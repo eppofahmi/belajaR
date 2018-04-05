@@ -1,0 +1,38 @@
+---
+title: "Mendapatkan data dari Twitter menggunakan API"
+author: "Ujang Fahmi"
+date: "4/5/2018"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Intro
+Di sini saya akan belajar bagaimana caranya mendapatkan data dari Twitter menggunakan API gratis. Berikut adalah beberapa langkahnya. 
+
+1. Membuat API di twitter
+2. Setting API buat ambil data di R
+3. Running di R buat ambil data
+4. Menyimpan data yang didapat 
+5. Mengolah data yang didapat
+
+# Membuat API Twitter
+Twiter menyediakan tiga macam Application programming interface (API), yaitu gratis, bisnis, dan premium. Perbedaan ketiganya adalah jumlah data yang bisa didapat dan lamanya waktu twit yang bisa didapat. Kali ini kita akan mengambil data dengan API Gratis. Langkahnya ada sebagai berikut. 
+
+1. Go to https://apps.twitter.com/app/new and log in, if necessary.
+2. Enter your desired Application Name, Description and your website address making sure to enter the full address including the http://. You can leave the callback URL empty. ![Caption for the picture.](/Volumes/mydata/RStudio/belajaR/twitter-api/img1.png)
+3. Accept the TOS and submit the form by clicking the Create your Twitter Application.
+4. After creating your Twitter Application click on the tab that says Keys and Access Tokens, then you have to give access to your Twitter Account to use this Application. To do this, click the Create my Access Token button. ![Caption for the picture.](/Volumes/mydata/RStudio/belajaR/twitter-api/img2.png)
+5. Lastly copy the Consumer key (API key), Consumer Secret, Access Token and Access Token Secret from the screen into our plugin’s Twitter Options page and test. ![Caption for the picture.](/Volumes/mydata/RStudio/belajaR/twitter-api/img3.png)
+
+# Setting API buat ambil data di R
+# Running di R buat ambil data
+# Menyimpan data yang didapat 
+# Mengolah data yang didapat
