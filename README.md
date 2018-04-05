@@ -1,2 +1,2 @@
 # belajaR
-belajaR is a place for me learning R
+belajaR is a place for me learning R, trying something and make notes
