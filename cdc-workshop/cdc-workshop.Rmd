@@ -1,0 +1,115 @@
+---
+title: "Mining and Exploration Twitter Data"
+author: "Ujang Fahmi"
+date: "4/6/2018"
+output:
+  html_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+  word_document:
+    toc: yes
+    toc_depth: '3'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Pendahuluan
+
+Media sosial merupakan salah satu sumber data baru bagi akademisi maupun industri untuk mengetahui berbagai hal. Mulai dari preferensi, pola, dan fenomena yang terjadi diberbagai belahan dunia. Berdasarkan Statista (2017), setidaknya ada 500 juta twit setiap harinya dikirim oleh pengguna Twitter. Twit tersebut mengandung banyak informasi yang dapat dimanfaatkan untuk hal-hal baik atau sebaliknya. Ketika sumber data melimpah, ternyata mendapatkannya bukanlah hal mudah namun juga sebenarnya bukan hal yang tidak mungkin dilakukan. Saya katakan tidak mungkin karena ada alat yang dapat digunakan secara gratis. Tentunya gartis bukan berarti tanpa usaha, namun usaha berupa belajar untuk menggunakannya. 
+
+Pada kesempatan ini kita akan belajar cara mendapatkan data dengan menggunakan (sebut saja program) R. Apa itu R dan, nanti R Studio, akan saya jelaskan pada bagian berikutnya. R di sini akan digunakan untuk mendapatkan data dari Twitter dengan menggunakan API. Namun sebelumnya, ada beberapa syarat yang harus dimiliki, yaitu:
+
+1. Memiliki akun Twitter
+2. Mengunduh dan menginstall R, yang bisa didapat [**di sini**](https://repo.bppt.go.id/cran/).
+3. Mengunduh dan menginstall R Studio, yang bisa didapat [**di sini**](https://www.rstudio.com/products/rstudio/download/#download).
+
+Sampai di sini, saya asumsikan kita sudah mengunduh dan menginstall dua program di atas dan memiliki akun Twitter yang masih aktif. Selanjutnya, kita perlu membuat API Twitter dengan cara [**klik link ini**](https://apps.twitter.com/app/new) dan isi semua kolom yang bertanda bintang merah dan create aplication. Untuk lebih lengkapnya, cara membuat API twitter dapat ditemukan di unggahan [**blog ini**](https://iag.me/socialmedia/how-to-create-a-twitter-app-in-8-easy-steps/).
+
+# Apa dan Kenapa R dan RStudio
+R adalah sebuah bahasa pemerograman dan lingkungan program yang digunakan untuk komputasi statistik dan pemodelan atau analisis data. RStudio merupakan program terintegrasi dengan R yang dapat digunakan untuk menulis *script* R. RStudio mengobinasikan sebuah editor kode (scipt) dengan lingkungan lain yang mudah diakses dan memudahkan analisis. Kedua program tersebut bersifat open source atau dapat digunakan secara gratis. 
+
+Kenapa menggunakan R? Alasan di bawah ini pada dasarnya bersifat subjektif, karena setiap programer punya preferensi sendiri. 
+
+1. Free for everyone - (bye bye software berbayar!!!)
+2. R is Popular - mudah mendapatkan tutorial atau solusi ketika menghadapi masalah, beruntungnya banyak orang juga punya masalah. Banyak masalah + banyak orang = banyak solusi. 
+3. R is Flexible - digunakan untuk banyak hal
+4. To the point - olah langsung visualisasi
+
+# Kenapa Data Twitter
+Media sosial seperti Facebook, Instagram dan Twitter merupakan bagian yang hampir tidak dapat dipisahkan dari kehidupan masyarakat. Khususnya bagi mereka yang tinggal di daerah perkotaan. Twitter sendiri merupakan media sosial berbasis web 2.0 dan *user generated content* (UGC) yang dapat menyediakan informasi tentang banyak hal. Misalnya:
+
+1. Dari twit yang diposting kita dapat mengetahui apa yang terjadi, dipikirkan, diinginkan, dibutuhkan dan lain sebagainya. Data ini umumnya berupa teks. 
+2. Dari kumpulan aktivitas yang dilakukan kita bisa mengetahui kebiasaan.
+3. Dari username yang beraktivitas kita bisa mengetahui siapa yang menjadi apa dalam sebuah perbincangan di Twitter. 
+
+Selain tiga hal di atas tentu masih banyak lagi yang bisa dimanfaatkan, khususnya dalam ranah akademik. Misalnya informasi geografis, dan lain sebagainya. Hal lain yang juga perlu menjadi pertimbangan di antaranyaL (1) batasan karakter yang diterapkan di Twitter cenderung membuat orang lebih banyak bicara (bercuit) di banding di media sosial lain, mungkin menghasilkan teks yang lebih fokus juga (minimal itulah tujuan twitter: targeted communication); (2) Virality, berbeda dengan media sosial lain, sebuah unggahan dapat menyebar keseluruh *follower*, bandingkan misalnya dengan Facebook, yang hanya dapat sampai kesekitar 10% dari teman dalam facebook. Sehingga jika tujuannya adalah untuk mengeksplorasi dunia maya, Twitter merupakan salah satu titik pertama yang perlu dijadikan tilikan. 
+
+# Persiapan
+Banyak tutorial yang dapat ditemukan baik dengan google search maupun lihat di Youtube. Oleh karena itu, di sini saya hanya akan mengulas sekilas saja tentang RStudio. 
+
+## Mengenal Lingkungan RStudio
+Halaman permukaan asal (default) Rstudi terdiri dari empat bagian, yaitu: (1) *script*; (2) *Environment*; (3) *Console*; dan (4) *Files*. **Console** digunakan untuk menulis script/code. **Environment** digunakan untuk melihat data yang dimasukkan dan akan diolah, serta hasil dari *script* yang dijalankan. **Console** digunakan untuk mengeksekusi script secara langsu dan melihat proses script berjalan. **Files** untuk melihat data yang ada dalam folder di mana kita menyimpan script yang ditulis. Empat hal tersebut ditambah dengan beberapa fitur lain. Di sini saya menggaris bawahi fitur **Viewer** yang dapat digunakan untuk melihat hasil visualisasi *script*.  
+
+
+### Mulai menulis *script*
+Untuk memulai menulis script kita bisa mulai dari membuka RStudi kemudian: 
+
+1. Menuju menu **file** *(di pojok kanan atas)*, lalu pilih **New File** dan pilih jenis file yang akan ditulis. Di sini saya sarankan untuk memilih **R Script**.
+2. Aktivitas di atas membuat sebuah halaman baru di kolom *script*, biasanya nama file *Untitle1* (jika itu script pertama). Untuk menyimpannya bisa melalui menu **File** dan pilih save atau command + s (macbook)/ ctr + s (windows). 
+3. Aktivitas no 2 membawa ke halaman baru untuk menyimpan. **Beri nama** dan pilih atau buat folder baru untuk menyimpan *script* yang dibuat. 
+4. Tanda pagar `#` adalah comment, tanda ini dapat digunakan pada setiap awal tulisan yang tidak ingin dibaca sebagai kode. Tanda ini juga biasanya digunakan untuk memberikan penjelasan tentang fungsi yang ditulis. 
+5. Untuk menjalankan script, arahkan kursor pada script yang akan dijalankan dan klik tombol `run` yang ada bagian atas sebelah kanan script. 
+
+### Membaca dan Menyimpan Data
+Untuk memudahkan proses membaca dan menyimpan, saya sarankan file yang akan dibaca (import) atau tulis (eksport) berada satu folder dengan *script* yang akan dijalankan. R memiliki kemampuan membaca beragam jenis data. Namun umumnya data yang akan diolah dalam bentuk tabel dengan ekstensi xlsx dari excel atau csv, misalnya data dari laman BPS atau data.go.id.
+
+1. Untuk membaca file **.csv** salah satunya bisa menggunakan fungsi `read.csv()`
+2. Untuk membaca file **.xls** dapat menggunakan fungsi `read.delim()`
+
+Berikut ini adalah script untuk memasukan file fungsi di atas. Namun sebelumnya, pastikan file tersebut berada dalam folder yang sama dengan scirpt. Untuk memastikannya, lihat dan klik menu **Session** di bagian atas RStudio, lalu pilih **Set Working Directory** dan kemudian **To Project Directory**. Seharusnya pada halaman antar muka **Files** bagian bawah sebelah kanan kita dapat melihat file tersebut. 
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+mydata1 <- read.csv("data2.csv", header = TRUE, stringsAsFactors = FALSE)
+mydata2 <- read.delim("data1.xls", header = TRUE, stringsAsFactors = FALSE)
+```
+
+Script di atas dapat saya bunyikan sebagai berikut: (1) Hai R, buatlah data dengan nama mydata1 dengan mengambil file dengan nama data2 yang berekstens csv yang memiliki header dari folder di mana script ini ada; (2) Hai R, buatlah data dengan nama mydata dua, dengan mengambil file dengan nama data2 yang berekstensi xls yang memiliki header dari folder di mana script ini ada. Hasil dari script diatas, dapat dilihat pada **Environment**.
+
+Sekarang untuk menyimpan file, yang kita buat di R salah satunya dapat menggunakan fungsi `write.csv()`.
+
+```{r, message=FALSE, warning=FALSE}
+write.csv(mydata1, "file_export.csv")
+```
+
+Setelah kode di atas dijalankan, di folder kita seharusnya sudah ada satu file baru dengan nama `file_export` dengan ekstensi `.csv`. Sebagai catatan, untuk membuat nama di dalam R, tidak dapat dilakukan memberikan spasi. Misalnya, `my data 1` akan membuat script error, yang benar adalah `myData1` atau atau `my_data_1`.
+
+## Library dan Package
+Dua hal yang berbeda namun di R dipanggil dengan fungsi yang sama, yaitu `library()`. Penjelasan detil tentang perbedaan di antara keduanya dapat ditemukan dalam [postingan ini](https://www.r-bloggers.com/r-package-or-library/). Di mana library dapat berisi package, namun tidak bisa sebaliknya. Library dan Package di R berfungsi ini menggunakan kode atau algoritem yang sudah ditulis ulang dengan script untuk R sehingga pengguna R dapat langsung menggunakannya dalam berbagai aktivitas yang dilakukan di lingkungan R. 
+
+Di sini, kita membutuhkan beberapa library dan package untuk melakukan data mining dan eksplorasi data Twitter. Pertama 
+
+```{r lib, echo=TRUE, message=FALSE, warning=FALSE}
+library(twitteR) # mengambil data dari twitter
+library(dplyr) # memanipulasi data
+library(ggplot2) # visualisasi data
+```
+
+
+## Setting API
+
+
+
+# Mining Twitter Data
+
+# Pre-Processing
+
+# Eksplorasi
+
+## Frekuensi
+
+
+## Sentimen 
