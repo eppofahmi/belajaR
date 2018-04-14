@@ -4,13 +4,12 @@ author: "Ujang Fahmi"
 date: "4/6/2018"
 output:
   html_document:
+    includes:
+    after_body: footer.Rhtml
     number_sections: yes
     toc: yes
     toc_depth: 3
     toc_float: yes
-  word_document:
-    toc: yes
-    toc_depth: '3'
 ---
 
 ```{r setup, include=FALSE}
@@ -19,7 +18,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Pendahuluan
 
-Media sosial merupakan salah satu sumber data baru bagi akademisi maupun industri untuk mengetahui berbagai hal. Mulai dari preferensi, pola, dan fenomena yang terjadi diberbagai belahan dunia. Berdasarkan Statista (2017), setidaknya ada 500 juta twit setiap harinya dikirim oleh pengguna Twitter. Twit tersebut mengandung banyak informasi yang dapat dimanfaatkan untuk hal-hal baik atau sebaliknya. Ketika sumber data melimpah, ternyata mendapatkannya bukanlah hal mudah namun juga sebenarnya bukan hal yang tidak mungkin dilakukan. Saya katakan tidak mungkin karena ada alat yang dapat digunakan secara gratis. Tentunya gartis bukan berarti tanpa usaha, namun usaha berupa belajar untuk menggunakannya. 
+Media sosial merupakan salah satu sumber data baru bagi akademisi maupun industri untuk mengetahui berbagai hal. Mulai dari preferensi, pola, dan fenomena yang terjadi diberbagai belahan dunia. Berdasarkan Statista (2017), setidaknya ada 500 juta twit setiap harinya dikirim oleh pengguna Twitter. Twit tersebut mengandung banyak informasi yang dapat dimanfaatkan untuk hal-hal baik atau sebaliknya. Ketika sumber data melimpah, ternyata mendapatkannya bukanlah hal mudah namun juga sebenarnya bukan hal yang tidak mungkin dilakukan. Saya katakan tidak mungkin karena ada alat yang dapat digunakan secara gratis. Tentunya gartis bukan berarti tanpa usaha, namun usaha di sini berupa belajar untuk menggunakannya. 
 
 Pada kesempatan ini kita akan belajar cara mendapatkan data dengan menggunakan (sebut saja program) R. Apa itu R dan, nanti R Studio, akan saya jelaskan pada bagian berikutnya. R di sini akan digunakan untuk mendapatkan data dari Twitter dengan menggunakan API. Namun sebelumnya, ada beberapa syarat yang harus dimiliki, yaitu:
 
@@ -61,8 +60,9 @@ Untuk memulai menulis script kita bisa mulai dari membuka RStudi kemudian:
 1. Menuju menu **file** *(di pojok kanan atas)*, lalu pilih **New File** dan pilih jenis file yang akan ditulis. Di sini saya sarankan untuk memilih **R Script**.
 2. Aktivitas di atas membuat sebuah halaman baru di kolom *script*, biasanya nama file *Untitle1* (jika itu script pertama). Untuk menyimpannya bisa melalui menu **File** dan pilih save atau command + s (macbook)/ ctr + s (windows). 
 3. Aktivitas no 2 membawa ke halaman baru untuk menyimpan. **Beri nama** dan pilih atau buat folder baru untuk menyimpan *script* yang dibuat. 
-4. Tanda pagar `#` adalah comment, tanda ini dapat digunakan pada setiap awal tulisan yang tidak ingin dibaca sebagai kode. Tanda ini juga biasanya digunakan untuk memberikan penjelasan tentang fungsi yang ditulis. 
-5. Untuk menjalankan script, arahkan kursor pada script yang akan dijalankan dan klik tombol `run` yang ada bagian atas sebelah kanan script. 
+4. Tanda pagar `#` adalah comment, tanda ini dapat digunakan pada setiap awal tulisan yang tidak ingin dibaca sebagai kode. Tanda ini juga biasanya digunakan untuk memberikan penjelasan tentang fungsi yang ditulis.
+5. Tanda `<-` sama dengan tanda `=` artinya sama dengan. Contoh, `1a <- c(1:10)`, artinya variabel 1a berisi integer dari 1 hingga 10.
+6. Untuk menjalankan script, arahkan kursor pada script yang akan dijalankan dan klik tombol `run` yang ada bagian atas sebelah kanan script. 
 
 ### Membaca dan Menyimpan Data
 Untuk memudahkan proses membaca dan menyimpan, saya sarankan file yang akan dibaca (import) atau tulis (eksport) berada satu folder dengan *script* yang akan dijalankan. R memiliki kemampuan membaca beragam jenis data. Namun umumnya data yang akan diolah dalam bentuk tabel dengan ekstensi xlsx dari excel atau csv, misalnya data dari laman BPS atau data.go.id.
@@ -72,44 +72,361 @@ Untuk memudahkan proses membaca dan menyimpan, saya sarankan file yang akan diba
 
 Berikut ini adalah script untuk memasukan file fungsi di atas. Namun sebelumnya, pastikan file tersebut berada dalam folder yang sama dengan scirpt. Untuk memastikannya, lihat dan klik menu **Session** di bagian atas RStudio, lalu pilih **Set Working Directory** dan kemudian **To Project Directory**. Seharusnya pada halaman antar muka **Files** bagian bawah sebelah kanan kita dapat melihat file tersebut. 
 
-```{r, echo=TRUE, message=FALSE, warning=FALSE}
+```{r test1, echo=TRUE, message=FALSE, warning=FALSE}
 mydata1 <- read.csv("data2.csv", header = TRUE, stringsAsFactors = FALSE)
 mydata2 <- read.delim("data1.xls", header = TRUE, stringsAsFactors = FALSE)
 ```
 
 Script di atas dapat saya bunyikan sebagai berikut: (1) Hai R, buatlah data dengan nama mydata1 dengan mengambil file dengan nama data2 yang berekstens csv yang memiliki header dari folder di mana script ini ada; (2) Hai R, buatlah data dengan nama mydata dua, dengan mengambil file dengan nama data2 yang berekstensi xls yang memiliki header dari folder di mana script ini ada. Hasil dari script diatas, dapat dilihat pada **Environment**.
 
-Sekarang untuk menyimpan file, yang kita buat di R salah satunya dapat menggunakan fungsi `write.csv()`.
-
-```{r, message=FALSE, warning=FALSE}
+Untuk menyimpan file yang kita buat di R salah satunya dapat menggunakan fungsi `write.csv()`.
+```{r test2, message=FALSE, warning=FALSE}
 write.csv(mydata1, "file_export.csv")
 ```
-
 Setelah kode di atas dijalankan, di folder kita seharusnya sudah ada satu file baru dengan nama `file_export` dengan ekstensi `.csv`. Sebagai catatan, untuk membuat nama di dalam R, tidak dapat dilakukan memberikan spasi. Misalnya, `my data 1` akan membuat script error, yang benar adalah `myData1` atau atau `my_data_1`.
 
 ## Library dan Package
 Dua hal yang berbeda namun di R dipanggil dengan fungsi yang sama, yaitu `library()`. Penjelasan detil tentang perbedaan di antara keduanya dapat ditemukan dalam [postingan ini](https://www.r-bloggers.com/r-package-or-library/). Di mana library dapat berisi package, namun tidak bisa sebaliknya. Library dan Package di R berfungsi ini menggunakan kode atau algoritem yang sudah ditulis ulang dengan script untuk R sehingga pengguna R dapat langsung menggunakannya dalam berbagai aktivitas yang dilakukan di lingkungan R. 
 
-Di sini, kita membutuhkan beberapa library dan package untuk melakukan data mining dan eksplorasi data Twitter. Pertama 
+Di sini, kita membutuhkan beberapa pacakage untuk melakukan data mining dan eksplorasi data dari Twitter. Pertama untuk menggunakan API dan mengambil twit itu sendiri. Kedua untuk mengolahnya, dan ketiga untuk memvisualisasikan. Package dalam R dan di install melalui menu **Tools** yang ada dibagian atas lalu pilih **Install Package** dan tuliskan nama packagenya pada kolom di halaman yang keluar. Selain itu, juga dapat menggunakan fungsi `install.packages()`. Misalanya untuk menginstall package `twitteR` maka kode yang dapat digunakan: `install.packages("twitteR")`. Dalam tutorial ini, selain yang ada di dalam kode dibawah ini juga ada beberapa package lain yang digunakan. Untuk itu, silahkan praktikan kode untuk menginstall packagenya. 
 
 ```{r lib, echo=TRUE, message=FALSE, warning=FALSE}
 library(twitteR) # mengambil data dari twitter
 library(dplyr) # memanipulasi data
 library(ggplot2) # visualisasi data
+library(skimr) # melihat rangkuman data 
+library(stringr) # text handling
+library(tm) # text mining 
 ```
 
+Sampai di sini, saya asumsikan kita sudah memiliki persyaratan utama dan pengetahuan (lihat bagian pendahualuan) dan pengetahuan dasar untuk melakukan data mining dari Twitter dengan API. 
 
 ## Setting API
+Di halaman aplikasi API Twitter yang telah buat, klik bagian **Keys and Access Token**. Pada bagian atas akan ditemukan dua hal berikut:
 
+1. Consumer Key (API Key)
+2. Consumer Secret (API Secret)
 
+Lalu, jika di scroll ke bawah akan ada tulisan **Your Access Token** klik **create** atau **generate** dan akan menemukan hal berikut:
+
+1. Access Token
+2. Access Token Secret
+
+Kopi dan paste empat hal di atas dalam kode berikut: 
+```{r api, echo=TRUE, message=FALSE, message=FALSE}
+options(httr_oauth_cache=T)
+
+# ganti dengan kode dari Consumer Key (API Key)
+api_key <- "pAFA3zX08uixfVtP4PMpcHas0"
+# ganti dengan kode dari Consumer Secret (API Secret)
+api_secret <- "FZfuzn055vuJgRFraq8KNAAWipsa0ugUEpIjWxuhOFH9Kd5HAm"
+# ganti dengan kode Access Token
+token <- "73705532-JApWQavtY5kkKbpRUGpDByEhHdLxb2HcKzAgtDZ7T"
+# ganti dengan Access Token Secret
+token_secret <- "2p2xuhlsMHVlbqDx8Swb7IkCAstwmCEMoINYreNmWxoCN"
+
+setup_twitter_oauth(api_key, api_secret, token, token_secret)
+```
+
+Kode di atas digunakan untuk mengatur penggunaann API Twitter yang akan digunakan dalam pengambilan data. 
 
 # Mining Twitter Data
+Terdapat tiga poses utama dalam data mining, yaitu import dan atau mendapatkan data, memanipulas atau restrukturisasi data, dan memvisualisasikannya. Di sini kita akan mencoba mengikuti alur logika yang bangun oleh seorang coding guru R, [Hadley Wickham](http://r4ds.had.co.nz/index.html) seperti dapat dilihat pada gambar berikut. 
+![Caption for the picture.](/Volumes/mydata/RStudio/belajaR/cdc-workshop/pic1.png)
+
+Untuk mendapatkan data dengan library `twitteR` kita bisa menggunakan fungsi `searchTwitter()` dari library ini. Selain fungsi tersebut juga masih ada beberapa fungsi lain, misalnya untuk mengetahui trending, user timeline, dan lain sebagainya. Selengkapnya tentang package ini dapat dibaca [di sini](https://cran.r-project.org/web/packages/twitteR/twitteR.pdf). Namun di sini kita akan coba menggunakan dua fungsi yang ada dalam package ini saja, yaitu:  
+
+1. `searchTwitter()` untuk mendapatkan twit, dan 
+2. `twListToDF()` untuk membuat data frame data yang diambil. 
+
+Untuk menjaga fokus pencarian, sebaiknya kita memiliki pertanyaan yang ingin dijawab oleh data. Dalam hal ini saya ingin membandingkan twit yang memantion akun @jokowi dan @prabowo. Di sini saya akan mencari 500 twit yang memention masing-masing akun. 
+
+Silahkan kopi dan paste kode di bawah ini untuk melakukan pencarian dan pengumpulan tweets dengan hastag. Di sini kata kunci yang saya gunakan adalah tagar, hal ini dapat diubah sesuai dengan apa yang diinginkan. 
+
+## Pencarian 1
+```{r mining, echo=TRUE, warning=FALSE}
+# Collecting tweets
+raw_jkw <- searchTwitter("@jokowi", n=5000, lang="id", resultType = "recent")
+# Transform tweets list into a data frame
+raw_jkw <- twListToDF(raw_jkw)
+#View(raw_jkw)
+```
+
+## Pencarian 2
+```{r mining2, echo=TRUE, warning=FALSE}
+# Collecting tweets
+raw_prb <- searchTwitter("@prabowo", n=5000, lang="id", resultType = "recent")
+# Transform tweets list into a data frame
+raw_prb <- twListToDF(raw_prb)
+View(raw_prb)
+```
+
+Dari hasil pencarian, kita sudah bisa mengumpulkan masing-masing 1000 twit yang memention akun @jokowi dan @prabowo. Pada tahap selanjutnya kita akan menggabungkan kedua data tersebut dan menambahkan 1 kolom untuk menamai sumbernya, yaitu twit yang memention @jokowi dan @prabowo. Hasil penggabungan akan dijadikan data baru yang dengan nama `raw_tweets`.
+
+```{r comb, echo=TRUE, message=FALSE, warning=FALSE}
+raw_tweets <- bind_rows(raw_jkw %>% 
+                      mutate(person = "Jokowi"),
+                    raw_prb %>% 
+                      mutate(person = "Prabowo"))
+```
+
+Untuk mengetahui jumlah dan nama kolom apa saja bisa menggunakan kode di bawah ini dengan menggunakan package `skimr` dan fungsi `skim()`. 
+
+```{r cek, echo=TRUE, message=FALSE, warning=FALSE, results='hide'}
+library(skimr)
+skim(raw_tweets)
+```
+
+Dari sini kita bisa mengetahui bahwa ada 17 variabel atau kolom, mulai dari `text` hingga `person`. 
 
 # Pre-Processing
+Kita akan mencoba mendapatkan jawaban dari kolom `text`, namun jika dilihat di sana teks yang ada masih kotor. Kotor di sini dapat diartikan masih bercampur dengan tagar, username, dan url. Untuk analisis teks hal tersebut umumnya harus dibersihkan terlebih dahulu. Untuk itu, di sini saya akan mencoba membuat kolom baru yang akan saya beri nama `text_clean` untuk menandakan bahwa kolom tersebut berasal dari kolom `text` namun sudah dibersihkan dari elemen-elemen lainnya. Karena hal ini umumnya akan dilakukan berulang-ulang saya membuat fungsi berikut. 
+
+Fungsi untuk cleaning teks Twitter
+```{r clean}
+tweet_cleaner <- function(input_text) # nama kolom yang akan dibersihkan
+{    
+  # create a corpus (type of object expected by tm) and document term matrix
+  corpusku <- Corpus(VectorSource(input_text)) # make a corpus object
+  # remove urls1
+  removeURL1 <- function(x) gsub("http[^[:space:]]*", "", x) 
+  corpusku <- tm_map(corpusku, content_transformer(removeURL1))
+  #remove urls3
+  removeURL2 <- function(x) gsub("pic[^[:space:]]*", "", x) 
+  corpusku <- tm_map(corpusku, content_transformer(removeURL2))
+  # remove username
+  TrimUsers <- function(x) {
+    str_replace_all(x, '(@[[:alnum:]_]*)', '')
+  }
+  corpusku <- tm_map(corpusku, TrimUsers)
+  #remove hashtags
+  removehashtag <- function(x) gsub("#\\w+", "", x)
+  corpusku <- tm_map(corpusku, content_transformer(removehashtag))
+  #remove puntuation
+  removeNumPunct <- function(x) gsub("[^[:alpha:][:space:]]*", "", x)
+  corpusku <- tm_map(corpusku, content_transformer(removeNumPunct))
+  corpusku <- tm_map(corpusku, stripWhitespace)
+  # tranform text to lower case
+  corpusku <- tm_map(corpusku, content_transformer(tolower))
+  #stopwords bahasa indonesia
+  stopwords <- read.csv("stopwords_indo.csv", header = FALSE)
+  stopwords <- as.character(stopwords$V1)
+  stopwords <- c(stopwords, stopwords())
+  corpusku <- tm_map(corpusku, removeWords, stopwords)
+  #kata khusus yang dihapus
+  corpusku <- tm_map(corpusku, removeWords, c("rt"))
+  corpusku <- tm_map(corpusku, stripWhitespace)
+  #removing white space in the begining
+  rem_spc_front <- function(x) gsub("^[[:space:]]+", "", x)
+  corpusku <- tm_map(corpusku, content_transformer(rem_spc_front))
+  #removing white space at the end
+  rem_spc_back <- function(x) gsub("[[:space:]]+$", "", x)
+  corpusku <- tm_map(corpusku, content_transformer(rem_spc_back))
+  
+  data <- data.frame(text=sapply(corpusku, identity),stringsAsFactors=F)
+  
+  a <- bind_cols(raw_tweets, data)
+}
+```
+
+Di dalam fungsi di atas, hal yang dihilangkan di antaranya adalah:
+
+1. url 
+2. tagar
+3. username
+4. string RT
+5. angka
+
+```{r runfung}
+# menjalankan fungsi
+raw_tweets <- tweet_cleaner(raw_tweets$text)
+# changing col 18 name 
+colnames(raw_tweets)[18] <- "text_clean"
+```
+
+Saat ini kita sudah memiliki data yang bernama `raw_tweets` yang berisi 16 kolom menjadi 17 kolom.
 
 # Eksplorasi
+Di dalam eksplorasi ini, terdapat beberapa hal yang ingin dilihat:
 
-## Frekuensi
+1. Distribusi twit
+2. Frekuensi tagar, dan
+3. Frekuensi kata yang digunakan
 
+## Melihat distribusi twit
+Untuk mengetahui distribusi twit kita hanya membutuhkan satu kolom dan menghitung frekuensinya. Kolom yang akan dihitung adalah kolom `created`. Kita akan membuatnya menjadi data baru dengan nama `tweets_dist`. 
 
-## Sentimen 
+```{r plotdis1}
+ggplot(raw_tweets, aes(x = created, fill = person)) +
+  geom_histogram(position = "identity", bins = 20, show.legend = FALSE) +
+  facet_wrap(~person, ncol = 1)
+```
+
+Twit yang berhasil dikumpulkan berasal dari twit yang di unggah pada tanggal 06 sampai 07 April 2018. Jika dilihat datanya, maka kita akan melihat bahwa banyak twit yang diungah merupakan retweet. Untuk melihatnya twit yang bukan retweet dapat menggunakan fungsi `filter()` dari `dplyr` dan memilih kolom `isRetweet` yang berisi TRUE dan FALSE. TRUE berarti twit tersebut retweet, dan sebaliknya. 
+```{r}
+not_rt <- raw_tweets %>%
+  filter(isRetweet == "FALSE")
+ggplot(not_rt, aes(x = created, fill = person)) +
+  geom_histogram(position = "identity", bins = 20, show.legend = FALSE) +
+  facet_wrap(~person, ncol = 1)
+```
+Plot di atas menunjukkan pola distribusi yang mirip antara twit yang retweet dengan twit secara keseluruhan. Selanjutnya, kita bisa memilih apakah kita akan melanjutkan analisis dengan semua twit, atau hanya dengan twit asli (bukan retweet).
+
+## Tagar
+Tagar kita dapatkan dari kolom `text` atau body twit. Di sini kita dapat menggunakan fungsi `str_extract_all` untuk mendeteksi term/kata yang diawali oleh tanda `#`. Untuk memudahkan proses, saya membuat fungsi untuk mengambil tagar dari text twitter sebagai berikut:
+
+**Fungsi untuk mengambil tagar**
+```{r}
+# function detecting hashtag
+tag_detect <- function(input_col) {
+  hashtag <- str_extract_all(input_col, "#\\w+")
+  # put tags in vector
+  hashtag <- unlist(hashtag)
+  # removing pic etc chr in the vector
+  hashtag <- gsub("pic$", "", hashtag)
+  hashtag <- gsub("http$", "", hashtag)
+  hashtag <- gsub("https$", "", hashtag)
+  hashtag <- gsub("XAmarthaXCoworkinc$", "", hashtag)
+  hashtag <- tolower(hashtag)
+  # calculate hashtag frequencies
+  hashtag = table(hashtag)
+  hashtag = as.data.frame(hashtag)
+} 
+```
+
+Untuk menjalankan fungsi yang dibuat, kita hanya perlu menuliskan variabel yang akan dibuta, memanggil fungsinya, dan data yang akan di ekstrak. Dalam hal ini saya mengekstrak tagar dari dua data yaitu, `raw_jkw` dan `raw_prb`.
+
+Menjalankan fungsi pengambil tagar
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+# run the funtion 
+tagar_jkw <- tag_detect(raw_jkw)
+tagar_prb <- tag_detect(raw_prb)
+
+tagar <- bind_rows(tagar_jkw %>% 
+                      mutate(person = "Jokowi"),
+                    tagar_prb %>% 
+                      mutate(person = "Prabowo"))
+```
+
+Visualisasi perbadingan tagar dengan wordcloud
+```{r wrcloud, echo=TRUE, message=FALSE, warning=FALSE}
+library(wordcloud)
+library(RColorBrewer)
+library(reshape2)
+
+tagar %>%
+  acast(hashtag ~ person, value.var = "Freq", fill = 0) %>%
+  comparison.cloud(colors = c("coral1", "darkturquoise"),
+                   max.words = 427)
+```
+
+Visualisasi 15 tagar yang paling sering digunakan
+```{r}
+tagar %>%
+  group_by(person) %>%
+  arrange(desc(Freq)) %>%
+  slice(1:15) %>%
+  ungroup() %>%
+  mutate(word = factor(hashtag, unique(hashtag))) %>%
+  ungroup() %>%
+  ggplot(aes(x = reorder(hashtag, Freq), y = Freq, fill = person)) + 
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~ person, scales = "free", ncol = 2) +
+  coord_flip() +
+  labs(x = NULL, 
+       y = "15 Tagar paling sering digunakan")
+```
+
+## Term Frequency
+Berdasarkan plot distribusi twit, baik yang bukan retweet maupun secara keselurhan distribusi twit ke akun @jokowi hanya berkumpula pada satu titik waktu sementara twit ke akun @prabowo cukup menyebar. Oleh karena itu, di sini saya berusha bukan hanya mencari perbedaan kata dalam twit yang memention dua akun di atas, tapi juga persamaan kata yang digunakan dalam twit. Untuk memudahkan hal ini, kita akan menggunakan tidy text dengan package `tidytext`. 
+
+Secara umum, pendekatan tidy text merubah struktur data frame yang kita buat dengan objek atau variabel yang di tidy. Dalam hal ini kolom clean_text yang berisi twit yang sudah dibersihkan yang akan di tidy. Data hasil tidy berisi data sebelumnya ditambah satu kolom dengan nama `word` yang isinya pecahan dari kalimat dalam twit. Secara tidak langsung hal ini juga dapat disebut tokenisasi. 
+
+```{r ct, echo=TRUE, message=FALSE, warning=FALSE, results='hide'}
+library(tidytext)
+library(stringr)
+
+replace_reg <- "https://t.co/[A-Za-z\\d]+|http://[A-Za-z\\d]+|&amp;|&lt;|&gt;|RT|https"
+unnest_reg <- "([^A-Za-z_\\d#@']|'(?![A-Za-z_\\d#@]))"
+
+tidy_tweets <- raw_tweets %>% 
+  mutate(text_clean = str_replace_all(text_clean, replace_reg, "")) %>%
+  unnest_tokens(word, text_clean, token = "regex", pattern = unnest_reg)
+```
+
+Setelah data dalam format tidy, kita dapat mengalkulasi frekuensi bagi setiap akun dengan tahapan: (1) mengeompokkannya berdasarkan kolom `person` dan menghitung berapa kali sebuah term digunakan dalam twit untuk masing-maisng akun; (2) menggunakan fungsi `left_join()` untuk menambah kolom yang berisi jumal term total untuk masing-masing akun; (3) mengalkulasi frekuensi untuk masing-masing akun dan term. 
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE, results='hide'}
+frequency <- tidy_tweets %>% 
+  group_by(person) %>% 
+  count(word, sort = TRUE) %>% 
+  left_join(tidy_tweets %>% 
+              group_by(person) %>% 
+              summarise(total = n())) %>%
+  mutate(freq = n/total)
+```
+
+Script di atas telah membuat sebuah data baru dengan nama `frequency` yang berisi kata untuk masing-masing akun dan nilainya. Namun untuk menempatkannya dalam sebuah plot dengan x dan y axis kita harus menyederhanakannya menjadi hanya tiga kolom atau melebur data. Untuk melakukannya akan digunakan fungsi `spread()` dari `tidyr`. 
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE, results='hide'}
+library(tidyr)
+
+frequency <- frequency %>% 
+  select(person, word, freq) %>% 
+  spread(person, freq) %>%
+  arrange(Jokowi, Prabowo)
+```
+
+Sekarang kita bisa menampilkannya dalam sebuah grafik. 
+
+```{r, warning=FALSE}
+library(scales)
+
+ggplot(frequency, aes(Jokowi, Prabowo)) +
+  geom_jitter(alpha = 0.1, size = 2.5, width = 0.25, height = 0.25) +
+  geom_text(aes(label = word), check_overlap = TRUE, vjust = 1.5) +
+  scale_x_log10(labels = percent_format()) +
+  scale_y_log10(labels = percent_format()) +
+  geom_abline(color = "red")
+```
+Gambar di atas menunjukkan kata untuk masing-masing akun, semakin jauh dari gari mereah, semakin khas untuk salah satu. Sebaliknya, kata yang berada di garis merah berarti memiliki kecenderungan untuk ada dalam twit yang dimentionkan pada dua akun yang jadi parameter pengambilan data.
+
+## Comparing word usage
+Di sini kita akan membandingkan kata mana yang cenderung berasal dari twit yang memention akun @jokowi dan @prabowo dengan log odds ratio. 
+
+```{r}
+word_ratios <- tidy_tweets %>%
+  filter(!str_detect(word, "^@")) %>%
+  count(word, person) %>%
+  filter(sum(n) >= 10) %>%
+  ungroup() %>%
+  spread(person, n, fill = 0) %>%
+  mutate_if(is.numeric, funs((. + 1) / sum(. + 1))) %>%
+  mutate(logratio = log(Jokowi / Prabowo)) %>%
+  arrange(desc(logratio))
+```
+
+Fungsi di atas baru saja membuat sebuah data frame dengan nama `word_ratios` yang berisi nilai kata yang cenderung berasal dari twit yang memention dua akun di atas. Untuk melihat secara sekilas dapat menggunakan fungsi berikut. 
+
+```{r}
+word_ratios %>% 
+  arrange(abs(logratio))
+```
+Banyak kata yang mungkin tidak memiliki arti dan hal tersebut sangat lazim ditemukan dalam twit. Oleh karena itu, pre-processing menjadi salah satu tahapan yang terkadang harus diulang setelah eksplorasi dilakukan. Dalam hal ini kata yaa, dah, dan du mungkin sebaiknya dihilangkan. Namun sebelum melangkah lebih jauh, kita dapat melihat 20 kata yang memiliki kecenderungan tertinggi yang berasal dari twit masing-masing akun yang dimention dengan script di bawah ini. 
+
+```{r}
+word_ratios %>%
+  group_by(logratio < 0) %>%
+  top_n(20, abs(logratio)) %>%
+  ungroup() %>%
+  mutate(word = reorder(word, logratio)) %>%
+  ggplot(aes(word, logratio, fill = logratio < 0)) +
+  geom_col(show.legend = TRUE) +
+  coord_flip() +
+  ylab("log odds ratio (Jokowi/Prabowo)") +
+  scale_fill_discrete(name = "", labels = c("Jokowi", "Prabowo"))
+```
+Gambar di atas menunjukkan kata atau term apa saja yang cenderung berasal dari twit yang memention @jokowi dan @prabowo. Dari gambar di atas kita juga dapat mengidentifikasi kata mana saja yang mungkin kurang berarti dan harus dihilangkan dalam proses cleaning. Dalam eksplorasi yang lebih lanjut, untuk melihat urgensi sebuah term dalam sebuah dokumen salah satunya dapat menggunakan nilai tf-idf. 
+
+# Rangkuman
+Tutorial ini dibuat dengan tujuan untuk menunjukkan bagaimana cara mendaptkan data dengan dengan R dan API Twitter. Secara keseluruahn prosesnya meliputi 3 hal utama, yaitu mendapatkan data, melakukan pre-processsing dan mencoba mengambil informasi yang ada di dalamnya dan kemudian memvisualisasikannya. Beberapa grammar R yang telah dipelajari diantaranya adalah cara menimpor dan mengekspor data di R serta pengenalan beberapa package yang dapat digunakan untuk menghandle ekspolarsi data dari Twitter. Namun hal yang dilakukan di sini hanya sebuah langkah pertama dalam tahapan eksplorasi untuk mengekstrak informasi dari dunia big data. Banyak hal yang masih bisa di eksplorasi seperti nilai sebuah term dengan tf-idf, hubungan atau asosiasi sebuah term, dan topik dari data yang di analisis, misalnya dengan menggunakan algoritme `latent dirichelet allocation`. Selain itu, data yang didapat juga sangat mungkin untuk dilakukan network analisis.  
