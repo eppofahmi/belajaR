@@ -9,7 +9,8 @@
 
 
 #--------------- Memasukkan data -------------------------------------------------
-raw_data <- read.csv("latihan cdc.csv", 
+dirwd <- paste(getwd(),"/cdc-workshop/",sep='')
+raw_data <- read.csv(paste(dirwd,"latihan-cdc.csv",sep=''), 
                      header = TRUE, sep = ",", stringsAsFactors = FALSE)
 
 #--------------- Rangkuman data --------------------------------------------------
@@ -228,7 +229,7 @@ tweet_cleaner <- function(input_text) # nama kolom yang akan dibersihkan
   # tranform text to lower case
   corpusku <- tm_map(corpusku, content_transformer(tolower))
   #stopwords bahasa indonesia
-  stopwords <- read.csv("stopwords_indo.csv", header = FALSE)
+  stopwords <- read.csv(paste(dirwd,"stopwords_indo.csv",sep=''), header = FALSE)
   stopwords <- as.character(stopwords$V1)
   stopwords <- c(stopwords, stopwords())
   corpusku <- tm_map(corpusku, removeWords, stopwords)

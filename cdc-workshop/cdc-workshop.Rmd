@@ -61,7 +61,7 @@ Untuk memulai menulis script kita bisa mulai dari membuka RStudi kemudian:
 2. Aktivitas di atas membuat sebuah halaman baru di kolom *script*, biasanya nama file *Untitle1* (jika itu script pertama). Untuk menyimpannya bisa melalui menu **File** dan pilih save atau command + s (macbook)/ ctr + s (windows). 
 3. Aktivitas no 2 membawa ke halaman baru untuk menyimpan. **Beri nama** dan pilih atau buat folder baru untuk menyimpan *script* yang dibuat. 
 4. Tanda pagar `#` adalah comment, tanda ini dapat digunakan pada setiap awal tulisan yang tidak ingin dibaca sebagai kode. Tanda ini juga biasanya digunakan untuk memberikan penjelasan tentang fungsi yang ditulis.
-5. Tanda `<-` sama dengan tanda `=` artinya sama dengan. Contoh, `1a <- c(1:10)`, artinya variabel 1a berisi integer dari 1 hingga 10.
+5. Tanda `<-` bermakna pengisian nilai ke variabel. Contoh, `1a <- c(1:10)`, artinya variabel 1a diisi nilai integer dari 1 hingga 10.
 6. Untuk menjalankan script, arahkan kursor pada script yang akan dijalankan dan klik tombol `run` yang ada bagian atas sebelah kanan script. 
 
 ### Membaca dan Menyimpan Data
@@ -70,8 +70,9 @@ Untuk memudahkan proses membaca dan menyimpan, saya sarankan file yang akan diba
 1. Untuk membaca file **.csv** salah satunya bisa menggunakan fungsi `read.csv()`
 2. Untuk membaca file **.xls** dapat menggunakan fungsi `read.delim()`
 
-Berikut ini adalah script untuk memasukan file fungsi di atas. Namun sebelumnya, pastikan file tersebut berada dalam folder yang sama dengan scirpt. Untuk memastikannya, lihat dan klik menu **Session** di bagian atas RStudio, lalu pilih **Set Working Directory** dan kemudian **To Project Directory**. Seharusnya pada halaman antar muka **Files** bagian bawah sebelah kanan kita dapat melihat file tersebut. 
+Sebelum menggunakan perintah di atas, pastikan dahulu delimiter dari file yang akan dibaca. Fungsi `read.csv()` secara default akan menggunakan delimiter `,(comma)`. Jika hendak menggunakan delimiter lain, bisa dengan memasukkan delimiter pada parameter `sep`. Contohnya: `read.csv("coba.csv",sep=";")`
 
+Berikut ini adalah script untuk memasukan file fungsi di atas. Namun sebelumnya, pastikan file tersebut berada dalam folder yang sama dengan scirpt. Untuk memastikannya, lihat dan klik menu **Session** di bagian atas RStudio, lalu pilih **Set Working Directory** dan kemudian **To Project Directory**. Seharusnya pada halaman antar muka **Files** bagian bawah sebelah kanan kita dapat melihat file tersebut. 
 ```{r test1, echo=TRUE, message=FALSE, warning=FALSE}
 mydata1 <- read.csv("data2.csv", header = TRUE, stringsAsFactors = FALSE)
 mydata2 <- read.delim("data1.xls", header = TRUE, stringsAsFactors = FALSE)
