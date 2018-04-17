@@ -39,7 +39,7 @@ str(raw_data)
 # 1. twit - bagaimana distribusi twit? -------------------------------------------
 
 ggplot(raw_data, aes(x = created, fill = person)) +
-  geom_histogram(position = "identity", bins = 20, show.legend = FALSE) +
+  geom_histogram(position = "identity", show.legend = FALSE, binwidth = 1800) +
   facet_wrap(~person, ncol = 1)
 
 # pada jam berapa orang biasanya memention dua akun ini?
@@ -289,8 +289,8 @@ clean_text %>%
   ggtitle("Username minimal 15 unggahan twit dengan mention 2 akun") +
   coord_flip()
 
-
 # 4. Kata apa yang paling penting dalam dua sumber twit? (tf-idf)
+
 
 # 5. Bagaimana hubungan antar kata di dalam dokumen? (semantic network)
 
