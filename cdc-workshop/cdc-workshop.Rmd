@@ -3,7 +3,7 @@ title: "Mining and Exploration Twitter Data"
 author: "Ujang Fahmi"
 date: "4/6/2018"
 output:
-  html_document:
+  html_notebook:
     includes:
     after_body: footer.Rhtml
     number_sections: yes
@@ -146,7 +146,7 @@ Silahkan kopi dan paste kode di bawah ini untuk melakukan pencarian dan pengumpu
 ## Pencarian 1
 ```{r mining, echo=TRUE, warning=FALSE}
 # Collecting tweets
-raw_jkw <- searchTwitter("@jokowi", n=5000, lang="id", resultType = "recent")
+raw_jkw <- searchTwitter("@jokowi", since = "2018-04-10", until = "2018-04-15", n = 5000)
 # Transform tweets list into a data frame
 raw_jkw <- twListToDF(raw_jkw)
 #View(raw_jkw)
@@ -155,10 +155,10 @@ raw_jkw <- twListToDF(raw_jkw)
 ## Pencarian 2
 ```{r mining2, echo=TRUE, warning=FALSE}
 # Collecting tweets
-raw_prb <- searchTwitter("@prabowo", n=5000, lang="id", resultType = "recent")
+raw_prb <- searchTwitter("@prabowo", n=5000, lang="id")
 # Transform tweets list into a data frame
 raw_prb <- twListToDF(raw_prb)
-View(raw_prb)
+#View(raw_prb)
 ```
 
 Dari hasil pencarian, kita sudah bisa mengumpulkan masing-masing 1000 twit yang memention akun @jokowi dan @prabowo. Pada tahap selanjutnya kita akan menggabungkan kedua data tersebut dan menambahkan 1 kolom untuk menamai sumbernya, yaitu twit yang memention @jokowi dan @prabowo. Hasil penggabungan akan dijadikan data baru yang dengan nama `raw_tweets`.
@@ -169,6 +169,12 @@ raw_tweets <- bind_rows(raw_jkw %>%
                     raw_prb %>% 
                       mutate(person = "Prabowo"))
 ```
+
+
+```{r}
+write.csv(raw_tweets, "latihan cdc.csv")
+```
+
 
 Untuk mengetahui jumlah dan nama kolom apa saja bisa menggunakan kode di bawah ini dengan menggunakan package `skimr` dan fungsi `skim()`. 
 
@@ -214,7 +220,7 @@ tweet_cleaner <- function(input_text) # nama kolom yang akan dibersihkan
   stopwords <- c(stopwords, stopwords())
   corpusku <- tm_map(corpusku, removeWords, stopwords)
   #kata khusus yang dihapus
-  corpusku <- tm_map(corpusku, removeWords, c("rt"))
+  corpusku <- tm_map(corpusku, removeWords, c("rt", "cc", "via", "r", "n", "dlm"))
   corpusku <- tm_map(corpusku, stripWhitespace)
   #removing white space in the begining
   rem_spc_front <- function(x) gsub("^[[:space:]]+", "", x)
@@ -299,8 +305,8 @@ Untuk menjalankan fungsi yang dibuat, kita hanya perlu menuliskan variabel yang 
 Menjalankan fungsi pengambil tagar
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 # run the funtion 
-tagar_jkw <- tag_detect(raw_jkw)
-tagar_prb <- tag_detect(raw_prb)
+tagar_jkw <- tag_detect(raw_jkw$text)
+tagar_prb <- tag_detect(raw_prb$text)
 
 tagar <- bind_rows(tagar_jkw %>% 
                       mutate(person = "Jokowi"),
@@ -417,7 +423,7 @@ Banyak kata yang mungkin tidak memiliki arti dan hal tersebut sangat lazim ditem
 ```{r}
 word_ratios %>%
   group_by(logratio < 0) %>%
-  top_n(20, abs(logratio)) %>%
+  top_n(10, abs(logratio)) %>%
   ungroup() %>%
   mutate(word = reorder(word, logratio)) %>%
   ggplot(aes(word, logratio, fill = logratio < 0)) +
