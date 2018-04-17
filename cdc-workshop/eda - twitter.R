@@ -62,6 +62,15 @@ format(mean(strptime(a$time, "%H:%M:%S")), "%H:%M:%S") # 07:43:00
 # lubridate way
 seconds_to_period(mean(period_to_seconds(hms(a$time))))
 
+# modus or mode of time 
+# R tidak punya fungsi khusus untuk menghitung modus
+getmode <- function(v) {
+  uniqv <- unique(v)
+  uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+
+
+
 # 2. retweet - twit siapa yang paling banyak di retweet? --------------------------
 
 # ke #jokowi
