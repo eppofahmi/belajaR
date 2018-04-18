@@ -15,7 +15,7 @@ raw_data <- read.csv(paste(dirwd,"latihan-cdc.csv",sep=''),
 
 #--------------- Rangkuman data --------------------------------------------------
 library(skimr)
-skim(raw_data)
+skimdata <- skim(raw_data)
 
 #--------------- Ekplorasi 1 - Aktivitas -----------------------------------------
 # Jenis aktivitas di Twitter
@@ -36,6 +36,7 @@ library(readr)
 # mengubah format tanggal dari character ke date
 raw_data$created <- ymd_hms(raw_data$created)
 str(raw_data)
+
 
 # 1. twit - bagaimana distribusi twit? -------------------------------------------
 
