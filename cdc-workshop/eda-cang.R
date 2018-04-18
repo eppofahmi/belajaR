@@ -6,7 +6,7 @@
 # sumber twit:
 # 1. yang memention akun @jokowi
 # 2. yang memention akun @prabowo
-
+s
 
 # A. Memasukkan data ----
 dirwd <- paste(getwd(),"/cdc-workshop/",sep='')
