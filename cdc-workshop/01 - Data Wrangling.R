@@ -40,12 +40,12 @@ raw_prb <-
 # atau ke bawah (baris/rows)
 # di sini kita akan menggabungkan rows dengan menggunakan bind_rows()
 
-tweet_gabungan <- bind_rows(raw_jkw, raw_prb)
+raw_data <- bind_rows(raw_jkw, raw_prb)
 
 # Mengecek structure data ----------
 # gunakan fungsi str(nama_data)
 
-str(tweet_gabungan)
+str(raw_data)
 
 # Seharusnya di console sekarang ada deskripsi tentang data
 # perhatikan kolom `created` 
@@ -56,6 +56,6 @@ str(tweet_gabungan)
 
 library(lubridate)
 
-tweet_gabungan$created <- as.Date(tweet_gabungan$created)
+raw_data$created <- as.Date(raw_data$created)
 
 # Coba cek apakah kolom tersebut saat ini sudah beruah atau belum dengan str(...)
