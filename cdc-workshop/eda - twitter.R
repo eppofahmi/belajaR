@@ -13,6 +13,11 @@ dirwd <- paste(getwd(),"/cdc-workshop/",sep='')
 raw_data <- read.csv(paste(dirwd,"latihan-cdc.csv",sep=''), 
                      header = TRUE, sep = ",", stringsAsFactors = FALSE)
 
+# the project is on cdc dir
+dirwd1 <- paste(getwd(),"/",sep='')
+raw_data <- read.csv(paste(dirwd1,"latihan-cdc.csv",sep=''), 
+                     header = TRUE, sep = ",", stringsAsFactors = FALSE)
+
 #--------------- Rangkuman data --------------------------------------------------
 library(skimr)
 skim(raw_data)
@@ -54,24 +59,19 @@ a <- raw_data %>%
   select(created) %>%
   separate(created, into = c("date", "time"), sep = " ")
 
-str(a)
-
-# mean dari kolom time saja 
-format(mean(strptime(a$time, "%H:%M:%S")), "%H:%M:%S") # 07:43:00
-
-# lubridate way
-seconds_to_period(mean(period_to_seconds(hms(a$time))))
-
-# modus or mode of time 
+# modus or mode of time
 getmode <- function(v) {
   uniqv <- unique(v)
   uniqv[which.max(tabulate(match(v, uniqv)))]
 }
 
+
+
 # atau dengan package `tadaatoolbox` yang memiliki fungsi `modus()`
 # devtools::install_github("tadaadata/tadaatoolbox")
-
 library(tadaatoolbox)
+
+
 
 
 # 2. retweet - twit siapa yang paling banyak di retweet? --------------------------
