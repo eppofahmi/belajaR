@@ -24,7 +24,7 @@ token_secret <- "2p2xuhlsMHVlbqDx8Swb7IkCAstwmCEMoINYreNmWxoCN"
 setup_twitter_oauth(api_key, api_secret, token, token_secret)
 
 # collect tweets 1 ------
-raw_jkw <- searchTwitter("@jokowi", n=5000, lang="id")
+raw_jkw <- searchTwitter("@jokowi", n=1000, lang="id")
 
 # mengubah format data menjadi data frame
 raw_jkw <- twListToDF(raw_jkw)
@@ -38,10 +38,7 @@ write.csv(raw_jkw, "raw_jkw.csv")
 # cek di folder apakah sudah ada file dengan nama raw_jokowi.csv
 
 
-# Your Turn 
-# collect tweets 2 -----
-raw_prb <- searchTwitter("@prabowo", n=5000, lang="id")
-raw_prb <- twListToDF(raw_prb)
-View(raw_prb)
-write.csv(raw_jkw, "raw_prb.csv")
+# Your Turn!!! ------
+# lakukan pencarian dengan pola yang sama dengan script di atas
+# misalnya untuk twit yang memention akun @prabowo
 
