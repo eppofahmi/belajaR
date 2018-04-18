@@ -15,8 +15,7 @@ raw_data <- read.csv(paste(dirwd,"latihan-cdc.csv",sep=''),
 
 # the project is on cdc dir
 dirwd1 <- paste(getwd(),"/",sep='')
-raw_data <- read.csv(paste(dirwd1,"latihan-cdc.csv",sep=''), 
-                     header = TRUE, sep = ",", stringsAsFactors = FALSE)
+raw_data <- read.csv(paste(dirwd1,"latihan-cdc.csv",sep=''), header = TRUE, sep = ",", stringsAsFactors = FALSE)
 
 #--------------- Rangkuman data --------------------------------------------------
 library(skimr)
@@ -246,20 +245,7 @@ tweet_cleaner <- function(input_text) # nama kolom yang akan dibersihkan
   stopwords <- c(stopwords, stopwords())
   corpusku <- tm_map(corpusku, removeWords, stopwords)
   #kata khusus yang dihapus
-  corpusku <- tm_map(corpusku, removeWords, c("rt", "cc", "via", "r", "n", "dlm", "bang", "tau", "mas",
-                                              "u", "zonkeduaubdedububf", "eduaubdedubu","mu","dah","gw",
-                                              "zonkeduaubdedubu", "yu", "yth", "kau", "tuh","p","d","du",
-                                              "yoo", "yoi", "yoiiik", "yng", "yesss", "eduaubdedubueduaubdedubu",
-                                              "akueduaubdedubuc", "lu", "sih", "gue", "eduaubdedubueduaubdedubueduaubdedubu",
-                                              "yaeduaubdedubueduaubdedubueduaubdedubueduaubdedubueduaubdedubutp", 
-                                              "yaaeduaubdedubuceduaubdedubuc","ha","loh","yaa","bs","h",
-                                              "yaaaakeduaubdedubueduaubdedubueduaubdedubueduaubdedubueduaubdedubueduaubdedubueduaubdedubueduaubdedubueduaubdedubu", 
-                                              "y", "xxxbuat", "x", "xxiud", "xexx", "wuahahahhaeduaubdedubu","wowww", 
-                                              "woow", "woiii", "wowww", "yaaau","eduaubdedubud","eh","oh",
-                                              "eduaubdedubueduaubdedubueduaubdedubueduaubdedubu","iya",
-                                              "ajaeduaubeedubua", "bro", "hahaha","g", "lg", "deh","ni", 
-                                              "sm", "wkwmkwmw", "wkwkwkwkwkwkwkwkwkwkwk", "wkwkwk","w",
-                                              "wkwkwkwkwkwkwkkkkkk", "eduaubeedubua", "vs", "wkwkwkwk"))
+  corpusku <- tm_map(corpusku, removeWords, c("rt"))
   corpusku <- tm_map(corpusku, stripWhitespace)
   #removing white space in the begining
   rem_spc_front <- function(x) gsub("^[[:space:]]+", "", x)
@@ -301,9 +287,3 @@ clean_text %>%
        x = NULL) +
   ggtitle("Username minimal 15 unggahan twit dengan mention 2 akun") +
   coord_flip()
-
-# 4. Kata apa yang paling penting dalam dua sumber twit? (tf-idf)
-
-
-# 5. Bagaimana hubungan antar kata di dalam dokumen? (semantic network)
-
