@@ -115,6 +115,7 @@ Lalu, jika di scroll ke bawah akan ada tulisan **Your Access Token** klik **crea
 
 Kopi dan paste empat hal di atas dalam kode berikut: 
 ```{r api, echo=TRUE, message=FALSE, message=FALSE}
+
 options(httr_oauth_cache=T)
 
 # ganti dengan kode dari Consumer Key (API Key)

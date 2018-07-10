@@ -1,3 +1,5 @@
+# Menambang Data Web 1
+
 # Skrip ini digunakan untuk mendapatkan data dari jurnal public policy yang dicari dengan kata kunci "public policy"
 
 library(tidyverse) # general
