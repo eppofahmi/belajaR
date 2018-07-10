@@ -131,6 +131,8 @@ multipages <- lapply(paste0('https://onlinelibrary.wiley.com/action/doSearch?All
                                    {if(length(.) == 0) NA else .}))
                 })
 
+# cek daftar
+
 a <- multipages[[1]]
 b <- multipages[[2]]
 c <- multipages[[3]]
@@ -139,4 +141,30 @@ e <- multipages[[5]]
 f <- multipages[[6]]
 g <- multipages[[7]]
 
-data <- bind_rows(a,b,c,d,e,f,g)
+# gabungan
+hasil_akhir <- bind_rows(a,b,c,d,e,f,g)
+rm(a,b,c,d,e,f,g)
+
+glimpse(hasil_akhir)
+a <- hasil_akhir$doi
+b <- unlist(a, recursive = FALSE)
+b <- data_frame(b)
+glimpse(b)
+
+hasil_akhir1 <- hasil_akhir[,-4]
+hasil_akhir1 <- bind_cols(hasil_akhir1,b)  
+glimpse(hasil_akhir1)
+class(hasil_akhir1)
+
+# cleaning hasil ---- 
+hasil_akhir1$judul <- replace_non_ascii(hasil_akhir1$judul)
+hasil_akhir1$penulis <- replace_non_ascii(hasil_akhir1$penulis)
+hasil_akhir1$abstrak <- replace_non_ascii(hasil_akhir1$abstrak)
+hasil_akhir1$abstrak <- replace_white(hasil_akhir1$abstrak)
+hasil_akhir1$tahun <- gsub("\\bFirst published: \\b", '', hasil_akhir1$tahun)
+
+colnames(hasil_akhir1) <- c("judul", "penulis", "tahun", "abstrak", "doi")
+hasil_akhir1$doi <- paste("https://onlinelibrary.wiley.com", sep = '', hasil_akhir1$doi)
+
+# menimpan hasil dalam memory internal
+write_tsv(hasil_akhir1, path = "hasil-akhir1.tsv")

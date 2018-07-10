@@ -22,8 +22,6 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
->**Keterangan:** Materi ini terdiri dari 1751 term/kata yang kurang lebih dapat dibaca sampai dengan selesai dalam waktu 8-10 menit.
-
 # Pengantar
 Web scraping juga disebut screen scrapping karena pada intinya kita memang hanya men-scrapp-apa yang sudah terbuka di layar (monitor). Web scrapping juga disbeut web data extraction karena hal tersebut kita lakukan memang untuk mendapatkan data. Web scrapping juga di sebut harvesting atau panen tanpa harus menanam karena data dibuat bukan oleh kita sendiri, tapi ditinggalkan sebagai jejak digital orang yang menggunakan internet. Secara umum scraping disebut teknik untuk mengekstrak data dalam jumlah bersar dari website, di mana data yang diekstrak kemudian di simpan dalam memory lokal, biasanya dalam format database dalam bentuk spreedsheet.  
 
@@ -173,3 +171,5 @@ Di sini kita bisa mendapatkan kode yang sama seperti yang kita amati secara lang
 **Catatan:** Lembar ini saya tujukan untuk memberikan intro tentang alat yang akan digunakan untuk melakukan scrapping. Untuk lebih lanjutnya saya akan coba jelaskan melalui percobaan langsung, baik untuk scrapping media sosial dengan API maupun web lain. Jika sudah familiar dengan R atau Rstudio, dan sebelumnya sudah pernah melakukan scrapping web kita bisa langsung ke materi selanjutnya tentang praktik scraping web. 
 
 Di sini saya akan gunakan web jurnal **policy & internet** untuk web scrapping semi otomatis dan **Twitter** untuk scrapping menggunakan API. 
+
+**SEMUA MATERI DAN SCRIPT DAPAT DITEMUKAN DI [LAMAN INI](https://github.com/eppofahmi/belajaR)** 
