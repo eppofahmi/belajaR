@@ -22,7 +22,9 @@ raw_data$created <- ymd_hms(raw_data$created)
 library(skimr)
 library(dplyr)
 ## B.1. Total data ----
+
 skimdata <- skim(raw_data)
+
 skimdata %>% dplyr::filter(variable=="favoriteCount")
 skimdata %>% dplyr::filter(stat=="mean")
 ## B.2. Dibagi per subjek ----

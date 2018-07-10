@@ -14,10 +14,7 @@ raw_jkw <- read.csv("raw_jkw.csv", stringsAsFactors = FALSE, header = TRUE,
 # Your turn!!! --------------------
 # cobalah impor data ke 2 
 # data 2
-raw_prb <- read.csv("raw_prb.csv", stringsAsFactors = FALSE, header = TRUE, 
-                    sep = ",")
-
-write.csv(raw_jkw, "raw_prb.csv")
+raw_prb <- 
 
 
 # Membuat kolom identitas ---------
@@ -28,8 +25,7 @@ library(dplyr)
 raw_jkw <- raw_jkw %>%
   mutate(person = "Jokowi")
 
-# Fungsi di atas membuat satu kolom baru dengan nama `person` pada data `raw_jkw`
-# string "Jokowi" adalah isi dari kolom tersebut
+# Fungsi di atas membuat satu kolom baru dengan nama `person` pada data `raw_jkw`, di mana string "Jokowi" adalah isi dari kolom tersebut
 # Your turn!!! --------------------
 # tambahkan kolom yang sama untuk data kedua 
 
