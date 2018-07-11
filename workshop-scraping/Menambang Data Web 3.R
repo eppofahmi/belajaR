@@ -1,4 +1,4 @@
-# Menambang Data Web 3
+# Menambang Data Web 2
 # script ini digunakan untuk menambang data dari Twitter dengan menggunakan API basci
 
 

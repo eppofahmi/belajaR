@@ -8,6 +8,7 @@ library(rvest) # html parser
 library(textclean) # text cleaning
 library(lubridate) # transform date 
 library(purrr) # mapping lists
+library(tidytext)
 
 # Tahap 1
 
@@ -195,5 +196,54 @@ write_tsv(hasil_akhir2, path = "hasil-akhir2.tsv")
 
 # Melalui skrip di atas saya menyimpan data hasil scraping dengan menggunakan format tsv.
 
+# Simple Analysis ----
+set.seed(2018)
+# Frekuensi ----
+# Di sini kita ingin mengetahui kata yang paling sering digunakan dari abstrak jurnal namun sebelumnya kita akan terlebih dahulu mengubah angka yang ada di dalam abstrak menjadi teks. Misalnya 1000 menjadi one thousand
 
-# Simple Analysis
+hasil_akhir2$abstrak <- replace_number(hasil_akhir2$abstrak, num.paste = TRUE, remove = TRUE)
+
+term_all <- hasil_akhir2 %>%
+  unnest_tokens(kata, abstrak, token = "words", to_lower = TRUE) %>%
+  filter(!kata %in% stop_words$word) %>% # removing en. stopwords
+  count(kata, sort = TRUE)
+
+term_all %>%
+  head(n = 20) %>%
+  ggplot(aes(reorder(kata, n), n)) +
+  geom_col() + coord_flip()
+
+# apakah ada perbedaan kata yang digunakan dalam tahun yang berbeda? namun untuk melakukannya kita perlu mengubah kolom tahun yang berisi informasi tentang pertama kali artikel diterbitkan. Package lubridate akan digunakan untuk melakukannya. format 11(%d) December(%b) 2017(%Y) = "%d %b %Y"
+
+hasil_akhir2$tahun <- as.Date(hasil_akhir2$tahun, "%d %b %Y")
+glimpse(hasil_akhir2)
+
+# untuk memudahkan, saya akan membuat data baru yang berisi kolom tahun, dan abstrak saja
+term_tahun <- hasil_akhir2 %>%
+  select(tahun, abstrak) %>%
+  separate(tahun, into = c("tahun", "bulan", "tanggal"), sep = "-") %>%
+  select(tahun, abstrak) %>%
+  unnest_tokens(kata, abstrak, token = "words", to_lower = TRUE) %>%
+  filter(!kata %in% stop_words$word) %>% # removing en. stopwords
+  filter(!kata %in% c("public", "policy", "article")) %>% # removing common words
+  group_by(tahun) %>%
+  count(kata, sort = TRUE)
+
+term_tahun %>%
+  top_n(10) %>%
+  ggplot(aes(reorder(kata, n), n, fill = tahun)) +
+  geom_col(show.legend = FALSE) + coord_flip() + 
+  facet_wrap(~tahun, scales = "free_y") + 
+  labs(x = "Jumlah", y = "")
+
+# Jumlah artikel per tahun
+jml_artikel <- hasil_akhir2 %>%
+  select(tahun, judul) %>%
+  separate(tahun, into = c("tahun", "bulan", "tanggal"), sep = "-") %>%
+  select(tahun, judul)
+
+jml_artikel %>%
+  group_by(tahun) %>%
+  count(tahun, sort = TRUE) %>%
+  ggplot(aes(tahun, n)) + geom_col() + 
+  labs(x = "tahun", y = "jumlah artikel")
