@@ -172,4 +172,4 @@ Di sini kita bisa mendapatkan kode yang sama seperti yang kita amati secara lang
 
 Di sini saya akan gunakan web jurnal **policy & internet** untuk web scrapping semi otomatis dan **Twitter** untuk scrapping menggunakan API. 
 
-**SEMUA MATERI DAN SCRIPT DAPAT DITEMUKAN DI [LAMAN INI](https://github.com/eppofahmi/belajaR)** 
+**SEMUA MATERI DAN SCRIPT DAPAT DITEMUKAN DI [LAMAN INI](https://github.com/eppofahmi/belajaR/tree/master/workshop-scraping)** 
