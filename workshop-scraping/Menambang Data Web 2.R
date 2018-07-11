@@ -2,6 +2,7 @@
 
 # Skrip ini digunakan untuk mendapatkan data dari jurnal public policy yang dicari dengan kata kunci "public policy" sebanyak 13 halaman. 
 
+# library yang digunakan 
 library(tidyverse) # general
 library(rvest) # html parser
 library(textclean) # text cleaning
@@ -166,7 +167,7 @@ hasil_akhir1 <- bind_cols(hasil_akhir1,b)
 glimpse(hasil_akhir1)
 class(hasil_akhir1)
 
-# cleaning hasil ---- 
+# Cleaning hasil ---- 
 hasil_akhir1$judul <- replace_non_ascii(hasil_akhir1$judul)
 hasil_akhir1$judul <- replace_white(hasil_akhir1$judul)
 hasil_akhir1$penulis <- replace_non_ascii(hasil_akhir1$penulis)
@@ -189,4 +190,10 @@ hasil_akhir2 <- hasil_akhir1 %>%
   filter(!str_detect(judul, "\\bErratum\\b")) %>% # bErratum
   drop_na(abstrak) # drop empty abstrak
 
-write_tsv(hasil_akhir1, path = "workshop-scraping/hasil-akhir2.tsv")
+# Menyimpan hasil akhir ----
+write_tsv(hasil_akhir2, path = "hasil-akhir2.tsv")
+
+# Melalui skrip di atas saya menyimpan data hasil scraping dengan menggunakan format tsv.
+
+
+# Simple Analysis
