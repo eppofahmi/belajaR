@@ -109,10 +109,10 @@ hasil_akhir <- url1 %>%
 hasil_akhir
 
 
-# Multiple pages judul ----
+# Multiple pages ----
 # hasil pencarian kita terdiri dari 7 halaman, sementara kita sudah mencoba untuk halaman satu dan berhasil. Dengan dasar yang sudah diaplikasikan di halaman 1 kita bisa mengetesnya untuk semua halaman. Karena dengan menggunakan bahasa ini juga memungkinkan kita untuk melakukan scrapping multi pages. 
 
-multipages <- lapply(paste0('https://onlinelibrary.wiley.com/action/doSearch?AllField=public%20policy&PubType=journal&SeriesKey=19442866&content=articlesChapters&countTerms=true&target=default&AfterYear=2009&BeforeYear=2018&startPage=', 1:7),
+multipages <- lapply(paste0('https://onlinelibrary.wiley.com/action/doSearch?AllField=public%20policy&PubType=journal&SeriesKey=19442866&content=articlesChapters&countTerms=true&target=default&AfterYear=2009&BeforeYear=2018&startPage=', 0:12),
                 function(url){
                   url %>% read_html() %>% 
                     html_nodes(".item__body") %>% 
@@ -135,17 +135,25 @@ multipages <- lapply(paste0('https://onlinelibrary.wiley.com/action/doSearch?All
 
 # cek daftar
 
-a <- multipages[[1]]
-b <- multipages[[2]]
-c <- multipages[[3]]
-d <- multipages[[4]]
-e <- multipages[[5]]
-f <- multipages[[6]]
-g <- multipages[[7]]
+page1 <- multipages[[1]]
+page2 <- multipages[[2]]
+page3 <- multipages[[3]]
+page4 <- multipages[[4]]
+page5 <- multipages[[5]]
+page6 <- multipages[[6]]
+page7 <- multipages[[7]]
+page8 <- multipages[[8]]
+page9 <- multipages[[9]]
+page10 <- multipages[[10]]
+page11 <- multipages[[11]]
+page12 <- multipages[[12]]
+page13 <- multipages[[13]]
+
 
 # gabungan
-hasil_akhir <- bind_rows(a,b,c,d,e,f,g)
-rm(a,b,c,d,e,f,g)
+hasil_akhir <- bind_rows(page1, page2, page3, page4, page5, page6, page7, page8, page9, page10, page11, page12, page13)
+
+rm(page1, page2, page3, page4, page5, page6, page7, page8, page9, page10, page11, page12, page13)
 
 glimpse(hasil_akhir)
 a <- hasil_akhir$doi
@@ -160,6 +168,7 @@ class(hasil_akhir1)
 
 # cleaning hasil ---- 
 hasil_akhir1$judul <- replace_non_ascii(hasil_akhir1$judul)
+hasil_akhir1$judul <- replace_white(hasil_akhir1$judul)
 hasil_akhir1$penulis <- replace_non_ascii(hasil_akhir1$penulis)
 hasil_akhir1$abstrak <- replace_non_ascii(hasil_akhir1$abstrak)
 hasil_akhir1$abstrak <- replace_white(hasil_akhir1$abstrak)
@@ -169,4 +178,15 @@ colnames(hasil_akhir1) <- c("judul", "penulis", "tahun", "abstrak", "doi")
 hasil_akhir1$doi <- paste("https://onlinelibrary.wiley.com", sep = '', hasil_akhir1$doi)
 
 # menimpan hasil dalam memory internal
-write_tsv(hasil_akhir1, path = "hasil-akhir1.tsv")
+write_tsv(hasil_akhir1, path = "workshop-scraping/hasil-akhir1.tsv")
+
+# Penutup
+# Dengan scrapping yang dilakukan didapatkan 244 judul artikel dan asbtraknya. Namun di dalamnya juga masih ada tulisan yang bukan jurnal, seperti Editorial dan Issue Information. Beruntunya format tersebut digunakan secara konsisten oleh jurnal. Sehingga term tersebut dapat dijadikan parameter untu memfilter. 
+
+hasil_akhir2 <- hasil_akhir1 %>%
+  filter(!str_detect(judul, "\\bEditorial\\b")) %>% # drop judul Editorial
+  filter(!str_detect(judul, "\\bIssue Information\\b")) %>% # drop "Issue Information"
+  filter(!str_detect(judul, "\\bErratum\\b")) %>% # bErratum
+  drop_na(abstrak) # drop empty abstrak
+
+write_tsv(hasil_akhir1, path = "workshop-scraping/hasil-akhir2.tsv")
