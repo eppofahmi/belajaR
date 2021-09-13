@@ -3,11 +3,14 @@ title: "Mendapatkan data dari Twitter menggunakan API"
 author: "Ujang Fahmi"
 date: "4/5/2018"
 output:
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
   html_document:
-    toc: true
+    toc: yes
     toc_depth: 3
-    toc_float: true
-    number_sections: true
+    toc_float: yes
+    number_sections: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -38,7 +41,7 @@ Setelah membuat aplikasi API Twitter selanjutnya kita bisa mengambil key dari ap
 
 ## Library
 ```{r lib, echo=TRUE, results='hide', message=FALSE}
-library(SocialMediaLab)
+library(vosonSML)
 library(twitteR)
 # library tambahan
 library(dplyr)
@@ -67,10 +70,11 @@ Di sini kita akan mencoba dua librar, yaitu socialMediaLab dan twitteR, dan meli
 Package ini dapat digunakan untuk mengambil data dari Twitter, dan juga langsung *mengenerate* input untuk network analysis yang bisa dilakukan di software lain. Misalnya **Gephi**. Untuk menggunakannya, kita terlebih dahulu harus mengatur pengunaan API Twitter yang sudah dibuat. Keterangan lebih lengkan dan lanjut tentang socialMediaLab dapat ditemukan [di sini](https://bit.ly/2GYs2JG). 
 
 ```{r sett2, echo=TRUE, results='hide', message=FALSE}
-data1 <- Authenticate("twitter", apiKey=myapikey,
-                             apiSecret=myapisecret,
-                             accessToken=myaccesstoken,
-                             accessTokenSecret=myaccesstokensecret) %>%
+data1 <- Authenticate("twitter", 
+                      apiKey=myapikey,
+                      apiSecret=myapisecret,
+                      accessToken=myaccesstoken,
+                      accessTokenSecret=myaccesstokensecret) %>%
   Collect(searchTerm="uu-md3 DPR", numTweets=10000,
           writeToFile=FALSE,verbose=TRUE)
 ```
