@@ -107,10 +107,9 @@ df3 = read_excel(path = "namafolder/namafile.xlsx", sheet = 1)
 
 `Json` atau `java script object notation` adalah format data yang umum digunakan untuk ditampilkan di sebuah laman/website. 
 
-```{r}
+```{r, eval=FALSE}
 library(jsonlite)
-
-
+df = read_json()
 ```
 
 
