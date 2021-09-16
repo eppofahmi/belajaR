@@ -109,7 +109,6 @@ df3 = read_excel(path = "namafolder/namafile.xlsx", sheet = 1)
 
 ```{r, eval=FALSE}
 library(jsonlite)
-# tes
 df = read_json()
 ```
 
