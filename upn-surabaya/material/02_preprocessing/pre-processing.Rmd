@@ -1,0 +1,135 @@
+---
+title: Pre-processing data di R
+subtitle: (Pelatihan data sains menggunakan R dan Gephi)
+author: Ujang Fahmi
+institute: "Pelajaran ke-1"
+titlegraphic: styles/sadasa.png
+fontsize: 10pt
+output:
+ beamer_presentation:
+   template: styles/svm-latex-beamer.tex
+   keep_tex: true
+   latex_engine: xelatex # pdflatex also works here
+   dev: cairo_pdf # I typically comment this out  if latex_engine: pdflatex
+   slide_level: 3
+make149: true
+mainfont: "Open Sans" # Try out some font options if xelatex
+titlefont: "Titillium Web" # Try out some font options if xelatex
+---
+
+```{r setup, include=FALSE, cache=F, message=F, warning=F, results="hide"}
+knitr::opts_chunk$set(cache=TRUE, echo=TRUE, message=FALSE, warning=FALSE, eval=FALSE)
+knitr::opts_chunk$set(fig.path='figs/')
+knitr::opts_chunk$set(cache.path='cache/')
+
+knitr::opts_chunk$set(
+                  fig.process = function(x) {
+                      x2 = sub('-\\d+([.][a-z]+)$', '\\1', x)
+                      if (file.rename(x, x2)) x2 else x
+                      }
+                  )
+library(tidyverse)
+library(stevemisc)
+```
+
+Salam kenal dan selamat datang.
+
+Semoga kita semua bisa saling berbagi pengalaman dan pengetahuan. Saya adalah Ujang Fahmi, Co-founder dan mentor Sadasa Academy.
+
+Jika anda berada dan sedang membaca tutorial ini, maka kemungkinan anda adalah orang yang sedang ingin belajar data sains, atau mungkin ditugaskan untuk mempelajari R oleh institusi atau organisasi anda. Sama seperti saya dulu, dimana tanpa latar belakang enginering saya didiharuskan untuk belajar R, demi menyelesaikan tugas akhir dan akhirnya jadilah seperti saya sekarang ini.
+
+Satu hal yang pasti, ini adalah langkah pertama dari banyak langkah yang harus dilalui, entah melalui lembaga resmi atau belajar secara mandiri. Jadi selamat belajar!!!
+
+`r paste("Ujang Fahmi, Yogyakarta,", Sys.Date())`
+
+# Mendapatkan Bantuan dan Mengatasi Error
+
+## Error yang umum 1
+
+Di worksapce kita menulis
+
+```{r, eval=FALSE}
+a + 198
+```
+
+Di console menampilkan: 
+
+`Error: object 'a' not found`
+
+Artinya objek `a` tidak bisa ditemukan sehingga R tidak bisa menyelesaikan perintah yang diberikan
+
+## Error yang umum 2
+
+Di workspace kita mencoba untuk memberikan perintah impor data dengan menggunakan fungsi `read_csv`, kita juga udah yakin argumen yang dibutuhkan sudah sesuai.
+
+```{r}
+df1 = read_csv("folder1/file.csv")
+```
+
+Tapi, di `console` kita masih tetap menerima error berikut:
+
+`Error in read_csv("folder1/file.csv") : `
+  
+  `could not find function "read_csv"`
+
+Error menunjukkan bahwa fungsi `read_csv` tidak ditemukan. Artinya kita belum memanggil library yang dibutuhkan.
+
+# Impor dan Ekspor Data
+
+> Di R kita hanya bisa mengolah data yang yang sudah kita impor atau berada di *environment* R. Maka ketika ada `error: object not found` di console, sebagian besar disebabkan oleh data/objek yang belum ada. 
+
+## Impor Data
+
+- Impor data merupakan salah satu langkah pertama dan utama dalam pengolahan data
+- impor umumnya menggunakan sintak dengan awalan `read`. Misal `read.csv()` atau `read_csv`, sama-sama digunakan untuk impor data `.csv`
+
+### Impor data frame
+Data frame atau data flate di R bisa diimpor dengan beberapa sintaks dari beberapa package. 
+
+Argumen yang dibutuhkan: 
+
+1. namfolder
+2. namafile atau link data
+
+```{r}
+# dasar
+df1 = read.csv(file = "namafolder/namafile.csv", header = TRUE, 
+               sep = ",")
+# readr
+library(readr)
+df2 = read_csv(file = "namafolder/namafile.csv", trim_ws = TRUE)
+# xlsx
+library(readxl)
+df3 = read_excel(path = "namafolder/namafile.xlsx", sheet = 1)
+```
+
+### Impor data json
+
+`Json` atau `java script object notation` adalah format data yang umum digunakan untuk ditampilkan di sebuah laman/website. 
+
+```{r}
+library(jsonlite)
+
+
+```
+
+
+### Impor data lain
+## Ekspor Data
+### Ekspor data frame
+### Ekspor data lain
+# Pengecekan Data 
+## Jumlah observasi dan variabel 
+## Rangkuman data
+# Penataan Data *(Data Wrangling)*
+## Memilih Kolom dan Menyusun nama kolom
+## Memilih Baris
+## Transformasi kolom
+### Nama bari menjadi kolom (Row names to column)
+### Membuat kolom baru
+### Memisah dan Menggabungkan nilai kolom
+### Merangkum variabel
+# Mengatasasi Nilai Hilang
+## Menggunakan teknik manual
+## Menggunakan `package`
+

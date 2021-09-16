@@ -260,7 +260,7 @@ Satu hal yang pasti, ini adalah langkah pertama dari banyak langkah yang
 harus dilalui, entah melalui lembaga resmi atau belajar secara mandiri.
 Jadi selamat belajar!!!
 
-Ujang Fahmi, Yogyakarta, 2021-09-13
+Ujang Fahmi, Yogyakarta, 2021-09-16
 \end{frame}
 
 \hypertarget{pengenalan-data-sains}{%
@@ -653,10 +653,31 @@ R MARKDOWN
 \end{itemize}
 \end{frame}
 
-\hypertarget{your-turn-1}{%
-\section{Your Turn 1!}\label{your-turn-1}}
+\begin{frame}[fragile]{Menggunakan fungsi dalam package}
+\protect\hypertarget{menggunakan-fungsi-dalam-package}{}
+Fungsi dalam r terdiri dari nama\_fungsi(argumen1, argumen2, dst).
+Bisanya dibuat dengan cara sebagai berikut.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# pembuatan fungsi}
+\NormalTok{fungsi\_modulo }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(argumen1)\{}
+\NormalTok{  hasil }\OtherTok{=}\NormalTok{ argumen1}\SpecialCharTok{\%\%}\DecValTok{2}
+  \FunctionTok{return}\NormalTok{(hasil)}
+\NormalTok{\}}
+
+\CommentTok{\# penggunaan fungsi}
+\FunctionTok{fungsi\_modulo}\NormalTok{(}\AttributeTok{argumen1 =} \DecValTok{7}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Setiap fungsi dari dalam pacakge juga memiliki format seperti, sehingga
+ketika kita akan menggunakannya kita perlu tahu terlebih dahulu argumen
+yang dibutuhkannya.
+\end{frame}
 
 \begin{frame}[fragile]{Your Turn 1!}
+\protect\hypertarget{your-turn-1}{}
 \begin{enumerate}
 \tightlist
 \item
@@ -664,8 +685,8 @@ R MARKDOWN
 \item
   Buatlah sebuah skrip \texttt{.R} di project yang telah dibuat!
 \item
-  Tulislah perintah untuk menginstall package tidyverse, tidytext, dan
-  igraph!
+  Tulislah perintah untuk menginstall package \texttt{tidyverse},
+  \texttt{tidytext}, dan \texttt{igraph}!
 \end{enumerate}
 \end{frame}
 
@@ -732,6 +753,8 @@ Contoh:
 
 \ControlFlowTok{if}\NormalTok{ (Tim\_A }\SpecialCharTok{\textgreater{}}\NormalTok{ Tim\_B) \{}
   \FunctionTok{print}\NormalTok{(}\StringTok{"Tim A adalah juaranya"}\NormalTok{)}
+\NormalTok{\} }\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{(Tim\_A }\SpecialCharTok{==}\NormalTok{ Tim\_B)\{}
+  \FunctionTok{print}\NormalTok{(}\StringTok{"Seri"}\NormalTok{)}
 \NormalTok{\} }\ControlFlowTok{else}\NormalTok{ \{}
   \FunctionTok{print}\NormalTok{(}\StringTok{"Tim B adalah juaranya"}\NormalTok{)}
 \NormalTok{  \}}
@@ -802,50 +825,134 @@ lebih banyak digunakan saat melakukan eksplorasi data.
 \end{columns}
 \end{frame}
 
+\begin{frame}{Your Turn 2!}
+\protect\hypertarget{your-turn-2}{}
+\begin{enumerate}
+\item
+  Data A = 6 dan B = 187, jika A = genap, dan B = Ganjil, maka cetak
+  ``Ganjil Genap'', jika A dan B genap, maka cetak ``Genap'', JIKA A dan
+  B ganjil semua maka cetak Ganjil, JIKA A ganjil dan B genap, maka
+  cetak ``Ganjil genap'', JIKA tidak memenuhi kondisi sebelumnya, maka
+  cetak ``genap''.
+\item
+  A adalah sebuah distribusi angka antara 10 sampai dengan 1000 sebanyak
+  100, buatlah fungsi loop dimana setiap menemukan angka genap console
+  mencetak ``Genap'' sementara jika menemukan angka ganjil tidak
+  mencetak apapun.
+\end{enumerate}
+\end{frame}
+
 \hypertarget{dataType}{%
 \section{Jenis-jenis data yang umum digunakan}\label{dataType}}
 
-\begin{frame}{Vectors}
+\begin{frame}[fragile]{Vectors}
 \protect\hypertarget{vectors}{}
 \begin{columns}[T]
-\begin{column}{0.5\textwidth}
-Contents\ldots.
+\begin{column}{0.35\textwidth}
+Vector merupakan sebuah tipe data gabungan yang berisi beberapa elemen
+\texttt{atomic} berjenis sama. Untuk membuat sebuah vector, digunakan
+perintah kombinasi \texttt{c()}.
+
+Untuk mengakses vector bisa menggunakan tanda \texttt{namaVector{[}{]}}.
+Misalnya, \texttt{a{[}1{]}}, berarti mengakses vektor ke-1 dari
+\texttt{a}.
 \end{column}
 
-\begin{column}{0.5\textwidth}
-Contents\ldots.
+\begin{column}{0.65\textwidth}
+Contoh:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\FloatTok{5.3}\NormalTok{,}\DecValTok{6}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{)}
+\NormalTok{b }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"one"}\NormalTok{,}\StringTok{"two"}\NormalTok{,}\StringTok{"three"}\NormalTok{)}
+\NormalTok{c }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{,}\ConstantTok{TRUE}\NormalTok{,}\ConstantTok{FALSE}\NormalTok{,}\ConstantTok{TRUE}\NormalTok{,}\ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 \end{column}
 \end{columns}
 \end{frame}
 
-\begin{frame}{Data Frame}
+\begin{frame}[fragile]{Data Frame}
 \protect\hypertarget{data-frame}{}
 \begin{columns}[T]
 \begin{column}{0.5\textwidth}
-Contents\ldots.
+Data frame juga disebut data flat atau rata, yaitu sebuah data yang
+setiap barisnya memiliki kolom yang sama, dan setiap kolomnya memiliki
+baris yang sama.
+
+Untuk mengakses data frame bisa menggunaan tanda dollar \texttt{\$}.
+Misalnya \texttt{datasiswa\$name}, berarti mengakses kolom \texttt{name}
+dari data \texttt{datasiswa}. Sementara jika
+\texttt{datasiswa\$name{[}3{]}}, berarti mengakses bari ke-3 dari kolom
+\texttt{name} dalam \texttt{datasiswa}.
 \end{column}
 
 \begin{column}{0.5\textwidth}
-Contents\ldots.
+Contoh:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{id }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{)}
+\NormalTok{name }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"tom"}\NormalTok{, }\StringTok{"jerry"}\NormalTok{, }
+          \StringTok{"dora"}\NormalTok{, }\StringTok{"emon"}\NormalTok{)}
+\NormalTok{score }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{85.4}\NormalTok{,}\FloatTok{78.3}\NormalTok{,}
+           \FloatTok{88.9}\NormalTok{,}\DecValTok{90}\NormalTok{) }
+
+\CommentTok{\# membuat data frame dari kolom}
+\NormalTok{datasiswa }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(id,}
+\NormalTok{                        name,}
+\NormalTok{                        score)}
+\end{Highlighting}
+\end{Shaded}
 \end{column}
 \end{columns}
 \end{frame}
 
-\begin{frame}{Lists}
+\begin{frame}[fragile]{Lists}
 \protect\hypertarget{lists}{}
 \begin{columns}[T]
 \begin{column}{0.5\textwidth}
-Contents\ldots.
+List merupakan tipe data gabungan yang mirip dengan Vector, namun list
+memungkinkan penggunaan elemen-elemen dengan tipe data dan jenis
+variabel berbeda.
+
+Untuk mengakses list kita bisa menggunakan
+\texttt{namalist{[}{[}nama/indeks{]}{]}}. Misalnya
+\texttt{all\_list{[}{[}1{]}{]}}, berarti mengakses list ke 1 dari
+\texttt{all\_list}. Sementara jika untuk mengakses elemen spesifik dari
+sebuah indeks dalam list kita bisa menggunakan skema
+\texttt{namalist{[}{[}nama/indeks{]}{]}{[}indeks{]}} dan seterusnya.
 \end{column}
 
 \begin{column}{0.5\textwidth}
-Contents\ldots.
+Contoh:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{w }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{(}\AttributeTok{name=}\StringTok{"Fred"}\NormalTok{, }
+          \AttributeTok{age=}\DecValTok{25}\NormalTok{, }
+          \AttributeTok{height=}\FloatTok{159.7}\NormalTok{)}
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{(}\StringTok{"saya"}\NormalTok{,}\FloatTok{5.4}\NormalTok{,}\DecValTok{1}\NormalTok{,}\ConstantTok{FALSE}\NormalTok{)}
+
+\NormalTok{all\_list }\OtherTok{=} \FunctionTok{list}\NormalTok{(datasiswa, w, x)}
+\end{Highlighting}
+\end{Shaded}
 \end{column}
 \end{columns}
 \end{frame}
 
-\hypertarget{your-turn-2}{%
-\section{Your Turn 2!}\label{your-turn-2}}
+\begin{frame}{Your Turn 3!}
+\protect\hypertarget{your-turn-3}{}
+\begin{enumerate}
+\item
+  Buatlah dua data frame. Data frame pertama memiliki 3 kolom dan 5
+  baris dan beri nama df1, lalu buat data frame kedua, dengan 5 kolom
+  dan 4 baris.
+\item
+  Buatlah list dengan nama list\_df dari dua data frame yang sudah
+  dibuat.
+\end{enumerate}
+\end{frame}
 
 
 \section[]{}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2019.9.9)  13 SEP 2021 09:10
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2019.3.1)  16 SEP 2021 08:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2325,7 +2325,10 @@ File: images/introtods13.png Graphic file (type QTm)
 ]
 \openout4 = `intoToDSinR.vrb'.
 
-(./intoToDSinR.vrb)
+(./intoToDSinR.vrb
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 9.
+)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2341,10 +2344,7 @@ File: images/introtods13.png Graphic file (type QTm)
 ]
 \openout4 = `intoToDSinR.vrb'.
 
-(./intoToDSinR.vrb
-LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/it' will be
-(Font)              scaled to size 8.05374pt on input line 9.
-)
+(./intoToDSinR.vrb)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2361,8 +2361,8 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/it' will be
 \openout4 = `intoToDSinR.vrb'.
 
 (./intoToDSinR.vrb
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 23.
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/it' will be
+(Font)              scaled to size 8.05374pt on input line 9.
 )
 .................................................
 . fontspec info: "set-scale"
@@ -2409,6 +2409,9 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
 [22
 
 ]
+\openout4 = `intoToDSinR.vrb'.
+
+(./intoToDSinR.vrb)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2435,6 +2438,9 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
 [24
 
 ]
+\openout4 = `intoToDSinR.vrb'.
+
+(./intoToDSinR.vrb)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2447,7 +2453,10 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
 .................................................
 [25
 
-] (./intoToDSinR.toc)
+]
+\openout4 = `intoToDSinR.vrb'.
+
+(./intoToDSinR.vrb)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2461,6 +2470,48 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
 [26
 
 ]
+\openout4 = `intoToDSinR.vrb'.
+
+(./intoToDSinR.vrb)
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+[27
+
+]
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+[28
+
+] (./intoToDSinR.toc)
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+[29
+
+]
 \tf@nav=\write7
 \openout7 = `intoToDSinR.nav'.
 
@@ -2470,19 +2521,19 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
 \tf@snm=\write9
 \openout9 = `intoToDSinR.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 854.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 854.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 961.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 961.
 (./intoToDSinR.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 854.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 854.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 961.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 961.
  ) 
 Here is how much of TeX's memory you used:
- 32982 strings out of 493005
- 643016 string characters out of 6134597
- 729633 words of memory out of 5000000
+ 32990 strings out of 493005
+ 643144 string characters out of 6134597
+ 729557 words of memory out of 5000000
  36335 multiletter control sequences out of 15000+600000
  17226 words of font info for 63 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  57i,13n,120p,10409b,872s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on intoToDSinR.pdf (26 pages).
+Output written on intoToDSinR.pdf (29 pages).

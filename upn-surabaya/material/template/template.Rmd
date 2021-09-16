@@ -1,8 +1,8 @@
 ---
 title: This is a Test document
 subtitle: (A Subtitle Would Go Here if This Were a Class)
-author: Steven V. Miller
-institute: Department of Political Science
+author: Ujang Fahmi
+institute: 'Pelajaran ke-2'
 titlegraphic: sadasa.png
 fontsize: 10pt
 output:
