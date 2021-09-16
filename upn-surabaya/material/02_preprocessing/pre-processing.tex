@@ -364,72 +364,645 @@ Argumen yang dibutuhkan:
 \protect\hypertarget{impor-data-json}{}
 \texttt{Json} atau \texttt{java\ script\ object\ notation} adalah format
 data yang umum digunakan untuk ditampilkan di sebuah laman/website.
+
+Contoh:
+
+\begin{quote}
+\url{https://raw.githubusercontent.com/eppofahmi/belajaR/master/upn-surabaya/data/sample.json}
+\end{quote}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(jsonlite)}
+
+\NormalTok{df4 }\OtherTok{=} \FunctionTok{fromJSON}\NormalTok{(}\StringTok{"namafolder/namafile.json"}\NormalTok{,}
+               \AttributeTok{simplifyDataFrame =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Sama seperi data lainnya, untuk mengimpor data \texttt{json} kita perlu
+menulis nama folder dan nama filenya. Selain data yang ada di folder
+dalam komputer, kita juga bisa membaca data yang ada di cloud atau
+website dengan ciri terdapta ekstensi data di url-nya seperti contoh di
+atas.
 \end{frame}
 
-\begin{frame}{Impor data lain}
+\begin{frame}[fragile]{Impor data lain}
 \protect\hypertarget{impor-data-lain}{}
+Selain jenis-jenis format data seperti yang sudah dibahas. Di R kita
+juga bisa membaca jenis lain, seperti:
+
+\begin{enumerate}
+\tightlist
+\item
+  Data output dari SPSS dan Stata
+\item
+  Data \texttt{.nc}
+\item
+  Data list
+\item
+  etc.
+\end{enumerate}
+
+TIPS:
+
+Jika ingin mengimpor data dengan ekstensi tertentu, kita bisa mencari
+tutorialnya dengan mengetikan di google search. Misalnya untuk membaca
+file stata, kita bisa menggunakan kata kunci berikut.
+
+\begin{quote}
+read stata data in r
+\end{quote}
+\end{frame}
+
+\hypertarget{your-turn-1}{%
+\subsection{Your Turn 1}\label{your-turn-1}}
+
+\begin{frame}{Your Turn 1}
+\begin{enumerate}
+\tightlist
+\item
+  Buatlah data xlsx dan csv dengan menggunakan excel
+\item
+  Letakan di folder data
+\item
+  Impor data tersebut menggunakan sintak-sintak yang sudah dipelajari
+\item
+  Impor data json dari url yang ada dicontoh
+\end{enumerate}
 \end{frame}
 
 \hypertarget{ekspor-data}{%
 \subsection{Ekspor Data}\label{ekspor-data}}
 
-\begin{frame}{Ekspor data frame}
-\protect\hypertarget{ekspor-data-frame}{}
+\begin{frame}{Ekspor Data}
+Setelah bisa mengimpor, dan setelah melakukan pemrosesan di R,
+selanjutnya kita mungkin perlu menyimpan data dihardisk.
 \end{frame}
 
-\begin{frame}{Ekspor data lain}
-\protect\hypertarget{ekspor-data-lain}{}
+\begin{frame}[fragile]{Ekspor data frame}
+\protect\hypertarget{ekspor-data-frame}{}
+Jika untuk mengimpor sebagian besar fungsinya diawali dengan
+\texttt{read*} maka untuk mengekspor data sebagian besar fungsinya
+diawali dengan \texttt{write}.
+
+Contoh:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{write\_csv}\NormalTok{(namaobjek, }\StringTok{"namafolder/namafile.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\end{frame}
+
+\begin{frame}[fragile]{Ekspor list}
+\protect\hypertarget{ekspor-list}{}
+List atau bisa juga disebut sebagai data bertingkat juga dapat disimpan
+atau diekspor dari R. Tipe data ini biasanya digunakan untuk menyimpan
+data hasil pengolahan dalam satu file. Untuk mengekspor list di R
+umumnya dilakukan menggunakan tipe data \texttt{.rds}. Tipe data ini
+hanya spesifik untuk R saja.
+
+Jika Menghendaku format yang lebih umum, maka sebaiknya list disimpan
+dalam format data yang juga umum. Misalnya json.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(readr)}
+
+\FunctionTok{write\_rds}\NormalTok{(namaobjek, }\StringTok{"namafolder/namafile.rds"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\end{frame}
+
+\begin{frame}[fragile]{Ekspor json}
+\protect\hypertarget{ekspor-json}{}
+Untuk menyimpan json kita juga bisa menggunakan pola sintak yang sama
+seperti yang sudah dipelajari sebelumnya, yaitu:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{jsonlite}\SpecialCharTok{::}\FunctionTok{write\_json}\NormalTok{(}\AttributeTok{x =}\NormalTok{ namaobjek, }\AttributeTok{path =} \StringTok{"namafolder/namafile.json"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 \end{frame}
 
 \hypertarget{pengecekan-data}{%
 \section{Pengecekan Data}\label{pengecekan-data}}
 
+\begin{frame}[fragile]{Pengecekan Data}
+\begin{quote}
+Cobalah untuk mengimpor data ke R, dan perhatikan apa yang ada dibagian
+environment.
+\end{quote}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nama\_objek1 }\OtherTok{=} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"folder/file.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Gantilah nama folder dan file yang sesuai dengan yang dimiliki di laptop
+masing-masing
+\end{frame}
+
 \hypertarget{jumlah-observasi-dan-variabel}{%
 \subsection{Jumlah observasi dan
 variabel}\label{jumlah-observasi-dan-variabel}}
 
+\begin{frame}[fragile]{Jumlah observasi dan variabel}
+\begin{columns}[T]
+\begin{column}{0.5\textwidth}
+\begin{itemize}
+\tightlist
+\item
+  Jumlah observasi menunjukkan jumlah baris, sementara jumlah variabel
+  menunjukkan jumlah kolom
+\item
+  Selain itu, sebagai analis kita juga harus tahu masing-masing tipe
+  variabel yang dimiliki
+\item
+  Untuk mengetahuinya kita bisa menggunakan fungsi glimpse()
+\end{itemize}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+Contoh:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nama\_objek2 }\OtherTok{=}\NormalTok{ mtcars}
+\FunctionTok{glimpse}\NormalTok{(nama\_objek2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 32
+## Columns: 11
+## $ mpg  <dbl> 21.0, 21.0, 22.8, 21.4, 18.7, 18.1, 14.3, 24.4, 22.8, 19.2, 17.8,~
+## $ cyl  <dbl> 6, 6, 4, 6, 8, 6, 8, 4, 4, 6, 6, 8, 8, 8, 8, 8, 8, 4, 4, 4, 4, 8,~
+## $ disp <dbl> 160.0, 160.0, 108.0, 258.0, 360.0, 225.0, 360.0, 146.7, 140.8, 16~
+## $ hp   <dbl> 110, 110, 93, 110, 175, 105, 245, 62, 95, 123, 123, 180, 180, 180~
+## $ drat <dbl> 3.90, 3.90, 3.85, 3.08, 3.15, 2.76, 3.21, 3.69, 3.92, 3.92, 3.92,~
+## $ wt   <dbl> 2.620, 2.875, 2.320, 3.215, 3.440, 3.460, 3.570, 3.190, 3.150, 3.~
+## $ qsec <dbl> 16.46, 17.02, 18.61, 19.44, 17.02, 20.22, 15.84, 20.00, 22.90, 18~
+## $ vs   <dbl> 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0,~
+## $ am   <dbl> 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0,~
+## $ gear <dbl> 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 4, 4, 4, 3, 3,~
+## $ carb <dbl> 4, 4, 1, 1, 2, 1, 4, 2, 2, 4, 4, 3, 3, 3, 4, 4, 4, 1, 2, 1, 1, 2,~
+\end{verbatim}
+\end{column}
+\end{columns}
+\end{frame}
+
 \hypertarget{rangkuman-data}{%
 \subsection{Rangkuman data}\label{rangkuman-data}}
+
+\begin{frame}[fragile]{Rangkuman data}
+\begin{columns}[T]
+\begin{column}{0.5\textwidth}
+\begin{itemize}
+\tightlist
+\item
+  Untuk mendapatkan rangkuman dari data kita bisa menggunakan fungsi
+  \texttt{summary()} atau \texttt{skim()} dari package \texttt{skimr}
+\item
+  Rangkuman biasanya digunakan untuk mendapatkan informasi umum terkait
+  dengan data yang akan diolah
+\item
+  Rangkuman secara umum jika angka akan berupa \emph{central tendency}
+  statistik
+\item
+  Rangkuman data teks biasanya berupa jenis datanya saja
+\end{itemize}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+Contoh:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(nama\_objek2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       mpg             cyl             disp             hp       
+##  Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  
+##  1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  
+##  Median :19.20   Median :6.000   Median :196.3   Median :123.0  
+##  Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  
+##  3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  
+##  Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  
+##       drat             wt             qsec             vs        
+##  Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  
+##  1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  
+##  Median :3.695   Median :3.325   Median :17.71   Median :0.0000  
+##  Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  
+##  3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  
+##  Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  
+##        am              gear            carb      
+##  Min.   :0.0000   Min.   :3.000   Min.   :1.000  
+##  1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  
+##  Median :0.0000   Median :4.000   Median :2.000  
+##  Mean   :0.4062   Mean   :3.688   Mean   :2.812  
+##  3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  
+##  Max.   :1.0000   Max.   :5.000   Max.   :8.000
+\end{verbatim}
+\end{column}
+\end{columns}
+\end{frame}
 
 \hypertarget{penataan-data-data-wrangling}{%
 \section{\texorpdfstring{Penataan Data \emph{(Data
 Wrangling)}}{Penataan Data (Data Wrangling)}}\label{penataan-data-data-wrangling}}
 
+\begin{frame}{Penataan Data \emph{(Data Wrangling)}}
+Penataan atau juga bisa disebut wrangling data juga merupakan salah satu
+bagian penting dalam tahap pra-pemrosesan data. Hal ini bisanya
+dilakukan mulai dari menstandarisasi nama kolom hingga memutuskan metode
+pengisian data yang kosong atau imputasi.
+
+Data wrangling berfungsi agar analis bisa fokus pada metode dan hasil
+pada saat melakukan analisis. Tidak lagi bingung atau harus menata data
+yang tidak terstruktur yang tidak mudah dipahami.
+\end{frame}
+
+\hypertarget{standar-nama-kolom}{%
+\subsection{Standar nama kolom}\label{standar-nama-kolom}}
+
+\begin{frame}[fragile]{Standar nama kolom}
+\begin{columns}[T]
+\begin{column}{0.5\textwidth}
+Nama kolom/variabel di R sebaiknya dibuat berdasarkan aturan yang sama
+untuk membuat objek R, yaitu:
+
+\begin{itemize}
+\tightlist
+\item
+  Tidak diawali dengan angka (\texttt{kolom1}, bukan \texttt{1kolom})
+\item
+  Tidak menggunakan spasi (\texttt{kolom\_ke1} bukan
+  \texttt{kolom\ ke\ 1})
+\item
+  Sebaiknya menggunakan huruf yang seragam (huruf kecil atau besar
+  semua)
+\end{itemize}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+Contoh:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(janitor)}
+\CommentTok{\# impor data}
+\NormalTok{df1 }\OtherTok{\textless{}{-}} \FunctionTok{read\_delim}\NormalTok{(}\StringTok{"data/sample.csv"}\NormalTok{, }\StringTok{";"}\NormalTok{, }
+    \AttributeTok{escape\_double =} \ConstantTok{FALSE}\NormalTok{)}
+\FunctionTok{glimpse}\NormalTok{(df1)}
+
+\CommentTok{\# nama kolom standar}
+\NormalTok{df1 }\OtherTok{=}\NormalTok{ janitor}\SpecialCharTok{::}\FunctionTok{clean\_names}\NormalTok{(df1)}
+\FunctionTok{glimpse}\NormalTok{(df1)}
+\end{Highlighting}
+\end{Shaded}
+\end{column}
+\end{columns}
+\end{frame}
+
 \hypertarget{memilih-kolom-dan-menyusun-nama-kolom}{%
 \subsection{Memilih Kolom dan Menyusun nama
 kolom}\label{memilih-kolom-dan-menyusun-nama-kolom}}
 
+\begin{frame}[fragile]{Memilih Kolom dan Menyusun nama kolom}
+\begin{columns}[T]
+\begin{column}{0.5\textwidth}
+Untuk memilih nama kolom kita bisa menggunakan fungsi \texttt{select}
+dari \texttt{dplyr}. Namun sebelum menggunakannya, cobalah untuk
+menjalankan dan membaca dokumentasinya dengan menjalankan fungsi
+berikut:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+
+\NormalTok{?dplyr}\SpecialCharTok{::}\NormalTok{select}
+\end{Highlighting}
+\end{Shaded}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+Untuk menata atau mengurutkan kolom/variabel sesuai kebutuhan kita juga
+bisa mengkombinasikan fungsi \texttt{select()} dengan nomor indeks atau
+anam kolomnya.
+
+Misalnya:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nama\_objek2 }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{select}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{4}\NormalTok{, }\DecValTok{10}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+Kita memilih kolom 1 sampai 4 dan kolom ke 10 dari data
+\texttt{nama\_objek2}
+\end{column}
+\end{columns}
+\end{frame}
+
 \hypertarget{memilih-baris}{%
 \subsection{Memilih Baris}\label{memilih-baris}}
+
+\begin{frame}[fragile]{Memilih Baris}
+\begin{itemize}
+\tightlist
+\item
+  Untuk memilih baris kita bisa menggunakan \texttt{filter()} dari dplyr
+\item
+  \texttt{filter()} digunakan untuk memilih baris dari data berdasarkan
+  kondisi yang ditetapkan pada satu atau lebih kolom
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nama\_objek2 }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{filter}\NormalTok{(disp }\SpecialCharTok{\textgreater{}} \DecValTok{250}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Skrip diatas digunakan untuk memfilter (memilih baris) yang nilai
+dikolom \texttt{disp} nya lebih dari 250.
+\end{frame}
 
 \hypertarget{transformasi-kolom}{%
 \subsection{Transformasi kolom}\label{transformasi-kolom}}
 
-\begin{frame}{Nama bari menjadi kolom (Row names to column)}
-\protect\hypertarget{nama-bari-menjadi-kolom-row-names-to-column}{}
+\begin{frame}[fragile]{Nama baris menjadi kolom}
+\protect\hypertarget{nama-baris-menjadi-kolom}{}
+\begin{columns}[T]
+\begin{column}{0.5\textwidth}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df3 }\OtherTok{=}\NormalTok{ mtcars}
+\NormalTok{df3 }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{select}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{head}\NormalTok{(}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                    mpg cyl
+## Mazda RX4         21.0   6
+## Mazda RX4 Wag     21.0   6
+## Datsun 710        22.8   4
+## Hornet 4 Drive    21.4   6
+## Hornet Sportabout 18.7   8
+\end{verbatim}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df3 }\OtherTok{=} \FunctionTok{rownames\_to\_column}\NormalTok{(df3)}
+\NormalTok{df3 }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{select}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{head}\NormalTok{(}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##             rowname  mpg
+## 1         Mazda RX4 21.0
+## 2     Mazda RX4 Wag 21.0
+## 3        Datsun 710 22.8
+## 4    Hornet 4 Drive 21.4
+## 5 Hornet Sportabout 18.7
+\end{verbatim}
+\end{column}
+\end{columns}
 \end{frame}
 
-\begin{frame}{Membuat kolom baru}
-\protect\hypertarget{membuat-kolom-baru}{}
+\begin{frame}[fragile]{Memisahkan nilai kolom}
+\protect\hypertarget{memisahkan-nilai-kolom}{}
+Untuk memisahkan nilai kolom kita bisa menggunakan fungsi
+\texttt{separate()}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df4 }\OtherTok{=}\NormalTok{ msleep}
+\NormalTok{df4 }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{select}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{head}\NormalTok{(}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Menjadi\ldots{}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df4 }\OtherTok{=}\NormalTok{ msleep}
+\NormalTok{df4 }\OtherTok{=}\NormalTok{ df4 }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{separate}\NormalTok{(name, }\AttributeTok{into =} \FunctionTok{c}\NormalTok{(}\StringTok{"nama\_depan"}\NormalTok{, }
+                           \StringTok{"nama\_tengah"}\NormalTok{, }
+                           \StringTok{"nama\_belakang"}\NormalTok{), }
+            \AttributeTok{sep =} \StringTok{" "}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{select}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{head}\NormalTok{(}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 \end{frame}
 
-\begin{frame}{Memisah dan Menggabungkan nilai kolom}
-\protect\hypertarget{memisah-dan-menggabungkan-nilai-kolom}{}
+\begin{frame}[fragile]{Menggabungkan nilai kolom}
+\protect\hypertarget{menggabungkan-nilai-kolom}{}
+Untuk mengabungkan nilai beberapa kolom menjadi berada dalam satu kolom
+kita bisa menggunakan fungsi \texttt{unite()}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df4 }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{unite}\NormalTok{(}\AttributeTok{col =} \StringTok{"nama\_lengkap"}\NormalTok{, }\AttributeTok{sep =} \StringTok{" "}\NormalTok{, }\AttributeTok{remove =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 \end{frame}
 
-\begin{frame}{Merangkum variabel}
-\protect\hypertarget{merangkum-variabel}{}
+\begin{frame}[fragile]{Membuat kolom baru dan Merangkum data}
+\protect\hypertarget{membuat-kolom-baru-dan-merangkum-data}{}
+Untuk membuat kolom baru kita bisa menggunakan fungsi \texttt{mutate()},
+di sini kita akan menggunakan dengan mengisi jumlah observasi dari kolom
+lain.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fauna }\OtherTok{=}\NormalTok{ msleep}
+\NormalTok{rangkuman }\OtherTok{=}\NormalTok{ fauna }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{group\_by}\NormalTok{(vore) }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{count}\NormalTok{(order)}
+\NormalTok{rangkuman}
+
+\NormalTok{mobil }\OtherTok{=}\NormalTok{ mtcars}
+\NormalTok{mobil }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{group\_by}\NormalTok{(cyl) }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{mutate}\NormalTok{(}\AttributeTok{mean =} \FunctionTok{mean}\NormalTok{(disp)) }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{select}\NormalTok{(cyl, disp, mean)}
+\end{Highlighting}
+\end{Shaded}
 \end{frame}
 
 \hypertarget{mengatasasi-nilai-hilang}{%
 \section{Mengatasasi Nilai Hilang}\label{mengatasasi-nilai-hilang}}
 
+\begin{frame}[fragile]{Mengatasasi Nilai Hilang}
+\begin{itemize}
+\item
+  Terkadang kita memiliki data yang tidak semua barisnya terisi. Kondisi
+  tersebut disebut value not available, missinf value atau \texttt{NA}.
+\item
+  Keputusan untuk tetap menggunakan data yang terdapat nilai kosong
+  dalam salah satu variabelnya merupakan keputusan teoretis
+\item
+  Secara teknis, ada beberapa upaya yang bisa dilakukan. Upaya ini
+  disebut imputasi.
+\end{itemize}
+
+Anggap saja kita memiliki data berikut, dimana tidak ada nilai yang
+kosong di dalamnya.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(missForest)}
+\FunctionTok{data}\NormalTok{(iris)}
+\FunctionTok{summary}\NormalTok{(iris)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+##  Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+##  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+##  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+##        Species  
+##  setosa    :50  
+##  versicolor:50  
+##  virginica :50  
+##                 
+##                 
+## 
+\end{verbatim}
+\end{frame}
+
 \hypertarget{menggunakan-teknik-manual}{%
 \subsection{Menggunakan teknik manual}\label{menggunakan-teknik-manual}}
+
+\begin{frame}[fragile]{Membuat nilai kosong untuk simulasi}
+\protect\hypertarget{membuat-nilai-kosong-untuk-simulasi}{}
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1234}\NormalTok{)}
+\NormalTok{iris.mis }\OtherTok{\textless{}{-}} \FunctionTok{prodNA}\NormalTok{(iris, }\AttributeTok{noNA =} \FloatTok{0.2}\NormalTok{)}
+\FunctionTok{summary}\NormalTok{(iris.mis)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.525   1st Qu.:0.300  
+##  Median :5.700   Median :3.000   Median :4.400   Median :1.300  
+##  Mean   :5.774   Mean   :3.072   Mean   :3.756   Mean   :1.186  
+##  3rd Qu.:6.400   3rd Qu.:3.400   3rd Qu.:5.100   3rd Qu.:1.800  
+##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+##  NA's   :25      NA's   :29      NA's   :28      NA's   :31     
+##        Species  
+##  setosa    :32  
+##  versicolor:39  
+##  virginica :42  
+##  NA's      :37  
+##                 
+##                 
+## 
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Mengisi Nilai kosong dengan rerata}
+\protect\hypertarget{mengisi-nilai-kosong-dengan-rerata}{}
+Dari rangkuman diketahui bahwa ada 25 bari yang kosong pada kolom
+\texttt{Sepal.Length}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# mendapatakan rearata kolom Sepal.Length}
+\CommentTok{\# mean(iris.mis$Sepal.Length, na.rm = TRUE)}
+\NormalTok{iris.mis }\OtherTok{=}\NormalTok{ iris.mis }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Sepal.Length =} \FunctionTok{case\_when}\NormalTok{(}
+      \FunctionTok{is.na}\NormalTok{(Sepal.Length) }\SpecialCharTok{\textasciitilde{}} \FunctionTok{mean}\NormalTok{(iris.mis}\SpecialCharTok{$}\NormalTok{Sepal.Length, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{), }
+      \ConstantTok{TRUE} \SpecialCharTok{\textasciitilde{}}\NormalTok{ Sepal.Length}
+\NormalTok{   ))}
+\FunctionTok{summary}\NormalTok{(iris.mis)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+##  1st Qu.:5.200   1st Qu.:2.800   1st Qu.:1.525   1st Qu.:0.300  
+##  Median :5.774   Median :3.000   Median :4.400   Median :1.300  
+##  Mean   :5.774   Mean   :3.072   Mean   :3.756   Mean   :1.186  
+##  3rd Qu.:6.300   3rd Qu.:3.400   3rd Qu.:5.100   3rd Qu.:1.800  
+##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+##                  NA's   :29      NA's   :28      NA's   :31     
+##        Species  
+##  setosa    :32  
+##  versicolor:39  
+##  virginica :42  
+##  NA's      :37  
+##                 
+##                 
+## 
+\end{verbatim}
+\end{frame}
 
 \hypertarget{menggunakan-package}{%
 \subsection{\texorpdfstring{Menggunakan
 \texttt{package}}{Menggunakan package}}\label{menggunakan-package}}
+
+\begin{frame}[fragile]{Menggunakan \texttt{package}}
+Untuk melakukan \emph{imputation} kita bisa menggunakan fungsing
+\texttt{missForest()} seperti contoh skrip berikut.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{iris.imp }\OtherTok{\textless{}{-}} \FunctionTok{missForest}\NormalTok{(iris.mis, }\AttributeTok{xtrue =}\NormalTok{ iris, }\AttributeTok{verbose =} \ConstantTok{TRUE}\NormalTok{)}
+
+\NormalTok{iris.imp}\SpecialCharTok{$}\NormalTok{OOBerror}
+\NormalTok{iris.imp}\SpecialCharTok{$}\NormalTok{error}
+\NormalTok{result0 }\OtherTok{\textless{}{-}}\NormalTok{ iris.imp}\SpecialCharTok{$}\NormalTok{ximp}
+
+\FunctionTok{summary}\NormalTok{(result0)}
+\end{Highlighting}
+\end{Shaded}
+\end{frame}
+
+\hypertarget{paket-lain-untuk-imputation}{%
+\subsection{\texorpdfstring{Paket lain untuk
+\emph{imputation}}{Paket lain untuk imputation}}\label{paket-lain-untuk-imputation}}
+
+\begin{frame}[fragile]{Paket lain untuk \emph{imputation}}
+Selain dengan menggunakan paket \texttt{missForest}, melakukan
+\emph{imputation} juga dapat dilakukan dengan beberapa paket lain dengan
+metode dan atau pendekatan yang berbeda. Seperti paket \texttt{Hmisc}
+yang juga cukup populer dikalangan pengguna R menawarkan metode
+\emph{imputation} dengan beberapa algoritme.
+
+Misalnya, dalam paket \texttt{Hmisc} terdapat fungsi \texttt{impute()}
+di mana pengguna dapat melakukan \emph{imputation} dengan metode yang
+didefinisikan sendiri (contoh: \emph{mean, max, median,} dll). Paket
+\texttt{mi} juga bisa digunakan untuk melakukan \emph{imputation} dengan
+menggunakan metode \emph{Predictive Mean Matching Method}.
+\end{frame}
 
 
 \section[]{}

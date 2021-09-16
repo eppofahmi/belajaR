@@ -60,6 +60,11 @@ Satu hal yang pasti, ini adalah langkah pertama dari banyak langkah yang harus d
 
 ## Pembersihan kata sambung
 
+```{r}
+stopword_id = read.table("https://raw.githubusercontent.com/datascienceid/stopwords-bahasa-indonesia/master/stopwords_id_satya.txt", header = FALSE)
+```
+
+
 ## Normalisasi
 
 ## Tokenisasi 

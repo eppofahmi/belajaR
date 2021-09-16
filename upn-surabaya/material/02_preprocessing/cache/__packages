@@ -9,3 +9,8 @@ dplyr
 stringr
 forcats
 stevemisc
+randomForest
+foreach
+iterators
+itertools
+missForest
