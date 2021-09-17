@@ -36,11 +36,18 @@ Salam kenal dan selamat datang.
 
 Semoga kita semua bisa saling berbagi pengalaman dan pengetahuan. Saya adalah Ujang Fahmi, Co-founder dan mentor Sadasa Academy.
 
+\vspace{0.1in}
+
 Jika anda berada dan sedang membaca tutorial ini, maka kemungkinan anda adalah orang yang sedang ingin belajar data sains, atau mungkin ditugaskan untuk mempelajari R oleh institusi atau organisasi anda. Sama seperti saya dulu, dimana tanpa latar belakang enginering saya didiharuskan untuk belajar R, demi menyelesaikan tugas akhir dan akhirnya jadilah seperti saya sekarang ini.
+
+\vspace{0.1in}
 
 Satu hal yang pasti, ini adalah langkah pertama dari banyak langkah yang harus dilalui, entah melalui lembaga resmi atau belajar secara mandiri. Jadi selamat belajar!!!
 
-`r paste("Ujang Fahmi, Yogyakarta,", Sys.Date())`
+\vspace{0.1in}
+Ujang Fahmi, 
+
+`r paste("Yogyakarta,", Sys.Date())`
 
 # Pengenalan Data Sains
 

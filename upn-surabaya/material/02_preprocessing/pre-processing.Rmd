@@ -2,7 +2,7 @@
 title: Pre-processing data di R
 subtitle: (Pelatihan data sains menggunakan R dan Gephi)
 author: Ujang Fahmi
-institute: "Pelajaran ke-1"
+institute: "Pelajaran ke-2"
 titlegraphic: styles/sadasa.png
 fontsize: 10pt
 output:
@@ -36,11 +36,18 @@ Salam kenal dan selamat datang.
 
 Semoga kita semua bisa saling berbagi pengalaman dan pengetahuan. Saya adalah Ujang Fahmi, Co-founder dan mentor Sadasa Academy.
 
+\vspace{0.1in}
+
 Jika anda berada dan sedang membaca tutorial ini, maka kemungkinan anda adalah orang yang sedang ingin belajar data sains, atau mungkin ditugaskan untuk mempelajari R oleh institusi atau organisasi anda. Sama seperti saya dulu, dimana tanpa latar belakang enginering saya didiharuskan untuk belajar R, demi menyelesaikan tugas akhir dan akhirnya jadilah seperti saya sekarang ini.
+
+\vspace{0.1in}
 
 Satu hal yang pasti, ini adalah langkah pertama dari banyak langkah yang harus dilalui, entah melalui lembaga resmi atau belajar secara mandiri. Jadi selamat belajar!!!
 
-`r paste("Ujang Fahmi, Yogyakarta,", Sys.Date())`
+\vspace{0.1in}
+Ujang Fahmi, 
+
+`r paste("Yogyakarta,", Sys.Date())`
 
 # Mendapatkan Bantuan dan Mengatasi Error
 
@@ -160,7 +167,9 @@ write_csv(namaobjek, "namafolder/namafile.csv")
 
 List atau bisa juga disebut sebagai data bertingkat juga dapat disimpan atau diekspor dari R. Tipe data ini biasanya digunakan untuk menyimpan data hasil pengolahan dalam satu file. Untuk mengekspor list di R umumnya dilakukan menggunakan tipe data `.rds`. Tipe data ini hanya spesifik untuk R saja. 
 
-Jika Menghendaku format yang lebih umum, maka sebaiknya list disimpan dalam format data yang juga umum. Misalnya json. 
+\vspace{0.1in}
+
+Jika Menghendaki format yang lebih umum, maka sebaiknya list disimpan dalam format data yang juga umum. Misalnya json. 
 
 ```{r}
 library(readr)
@@ -228,6 +237,8 @@ summary(nama_objek2)
 # Penataan Data *(Data Wrangling)*
 
 Penataan atau juga bisa disebut wrangling data juga merupakan salah satu bagian penting dalam tahap pra-pemrosesan data. Hal ini bisanya dilakukan mulai dari menstandarisasi nama kolom hingga memutuskan metode pengisian data yang kosong atau imputasi. 
+
+\vspace{0.1in}
 
 Data wrangling berfungsi agar analis bisa fokus pada metode dan hasil pada saat melakukan analisis. Tidak lagi bingung atau harus menata data yang tidak terstruktur yang tidak mudah dipahami. 
 
@@ -431,5 +442,7 @@ summary(result0)
 ## Paket lain untuk *imputation*
 
 Selain dengan menggunakan paket `missForest`, melakukan *imputation* juga dapat dilakukan dengan beberapa paket lain dengan metode dan atau pendekatan yang berbeda. Seperti paket `Hmisc` yang juga cukup populer dikalangan pengguna R menawarkan metode *imputation* dengan beberapa algoritme.
+
+\vspace{0.1in}
 
 Misalnya, dalam paket `Hmisc` terdapat fungsi `impute()` di mana pengguna dapat melakukan *imputation* dengan metode yang didefinisikan sendiri (contoh: *mean, max, median,* dll). Paket `mi` juga bisa digunakan untuk melakukan *imputation* dengan menggunakan metode *Predictive Mean Matching Method*.

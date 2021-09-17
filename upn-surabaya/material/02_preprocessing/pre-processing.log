@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2019.3.1)  16 SEP 2021 18:02
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2019.3.1)  17 SEP 2021 08:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2349,7 +2349,7 @@ Overfull \hbox (259.78346pt too wide) in paragraph at lines 41--41
 . Titillium Web scale = 0.8620011486482191.
 .................................................
 
-Overfull \vbox (3.58562pt too high) detected at line 556
+Overfull \vbox (3.58562pt too high) detected at line 566
  []
 
 [16
@@ -2488,7 +2488,7 @@ Overfull \hbox (91.78346pt too wide) in paragraph at lines 51--51
 . Titillium Web scale = 0.8620011486482191.
 .................................................
 
-Overfull \vbox (87.01563pt too high) detected at line 614
+Overfull \vbox (87.01563pt too high) detected at line 624
  []
 
 [17
@@ -2505,7 +2505,7 @@ Overfull \vbox (87.01563pt too high) detected at line 614
 . Titillium Web scale = 0.8620011486482191.
 .................................................
 LaTeX Font Info:    Font shape `TU/TitilliumWeb(0)/m/it' will be
-(Font)              scaled to size 12.41278pt on input line 629.
+(Font)              scaled to size 12.41278pt on input line 641.
 [18
 
 ]
@@ -2635,7 +2635,7 @@ LaTeX Font Info:    Font shape `TU/TitilliumWeb(0)/m/it' will be
 . Titillium Web scale = 0.8620011486482191.
 .................................................
 
-Overfull \vbox (91.29677pt too high) detected at line 895
+Overfull \vbox (91.29677pt too high) detected at line 907
  []
 
 [26
@@ -2655,7 +2655,7 @@ Overfull \vbox (91.29677pt too high) detected at line 895
 . Titillium Web scale = 0.8620011486482191.
 .................................................
 
-Overfull \vbox (33.0967pt too high) detected at line 928
+Overfull \vbox (33.0967pt too high) detected at line 940
  []
 
 [27
@@ -2675,7 +2675,7 @@ Overfull \vbox (33.0967pt too high) detected at line 928
 . Titillium Web scale = 0.8620011486482191.
 .................................................
 
-Overfull \vbox (104.3767pt too high) detected at line 966
+Overfull \vbox (104.3767pt too high) detected at line 978
  []
 
 [28
@@ -2714,7 +2714,7 @@ Overfull \vbox (104.3767pt too high) detected at line 966
 
 ]
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 7.24837pt on input line 1010.
+(Font)              scaled to size 7.24837pt on input line 1024.
 (./pre-processing.toc
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/it' will be
 (Font)              scaled to size 7.24837pt on input line 11.
@@ -2741,11 +2741,11 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/it' will be
 \tf@snm=\write9
 \openout9 = `pre-processing.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1011.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1011.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1025.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1025.
 (./pre-processing.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1011.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1011.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1025.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1025.
  ) 
 Here is how much of TeX's memory you used:
  32923 strings out of 493005
