@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2019.3.1)  17 SEP 2021 10:25
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2019.3.1)  17 SEP 2021 12:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**text-pre-processing.tex
-(./text-pre-processing.tex
+**intro-to-ds.tex
+(./intro-to-ds.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/beamer.cls
@@ -1161,64 +1161,7 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \fb@frh=\dimen280
 \FrameRule=\dimen281
 \FrameSep=\dimen282
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/tools/longtable.sty
-Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
-\LTleft=\skip64
-\LTright=\skip65
-\LTpre=\skip66
-\LTpost=\skip67
-\LTchunksize=\count277
-\LTcapwidth=\dimen283
-\LT@head=\box71
-\LT@firsthead=\box72
-\LT@foot=\box73
-\LT@lastfoot=\box74
-\LT@cols=\count278
-\LT@rows=\count279
-\c@LT@tables=\count280
-\c@LT@chunks=\count281
-\LT@p@ftn=\toks46
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/booktabs/booktabs.sty
-Package: booktabs 2016/04/27 v1.618033 publication quality tables
-\heavyrulewidth=\dimen284
-\lightrulewidth=\dimen285
-\cmidrulewidth=\dimen286
-\belowrulesep=\dimen287
-\belowbottomsep=\dimen288
-\aboverulesep=\dimen289
-\abovetopsep=\dimen290
-\cmidrulesep=\dimen291
-\cmidrulekern=\dimen292
-\defaultaddspace=\dimen293
-\@cmidla=\count282
-\@cmidlb=\count283
-\@aboverulesep=\dimen294
-\@belowrulesep=\dimen295
-\@thisruleclass=\count284
-\@lastruleclass=\count285
-\@thisrulewidth=\dimen296
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen297
-\captionmargin@=\dimen298
-\captionwidth=\dimen299
-\caption@tempdima=\dimen300
-\caption@indent=\dimen301
-\caption@parindent=\dimen302
-\caption@hangindent=\dimen303
-)
-\c@ContinuedFloat=\count286
-Package caption Info: beamer document class.
-Package caption Info: hyperref package is loaded.
-Package caption Info: Hyperref support is turned off
-(caption)             because hyperref has stopped early.
-Package caption Info: longtable package is loaded.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/caption/ltcaption.sty
-Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
-)) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/grffile.sty
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/grffile.sty
 Package: grffile 2016/05/16 v1.17 Extended file name support for graphics (HO)
 Package grffile Info: \Gread@QTm patched on input line 253.
 Package grffile Info: \Gread@eps patched on input line 303.
@@ -1231,55 +1174,74 @@ Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@r@tfl@t=\count287
-\rotFPtop=\skip68
-\rotFPbot=\skip69
-\rot@float@box=\box75
-\rot@mess@toks=\toks47
+\c@r@tfl@t=\count277
+\rotFPtop=\skip64
+\rotFPbot=\skip65
+\rot@float@box=\box71
+\rot@mess@toks=\toks46
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen283
+\captionmargin@=\dimen284
+\captionwidth=\dimen285
+\caption@tempdima=\dimen286
+\caption@indent=\dimen287
+\caption@parindent=\dimen288
+\caption@hangindent=\dimen289
+)
+\c@ContinuedFloat=\count278
+Package caption Info: beamer document class.
+Package caption Info: hyperref package is loaded.
+Package caption Info: Hyperref support is turned off
+(caption)             because hyperref has stopped early.
+Package caption Info: rotating package is loaded.
 ) (/usr/local/texlive/2017/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box76
-\UL@hyphenbox=\box77
-\UL@skip=\skip70
-\UL@hook=\toks48
-\UL@height=\dimen304
-\UL@pe=\count288
-\UL@pixel=\dimen305
-\ULC@box=\box78
+\UL@box=\box72
+\UL@hyphenbox=\box73
+\UL@skip=\skip66
+\UL@hook=\toks47
+\UL@height=\dimen290
+\UL@pe=\count279
+\UL@pixel=\dimen291
+\ULC@box=\box74
 Package: ulem 2012/05/18
-\ULdepth=\dimen306
+\ULdepth=\dimen292
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/wasysym/wasysym.sty
 Package: wasysym 2003/10/30 v2.0 Wasy-2 symbol support package
 \symwasy=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
 (Font)                  U/wasy/m/n --> U/wasy/b/n on input line 90.
-) (./text-pre-processing.aux)
-\openout1 = `text-pre-processing.aux'.
+) (./intro-to-ds.aux)
+\openout1 = `intro-to-ds.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 248.
-LaTeX Font Info:    ... okay on input line 248.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 248.
-LaTeX Font Info:    ... okay on input line 248.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 248.
-LaTeX Font Info:    ... okay on input line 248.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 248.
-LaTeX Font Info:    ... okay on input line 248.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 248.
-LaTeX Font Info:    ... okay on input line 248.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 248.
-LaTeX Font Info:    ... okay on input line 248.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 248.
-LaTeX Font Info:    ... okay on input line 248.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 248.
-LaTeX Font Info:    ... okay on input line 248.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 248.
-LaTeX Font Info:    ... okay on input line 248.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 248.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 248.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 243.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 243.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 248.
+LaTeX Font Info:    ... okay on input line 243.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1315,21 +1277,21 @@ LaTeX Font Info:    ... okay on input line 248.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box79
-Package hyperref Info: Link coloring OFF on input line 248.
+\AtBeginShipoutBox=\box75
+Package hyperref Info: Link coloring OFF on input line 243.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count289
+\c@section@level=\count280
 )
-LaTeX Info: Redefining \ref on input line 248.
-LaTeX Info: Redefining \pageref on input line 248.
-LaTeX Info: Redefining \nameref on input line 248.
-(./text-pre-processing.out) (./text-pre-processing.out)
+LaTeX Info: Redefining \ref on input line 243.
+LaTeX Info: Redefining \pageref on input line 243.
+LaTeX Info: Redefining \nameref on input line 243.
+(./intro-to-ds.out) (./intro-to-ds.out)
 \@outlinefile=\write6
-\openout6 = `text-pre-processing.out'.
+\openout6 = `intro-to-ds.out'.
 
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/translator/dicts/translato
@@ -1356,8 +1318,8 @@ Dictionary: translator-numbers-dictionary, Language: English
 r-theorem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 248.
-LaTeX Info: Redefining \microtypecontext on input line 248.
+LaTeX Info: Redefining \includegraphics on input line 243.
+LaTeX Info: Redefining \microtypecontext on input line 243.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -1998,19 +1960,18 @@ Package microtype Warning: Unknown slot number of character
 (microtype)                `microtype.cfg/358(protrusion)'.
 
 Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
-(./text-pre-processing.nav)
+(./intro-to-ds.nav)
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 4.02687pt on input line 248.
+(Font)              scaled to size 4.02687pt on input line 243.
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 11.59738pt on input line 249.
+(Font)              scaled to size 11.59738pt on input line 244.
 .................................................
 . fontspec info: "set-scale"
 . 
 . Titillium Web scale = 0.8620011486482191.
 .................................................
-\g__fontspec_family_TitilliumWeb_int=\count290
+\g__fontspec_family_TitilliumWeb_int=\count281
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2053,24 +2014,75 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
 .................................................
 LaTeX Font Info:    Font shape `TU/TitilliumWeb(0)/m/n' will be
-(Font)              scaled to size 12.41278pt on input line 249.
+(Font)              scaled to size 12.41278pt on input line 244.
 .................................................
 . fontspec info: "set-scale"
 . 
 . Titillium Web scale = 0.8620011486482191.
 .................................................
 LaTeX Font Info:    Font shape `TU/TitilliumWeb(0)/m/n' will be
-(Font)              scaled to size 7.758pt on input line 249.
+(Font)              scaled to size 7.758pt on input line 244.
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 5.63762pt on input line 249.
+(Font)              scaled to size 5.63762pt on input line 244.
 File: styles/sadasa.png Graphic file (type QTm)
 <use  "styles/sadasa.png" > [1
 
-] [2
+]
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/it' will be
+(Font)              scaled to size 8.05374pt on input line 277.
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/bx/n' will be
+(Font)              scaled to size 7.8952pt on input line 277.
+[2
 
 ]
-LaTeX Font Info:    Font shape `TU/OpenSans(0)/bx/n' will be
-(Font)              scaled to size 7.8952pt on input line 295.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 307.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-LatinModernRoman.cfg
+File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
+ern Roman (RS)
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 307.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 307
+.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 307
+.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 307.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 307.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 307.
+LaTeX Font Info:    Try loading font information for U+msa on input line 307.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 307.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+wasy on input line 307.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/wasysym/uwasy.fd
+File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
+)
+File: images/introtods1.png Graphic file (type QTm)
+<use  "images/introtods1.png" >
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2084,10 +2096,10 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/bx/n' will be
 [3
 
 ]
-File: images/img1.png Graphic file (type QTm)
-<use  "images/img1.png" >
+File: images/introtods2.png Graphic file (type QTm)
+<use  "images/introtods2.png" >
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 7.24837pt on input line 330.
+(Font)              scaled to size 7.24837pt on input line 328.
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2101,9 +2113,8 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
 [4
 
 ]
-\openout4 = `text-pre-processing.vrb'.
-
-(./text-pre-processing.vrb)
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
+(Font)              scaled to size 9.66449pt on input line 370.
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2117,8 +2128,6 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
 [5
 
 ]
-File: images/img2.jpeg Graphic file (type QTm)
-<use  "images/img2.jpeg" >
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2132,6 +2141,11 @@ File: images/img2.jpeg Graphic file (type QTm)
 [6
 
 ]
+\openout4 = `intro-to-ds.vrb'.
+
+(./intro-to-ds.vrb
+File: images/introtods3.png Graphic file (type QTm)
+<use  "images/introtods3.png" >)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2145,8 +2159,8 @@ File: images/img2.jpeg Graphic file (type QTm)
 [7
 
 ]
-File: images/img3.png Graphic file (type QTm)
-<use  "images/img3.png" >
+File: images/introtods4.png Graphic file (type QTm)
+<use  "images/introtods4.png" >
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2173,6 +2187,8 @@ File: images/img3.png Graphic file (type QTm)
 [9
 
 ]
+File: images/introtods5.png Graphic file (type QTm)
+<use  "images/introtods5.png" >
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2183,70 +2199,34 @@ File: images/img3.png Graphic file (type QTm)
 . 
 . Titillium Web scale = 0.8620011486482191.
 .................................................
+
+Overfull \vbox (18.24681pt too high) detected at line 475
+ []
+
 [10
 
 ]
-\openout4 = `text-pre-processing.vrb'.
+File: images/introtods6.png Graphic file (type QTm)
+<use  "images/introtods6.png" >
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
 
-(./text-pre-processing.vrb
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 9.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-LatinModernRoman.cfg
-File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
-ern Roman (RS)
-)
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 9.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 9.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 9.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 9.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 9.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 9.
-LaTeX Font Info:    Try loading font information for U+msa on input line 9.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-msa.cfg
-File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 9.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-msb.cfg
-File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-LaTeX Font Info:    Try loading font information for U+wasy on input line 9.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/wasysym/uwasy.fd
-File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
-))
-.................................................
-. fontspec info: "set-scale"
-. 
-. Titillium Web scale = 0.8620011486482191.
-.................................................
-.................................................
-. fontspec info: "set-scale"
-. 
-. Titillium Web scale = 0.8620011486482191.
-.................................................
+Overfull \vbox (2.13141pt too high) detected at line 486
+ []
+
 [11
 
 ]
-\openout4 = `text-pre-processing.vrb'.
-
-(./text-pre-processing.vrb)
+File: images/introtods7.png Graphic file (type QTm)
+<use  "images/introtods7.png" >
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2260,9 +2240,11 @@ File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 [12
 
 ]
-\openout4 = `text-pre-processing.vrb'.
+\openout4 = `intro-to-ds.vrb'.
 
-(./text-pre-processing.vrb)
+(./intro-to-ds.vrb
+File: images/introtods8.png Graphic file (type QTm)
+<use  "images/introtods8.png" >)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2276,9 +2258,11 @@ File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 [13
 
 ]
-\openout4 = `text-pre-processing.vrb'.
+\openout4 = `intro-to-ds.vrb'.
 
-(./text-pre-processing.vrb)
+(./intro-to-ds.vrb
+File: images/introtods9.png Graphic file (type QTm)
+<use  "images/introtods9.png" >)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2292,9 +2276,10 @@ File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 [14
 
 ]
-\openout4 = `text-pre-processing.vrb'.
-
-(./text-pre-processing.vrb)
+File: images/introtods11.png Graphic file (type QTm)
+<use  "images/introtods11.png" >
+File: images/introtods10.png Graphic file (type QTm)
+<use  "images/introtods10.png" >
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2308,9 +2293,10 @@ File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 [15
 
 ]
-\openout4 = `text-pre-processing.vrb'.
-
-(./text-pre-processing.vrb)
+File: images/introtods12.jpeg Graphic file (type QTm)
+<use  "images/introtods12.jpeg" >
+File: images/introtods13.png Graphic file (type QTm)
+<use  "images/introtods13.png" >
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2324,9 +2310,9 @@ File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 [16
 
 ]
-\openout4 = `text-pre-processing.vrb'.
+\openout4 = `intro-to-ds.vrb'.
 
-(./text-pre-processing.vrb)
+(./intro-to-ds.vrb)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2340,6 +2326,12 @@ File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 [17
 
 ]
+\openout4 = `intro-to-ds.vrb'.
+
+(./intro-to-ds.vrb
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 9.
+)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2353,42 +2345,9 @@ File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 [18
 
 ]
-\openout4 = `text-pre-processing.vrb'.
+\openout4 = `intro-to-ds.vrb'.
 
-(./text-pre-processing.vrb
-LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/it' will be
-(Font)              scaled to size 8.05374pt on input line 4.
-
-Overfull \hbox (89.06691pt too wide) in paragraph at lines 34--34
-[]\TU/lmtt/m/n/10 ## $ id              <dbl> 1.364073e+18, 1.363931e+18, 1.3638
-68e+18, 1.363855e+18~[] 
- []
-
-
-Overfull \hbox (89.06691pt too wide) in paragraph at lines 34--34
-[]\TU/lmtt/m/n/10 ## $ permalink       <chr> "https://twitter.com/CynthiaEllenn
-a/status/13640730734~[] 
- []
-
-
-Overfull \hbox (89.06691pt too wide) in paragraph at lines 34--34
-[]\TU/lmtt/m/n/10 ## $ timestamp       <dbl> 1614055338, 1614021494, 1614006552
-, 1614003330, 161396~[] 
- []
-
-
-Overfull \hbox (94.31691pt too wide) in paragraph at lines 34--34
-[]\TU/lmtt/m/n/10 ## $ created_at      <dttm> 2021-02-23 11:42:00, 2021-02-23 0
-2:18:00, 2021-02-22 2~[] 
- []
-
-
-Overfull \hbox (89.06691pt too wide) in paragraph at lines 34--34
-[]\TU/lmtt/m/n/10 ## $ created_at_time <time> 11:42:00, 02:18:00, 22:09:00, 21:
-15:00, 11:55:00, 16:~[] 
- []
-
-)
+(./intro-to-ds.vrb)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2399,16 +2358,12 @@ Overfull \hbox (89.06691pt too wide) in paragraph at lines 34--34
 . 
 . Titillium Web scale = 0.8620011486482191.
 .................................................
-
-Overfull \vbox (26.9926pt too high) detected at line 624
- []
-
 [19
 
 ]
-\openout4 = `text-pre-processing.vrb'.
+\openout4 = `intro-to-ds.vrb'.
 
-(./text-pre-processing.vrb)
+(./intro-to-ds.vrb)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2422,13 +2377,9 @@ Overfull \vbox (26.9926pt too high) detected at line 624
 [20
 
 ]
-\openout4 = `text-pre-processing.vrb'.
+\openout4 = `intro-to-ds.vrb'.
 
-(./text-pre-processing.vrb)
-Overfull \hbox (21.6932pt too wide) in paragraph at lines 18--693
-[][]  
- []
-
+(./intro-to-ds.vrb)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2442,13 +2393,9 @@ Overfull \hbox (21.6932pt too wide) in paragraph at lines 18--693
 [21
 
 ]
-\openout4 = `text-pre-processing.vrb'.
+\openout4 = `intro-to-ds.vrb'.
 
-(./text-pre-processing.vrb)
-Overfull \hbox (40.69894pt too wide) in paragraph at lines 18--727
-[][]  
- []
-
+(./intro-to-ds.vrb)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2461,7 +2408,10 @@ Overfull \hbox (40.69894pt too wide) in paragraph at lines 18--727
 .................................................
 [22
 
-] (./text-pre-processing.toc)
+]
+\openout4 = `intro-to-ds.vrb'.
+
+(./intro-to-ds.vrb)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2475,28 +2425,115 @@ Overfull \hbox (40.69894pt too wide) in paragraph at lines 18--727
 [23
 
 ]
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+[24
+
+]
+\openout4 = `intro-to-ds.vrb'.
+
+(./intro-to-ds.vrb)
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+[25
+
+]
+\openout4 = `intro-to-ds.vrb'.
+
+(./intro-to-ds.vrb)
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+[26
+
+]
+\openout4 = `intro-to-ds.vrb'.
+
+(./intro-to-ds.vrb)
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+[27
+
+]
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+[28
+
+] (./intro-to-ds.toc)
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+[29
+
+]
 \tf@nav=\write7
-\openout7 = `text-pre-processing.nav'.
+\openout7 = `intro-to-ds.nav'.
 
 \tf@toc=\write8
-\openout8 = `text-pre-processing.toc'.
+\openout8 = `intro-to-ds.toc'.
 
 \tf@snm=\write9
-\openout9 = `text-pre-processing.snm'.
+\openout9 = `intro-to-ds.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 733.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 733.
-(./text-pre-processing.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 733.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 733.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 977.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 977.
+(./intro-to-ds.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 977.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 977.
  ) 
 Here is how much of TeX's memory you used:
- 33128 strings out of 493005
- 645115 string characters out of 6134597
- 734998 words of memory out of 5000000
- 36480 multiletter control sequences out of 15000+600000
- 17202 words of font info for 60 fonts, out of 8000000 for 9000
+ 32990 strings out of 493005
+ 643144 string characters out of 6134597
+ 729557 words of memory out of 5000000
+ 36335 multiletter control sequences out of 15000+600000
+ 17226 words of font info for 63 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 57i,13n,120p,10417b,831s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,13n,120p,10409b,872s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on text-pre-processing.pdf (23 pages).
+Output written on intro-to-ds.pdf (29 pages).

@@ -228,9 +228,82 @@ mgsub_regex(teks, pattern = pattern, replacement = replacement, fixed = FALSE)
 ```
 
 
+### Konsep 2 
+
+Pembersihan kata sambung juga bisa menggunakan filter sama seperti kita memilih baris. Tapi untuk bisa mengerjakan hal ini, kita harus telebih dahulu mentokenisasi data yang akan dibersihkan. 
+
 ## Tokenisasi 
 
+Apa itu tokenisasi?
+
+> Tokenisasi adalah proses mengubah kalimat menjadi token/term individu atau sesuai dengan aturan token yang ditentukan.
+
+\vspace{0.1in}
+
+Data yang akan digunakan bisa diambil [**dari sini**](https://raw.githubusercontent.com/eppofahmi/belajaR/master/upn-surabaya/data/%23savejakarta.csv)
+
+```{r, eval=TRUE}
+library(tidyverse)
+
+data_twit = readr::read_csv("https://raw.githubusercontent.com/eppofahmi/belajaR/master/upn-surabaya/data/%23savejakarta.csv")
+
+glimpse(data_twit[,1:6])
+```
+
 ### One Gram
+
+1 gram berarti 1 token. Di sini kita akan mempraktikannya pada data yang sudah diimpor sebelumnya dan disimpan dalam objek `data_twit`.
+
+```{r, eval=TRUE}
+library(tidytext) 
+
+data_twit_token = data_twit %>% 
+   select(full_text_clean) %>% 
+   unnest_tokens(kata, input = full_text_clean, token = "words", to_lower = TRUE, drop = FALSE)
+```
+
+```{r, eval=TRUE, echo=FALSE}
+data_twit_token %>% 
+   head(5) %>% 
+   knitr::kable()
+```
+
 ### Bigram
+
+```{r, eval=TRUE}
+library(tidytext) 
+
+data_twit = readr::read_csv("https://raw.githubusercontent.com/eppofahmi/belajaR/master/upn-surabaya/data/%23savejakarta.csv")
+
+data_twit$full_text_clean = textclean::replace_non_ascii(data_twit$full_text_clean)
+
+data_twit_bigram = data_twit %>%
+   unnest_tokens(ngram, full_text_clean, token = "ngrams", n = 2, drop = FALSE) %>% 
+   select(full_text_clean, ngram)
+```
+
+```{r, eval=TRUE, echo=FALSE}
+data_twit_bigram %>% 
+   head(5) %>% 
+   kableExtra::kable()
+```
+
 ### Trigram 
 
+```{r, eval=TRUE}
+library(tidytext) 
+
+data_twit = readr::read_csv("https://raw.githubusercontent.com/eppofahmi/belajaR/master/upn-surabaya/data/%23savejakarta.csv")
+
+data_twit$full_text_clean = textclean::replace_non_ascii(data_twit$full_text_clean)
+
+data_twit_trigram = data_twit %>%
+   unnest_tokens(ngram, full_text_clean, token = "ngrams", n = 3, drop = FALSE) %>% 
+   select(full_text_clean, ngram)
+```
+
+```{r, eval=TRUE, echo=FALSE}
+data_twit_trigram %>% 
+   head(5) %>% 
+   kableExtra::kable()
+```

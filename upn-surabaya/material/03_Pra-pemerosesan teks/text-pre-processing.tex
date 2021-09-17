@@ -559,7 +559,7 @@ agak\tabularnewline
 \protect\hypertarget{konsep-1}{}
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{stopwords\_id}\SpecialCharTok{$}\NormalTok{kata }\OtherTok{\textless{}{-}} \FunctionTok{paste0}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{b"}\NormalTok{, stopwords\_id}\SpecialCharTok{$}\NormalTok{kata, }\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{b"}\NormalTok{)  }\CommentTok{\# excact macth}
+\NormalTok{stopwords\_id}\SpecialCharTok{$}\NormalTok{kata }\OtherTok{\textless{}{-}} \FunctionTok{paste0}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{b"}\NormalTok{, stopwords\_id}\SpecialCharTok{$}\NormalTok{kata, }\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{b"}\NormalTok{)}
 \NormalTok{stopwords\_id}\SpecialCharTok{$}\NormalTok{to }\OtherTok{\textless{}{-}} \StringTok{""}
 \NormalTok{pattern }\OtherTok{\textless{}{-}} \FunctionTok{as.character}\NormalTok{(stopwords\_id}\SpecialCharTok{$}\NormalTok{kata)}
 \NormalTok{replacement }\OtherTok{\textless{}{-}} \FunctionTok{as.character}\NormalTok{(stopwords\_id}\SpecialCharTok{$}\NormalTok{to)}
@@ -577,19 +577,153 @@ agak\tabularnewline
 \end{verbatim}
 \end{frame}
 
+\begin{frame}{Konsep 2}
+\protect\hypertarget{konsep-2}{}
+Pembersihan kata sambung juga bisa menggunakan filter sama seperti kita
+memilih baris. Tapi untuk bisa mengerjakan hal ini, kita harus telebih
+dahulu mentokenisasi data yang akan dibersihkan.
+\end{frame}
+
 \hypertarget{tokenisasi}{%
 \subsection{Tokenisasi}\label{tokenisasi}}
 
-\begin{frame}{One Gram}
+\begin{frame}[fragile]{Tokenisasi}
+Apa itu tokenisasi?
+
+\begin{quote}
+Tokenisasi adalah proses mengubah kalimat menjadi token/term individu
+atau sesuai dengan aturan token yang ditentukan.
+\end{quote}
+
+\vspace{0.1in}
+
+Data yang akan digunakan bisa diambil
+\href{https://raw.githubusercontent.com/eppofahmi/belajaR/master/upn-surabaya/data/\%23savejakarta.csv}{\textbf{dari
+sini}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+
+\NormalTok{data\_twit }\OtherTok{=}\NormalTok{ readr}\SpecialCharTok{::}\FunctionTok{read\_csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/eppofahmi/belajaR/master/upn{-}surabaya/data/\%23savejakarta.csv"}\NormalTok{)}
+
+\FunctionTok{glimpse}\NormalTok{(data\_twit[, }\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 10
+## Columns: 6
+## $ X1              <dbl> 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+## $ id              <dbl> 1.364073e+18, 1.363931e+18, 1.363868e+18, 1.363855e+18~
+## $ permalink       <chr> "https://twitter.com/CynthiaEllenna/status/13640730734~
+## $ timestamp       <dbl> 1614055338, 1614021494, 1614006552, 1614003330, 161396~
+## $ created_at      <dttm> 2021-02-23 11:42:00, 2021-02-23 02:18:00, 2021-02-22 2~
+## $ created_at_time <time> 11:42:00, 02:18:00, 22:09:00, 21:15:00, 11:55:00, 16:~
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{One Gram}
 \protect\hypertarget{one-gram}{}
+1 gram berarti 1 token. Di sini kita akan mempraktikannya pada data yang
+sudah diimpor sebelumnya dan disimpan dalam objek \texttt{data\_twit}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidytext)}
+
+\NormalTok{data\_twit\_token }\OtherTok{=}\NormalTok{ data\_twit }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{select}\NormalTok{(full\_text\_clean) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{unnest\_tokens}\NormalTok{(kata, }\AttributeTok{input =}\NormalTok{ full\_text\_clean, }\AttributeTok{token =} \StringTok{"words"}\NormalTok{,}
+        \AttributeTok{to\_lower =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{drop =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+full\_text\_clean & kata\tabularnewline
+\midrule
+\endhead
+ada yang bisa jelas kronologi kasus fee formula e yang besar 560 milyar
+itu & ada\tabularnewline
+ada yang bisa jelas kronologi kasus fee formula e yang besar 560 milyar
+itu & yang\tabularnewline
+ada yang bisa jelas kronologi kasus fee formula e yang besar 560 milyar
+itu & bisa\tabularnewline
+ada yang bisa jelas kronologi kasus fee formula e yang besar 560 milyar
+itu & jelas\tabularnewline
+ada yang bisa jelas kronologi kasus fee formula e yang besar 560 milyar
+itu & kronologi\tabularnewline
+\bottomrule
+\end{longtable}
 \end{frame}
 
-\begin{frame}{Bigram}
+\begin{frame}[fragile]{Bigram}
 \protect\hypertarget{bigram}{}
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidytext)}
+
+\NormalTok{data\_twit }\OtherTok{=}\NormalTok{ readr}\SpecialCharTok{::}\FunctionTok{read\_csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/eppofahmi/belajaR/master/upn{-}surabaya/data/\%23savejakarta.csv"}\NormalTok{)}
+
+\NormalTok{data\_twit}\SpecialCharTok{$}\NormalTok{full\_text\_clean }\OtherTok{=}\NormalTok{ textclean}\SpecialCharTok{::}\FunctionTok{replace\_non\_ascii}\NormalTok{(data\_twit}\SpecialCharTok{$}\NormalTok{full\_text\_clean)}
+
+\NormalTok{data\_twit\_bigram }\OtherTok{=}\NormalTok{ data\_twit }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{unnest\_tokens}\NormalTok{(ngram, full\_text\_clean, }\AttributeTok{token =} \StringTok{"ngrams"}\NormalTok{, }\AttributeTok{n =} \DecValTok{2}\NormalTok{,}
+        \AttributeTok{drop =} \ConstantTok{FALSE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{select}\NormalTok{(full\_text\_clean, ngram)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l|l}
+\hline
+full\_text\_clean & ngram\\
+\hline
+ada yang bisa jelas kronologi kasus fee formula e yang besar 560 milyar itu & ada yang\\
+\hline
+ada yang bisa jelas kronologi kasus fee formula e yang besar 560 milyar itu & yang bisa\\
+\hline
+ada yang bisa jelas kronologi kasus fee formula e yang besar 560 milyar itu & bisa jelas\\
+\hline
+ada yang bisa jelas kronologi kasus fee formula e yang besar 560 milyar itu & jelas kronologi\\
+\hline
+ada yang bisa jelas kronologi kasus fee formula e yang besar 560 milyar itu & kronologi kasus\\
+\hline
+\end{tabular}
 \end{frame}
 
-\begin{frame}{Trigram}
+\begin{frame}[fragile]{Trigram}
 \protect\hypertarget{trigram}{}
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidytext)}
+
+\NormalTok{data\_twit }\OtherTok{=}\NormalTok{ readr}\SpecialCharTok{::}\FunctionTok{read\_csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/eppofahmi/belajaR/master/upn{-}surabaya/data/\%23savejakarta.csv"}\NormalTok{)}
+
+\NormalTok{data\_twit}\SpecialCharTok{$}\NormalTok{full\_text\_clean }\OtherTok{=}\NormalTok{ textclean}\SpecialCharTok{::}\FunctionTok{replace\_non\_ascii}\NormalTok{(data\_twit}\SpecialCharTok{$}\NormalTok{full\_text\_clean)}
+
+\NormalTok{data\_twit\_trigram }\OtherTok{=}\NormalTok{ data\_twit }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{unnest\_tokens}\NormalTok{(ngram, full\_text\_clean, }\AttributeTok{token =} \StringTok{"ngrams"}\NormalTok{, }\AttributeTok{n =} \DecValTok{3}\NormalTok{,}
+        \AttributeTok{drop =} \ConstantTok{FALSE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{select}\NormalTok{(full\_text\_clean, ngram)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l|l}
+\hline
+full\_text\_clean & ngram\\
+\hline
+ada yang bisa jelas kronologi kasus fee formula e yang besar 560 milyar itu & ada yang bisa\\
+\hline
+ada yang bisa jelas kronologi kasus fee formula e yang besar 560 milyar itu & yang bisa jelas\\
+\hline
+ada yang bisa jelas kronologi kasus fee formula e yang besar 560 milyar itu & bisa jelas kronologi\\
+\hline
+ada yang bisa jelas kronologi kasus fee formula e yang besar 560 milyar itu & jelas kronologi kasus\\
+\hline
+ada yang bisa jelas kronologi kasus fee formula e yang besar 560 milyar itu & kronologi kasus fee\\
+\hline
+\end{tabular}
 \end{frame}
 
 
