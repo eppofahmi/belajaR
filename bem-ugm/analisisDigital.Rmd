@@ -32,9 +32,13 @@ library(tidyverse)
 library(stevemisc)
 ```
 
-dSalam kenal, saya adalah Ujang Fahmi, pengajar dan Co-Founder Sadasa Academi dan Kedata Indonesia digital. Sadasa adalah sebuah startup pengajaran data sains dari 0 hingga mahir. Kedata adalah startup dibidang big data analytis. 
+Salam kenal, saya adalah Ujang Fahmi, pengajar dan Co-Founder Sadasa Academi dan Kedata Indonesia digital. Sadasa adalah sebuah startup pengajaran data sains dari 0 hingga mahir. Kedata adalah startup dibidang big data analytis. 
+
+\vspace{0.1in}
 
 Saya bukanlah orang dengan latar belakang pendidikan teknik, S1 saya adalah Hubungan Internasional, dan S2 saya, Kebijakan Publik. Sebagian besar keterampilan *ngoding* saya pelajari secara otodidak dengan memproduksi `error` yang tidak terhitung hingga saat ini yang sudah saya coba cari solusinya. 
+
+\vspace{0.1in}
 
 Kemungkinan, jika ada yang sedang membaca atau memiliki slides ini juga tertarik untuk belajar tentang analisis big data atau digital. Satu hal yang saya bisa katakan untuk itu, bidang ini sangat terbuka bagi siapa saja yang mau dan bisa meluangkan waktu secara konsisten untuk belajar. 
 
@@ -47,6 +51,7 @@ Jadi, selemat belajar!...
 ## Digital
 
 ![Social Media sumber data digital](images/img1.jpg)
+
 ## Analisis
 
 > Analytics is the process of discovering, interpreting, and communicating significant patterns in data. . Quite simply, analytics helps us see insights and meaningful data that we might not otherwise detect.

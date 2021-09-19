@@ -268,7 +268,7 @@ Jadi selamat belajar!!!
 
 Ujang Fahmi,
 
-Yogyakarta, 2021-09-17
+Yogyakarta, 2021-09-18
 
 \vspace{0.1in}
 
@@ -630,7 +630,7 @@ R MARKDOWN
 \begin{figure}
 \centering
 \includegraphics{images/introtods12.jpeg}
-\caption{R markdown}
+\caption{Library dianalogikan sebagai perpustakaan}
 \end{figure}
 \end{column}
 
@@ -638,7 +638,7 @@ R MARKDOWN
 \begin{figure}
 \centering
 \includegraphics{images/introtods13.png}
-\caption{R markdown}
+\caption{Package dianalogikan sebagai buku}
 \end{figure}
 \end{column}
 \end{columns}
@@ -708,6 +708,27 @@ yang dibutuhkannya.
 
 \hypertarget{fungsidasar}{%
 \section{Fungsi-fungsi Dasar}\label{fungsidasar}}
+
+\begin{frame}[fragile]{Operator \texttt{\%\textgreater{}\%} (Kemduian)}
+\protect\hypertarget{operator-kemduian}{}
+Operator persen lebih dari persen disebut pipe dan bisa dibaca
+\texttt{kemudian}. Contohnya adalah sebagai berikut.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+
+\NormalTok{daftar\_siswa }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{4}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(kolom\_1 }\SpecialCharTok{\textgreater{}=} \DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Skrip diatas berarti kita menggunakan data, \texttt{kemudian} kita hanya
+memilih \texttt{kolom\ 1\ sampai\ 4} saja, dari daftar siswa tersebut
+\texttt{kemudian} kita hanya memilih yang nilai di \texttt{kolom\_1} nya
+\texttt{lebih\ dari\ atau\ sama\ dengan\ 10}.
+\end{frame}
 
 \begin{frame}[fragile]{Fungsi paste}
 \protect\hypertarget{fungsi-paste}{}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2019.3.1)  15 SEP 2021 12:14
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2019.3.1)  18 SEP 2021 13:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2014,12 +2014,14 @@ File: images/kedata.png Graphic file (type QTm)
 
 (./analisisDigital.vrb
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/it' will be
-(Font)              scaled to size 8.05374pt on input line 8.
+(Font)              scaled to size 8.05374pt on input line 10.
 ) [2
 
 ]
 File: images/img1.jpg Graphic file (type QTm)
 <use  "images/img1.jpg" >
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
+(Font)              scaled to size 7.24837pt on input line 244.
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2031,7 +2033,7 @@ File: images/img1.jpg Graphic file (type QTm)
 . Titillium Web scale = 0.8620011486482191.
 .................................................
 
-Overfull \vbox (29.94101pt too high) detected at line 242
+Overfull \vbox (14.7654pt too high) detected at line 244
  []
 
 [3
@@ -2050,10 +2052,6 @@ Overfull \vbox (29.94101pt too high) detected at line 242
 [4
 
 ]
-File: images/img3.png Graphic file (type QTm)
-<use  "images/img3.png" >
-LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 7.24837pt on input line 266.
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2065,6 +2063,21 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
 . Titillium Web scale = 0.8620011486482191.
 .................................................
 [5
+
+]
+File: images/img3.png Graphic file (type QTm)
+<use  "images/img3.png" >
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+[6
 
 ]
 File: images/img2.png Graphic file (type QTm)
@@ -2079,7 +2092,7 @@ File: images/img2.png Graphic file (type QTm)
 . 
 . Titillium Web scale = 0.8620011486482191.
 .................................................
-[6
+[7
 
 ]
 File: images/img4.jpeg Graphic file (type QTm)
@@ -2095,10 +2108,10 @@ File: images/img4.jpeg Graphic file (type QTm)
 . Titillium Web scale = 0.8620011486482191.
 .................................................
 
-Overfull \vbox (9.42224pt too high) detected at line 290
+Overfull \vbox (9.42224pt too high) detected at line 303
  []
 
-[7
+[8
 
 ]
 File: images/img5.jpeg Graphic file (type QTm)
@@ -2114,10 +2127,10 @@ File: images/img5.jpeg Graphic file (type QTm)
 . Titillium Web scale = 0.8620011486482191.
 .................................................
 
-Overfull \vbox (9.43602pt too high) detected at line 299
+Overfull \vbox (9.43602pt too high) detected at line 312
  []
 
-[8
+[9
 
 ]
 File: images/img10.png Graphic file (type QTm)
@@ -2132,7 +2145,7 @@ File: images/img10.png Graphic file (type QTm)
 . 
 . Titillium Web scale = 0.8620011486482191.
 .................................................
-[9
+[10
 
 ]
 File: images/img6.jpeg Graphic file (type QTm)
@@ -2147,7 +2160,7 @@ File: images/img6.jpeg Graphic file (type QTm)
 . 
 . Titillium Web scale = 0.8620011486482191.
 .................................................
-[10
+[11
 
 ]
 File: images/img7.png Graphic file (type QTm)
@@ -2162,7 +2175,7 @@ File: images/img7.png Graphic file (type QTm)
 . 
 . Titillium Web scale = 0.8620011486482191.
 .................................................
-[11
+[12
 
 ]
 File: images/img8.jpeg Graphic file (type QTm)
@@ -2177,7 +2190,7 @@ File: images/img8.jpeg Graphic file (type QTm)
 . 
 . Titillium Web scale = 0.8620011486482191.
 .................................................
-[12
+[13
 
 ]
 File: images/img9.jpeg Graphic file (type QTm)
@@ -2192,68 +2205,9 @@ File: images/img9.jpeg Graphic file (type QTm)
 . 
 . Titillium Web scale = 0.8620011486482191.
 .................................................
-[13
-
-]
-.................................................
-. fontspec info: "set-scale"
-. 
-. Titillium Web scale = 0.8620011486482191.
-.................................................
-.................................................
-. fontspec info: "set-scale"
-. 
-. Titillium Web scale = 0.8620011486482191.
-.................................................
 [14
 
 ]
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 434.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-LatinModernRoman.cfg
-File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
-ern Roman (RS)
-)
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 434.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 434
-.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 434
-.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 434.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 434.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 434.
-LaTeX Font Info:    Try loading font information for U+msa on input line 434.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-msa.cfg
-File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 434.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-msb.cfg
-File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-LaTeX Font Info:    Try loading font information for U+wasy on input line 434.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/wasysym/uwasy.fd
-File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
-)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2267,6 +2221,52 @@ File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 [15
 
 ]
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 447.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-LatinModernRoman.cfg
+File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
+ern Roman (RS)
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 447.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 447
+.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 447
+.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 447.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 447.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 447.
+LaTeX Font Info:    Try loading font information for U+msa on input line 447.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 447.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+wasy on input line 447.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/wasysym/uwasy.fd
+File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
+)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2278,6 +2278,19 @@ File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 . Titillium Web scale = 0.8620011486482191.
 .................................................
 [16
+
+]
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+[17
 
 ]
 File: images/img11.png Graphic file (type QTm)
@@ -2292,22 +2305,9 @@ File: images/img11.png Graphic file (type QTm)
 . 
 . Titillium Web scale = 0.8620011486482191.
 .................................................
-[17
-
-]
-.................................................
-. fontspec info: "set-scale"
-. 
-. Titillium Web scale = 0.8620011486482191.
-.................................................
-.................................................
-. fontspec info: "set-scale"
-. 
-. Titillium Web scale = 0.8620011486482191.
-.................................................
 [18
 
-] (./analisisDigital.toc)
+]
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2320,6 +2320,19 @@ File: images/img11.png Graphic file (type QTm)
 .................................................
 [19
 
+] (./analisisDigital.toc)
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+[20
+
 ]
 \tf@nav=\write6
 \openout6 = `analisisDigital.nav'.
@@ -2330,19 +2343,19 @@ File: images/img11.png Graphic file (type QTm)
 \tf@snm=\write8
 \openout8 = `analisisDigital.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 497.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 497.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 510.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 510.
 (./analisisDigital.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 497.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 497.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 510.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 510.
  ) 
 Here is how much of TeX's memory you used:
- 32467 strings out of 493005
- 635075 string characters out of 6134597
- 718501 words of memory out of 5000000
- 35854 multiletter control sequences out of 15000+600000
+ 32471 strings out of 493005
+ 635107 string characters out of 6134597
+ 718593 words of memory out of 5000000
+ 35858 multiletter control sequences out of 15000+600000
  17186 words of font info for 58 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  57i,13n,120p,10413b,842s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on analisisDigital.pdf (19 pages).
+Output written on analisisDigital.pdf (20 pages).
