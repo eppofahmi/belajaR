@@ -55,7 +55,7 @@ glimpse(df5)
 glimpse(df6)
 df6$row_labels
 
-# memilih kolom
+# memilih kolom -----
 ?select
 # pipe (%>%) shortcut cmd/ctr + shift + m
 
@@ -73,3 +73,124 @@ df4 %>%
 
 # delet obj env
 rm(impor_migas)
+
+# pilih dengan filter() -----
+?filter
+
+df5 = msleep
+glimpse(df5)
+
+df6 = df5 %>% 
+  filter(!is.na(brainwt))
+
+df7 = df5 %>% 
+  filter(vore == "herbi")
+
+df8 = df5 %>% 
+  filter(!is.na(brainwt) & vore == "herbi")
+
+?economics
+?mtcars
+
+## buat filter dari data starwars, economics, mtcars, msleep dengan menggunakan 1 varibel, 2 variabel, dan memasukan operator ==, >, >=, dan &, |, !
+
+glimpse(starwars)
+glimpse(economics)
+summary(economics)
+df9 = economics %>% 
+  filter(between(date, as.Date("1991-05-16"), as.Date("2003-04-23")))
+
+df10 = economics %>%
+  filter(date >= "1991-05-16" & date <= "2003-04-23")
+
+
+## trnasformasi kolom -----
+df11 = mtcars
+glimpse(df11)
+
+df11 = rownames_to_column(df11)
+glimpse(df11)
+
+### membuat kolom baru ----
+?mutate
+?row_number()
+
+df11 = df11 %>% 
+  mutate(id_baris = row_number())
+
+df11$id_baris2 = paste0("baris ke-", row_number(df11$mpg))
+
+df12 = data_frame(rnorm(32))
+colnames(df12) = "distribusi"
+
+?bind_cols()
+df13 = bind_cols(df11, df12)
+df11$distribusi = df12$distribusi
+
+?left_join()
+
+### join table ----
+df14 = data_frame(id_baris = seq_along(1:100), distribusi = rnorm(100))
+
+df15 = df11 %>% 
+  right_join(df14)
+
+df1 <- tibble(x = 1:3)
+df2 <- tibble(x = c(1, 1, 2), y = c("first", "second", "third"))
+df1 %>% left_join(df2)
+
+### memisahkan nilai kolom 
+data_tidur_fauna = msleep
+glimpse(data_tidur_fauna)
+
+data_tidur_fauna = data_tidur_fauna %>% 
+  separate(col = 1, into = c("nama_depan", "nama_tengah", "nama_belakang"), 
+           sep = " ", remove = FALSE, fill = "right")
+glimpse(data_tidur_fauna)
+
+?is.na()
+
+data_tidur_fauna$nama_belakang[is.na(data_tidur_fauna$nama_belakang)] = ""
+data_tidur_fauna$nama_tengah[is.na(data_tidur_fauna$nama_tengah)] = ""
+
+film_star = starwars
+
+## Mengabungkan nilai dari kolom 
+data_tidur_fauna$tengah_belakng = paste0(data_tidur_fauna$nama_tengah, 
+                                         "-", 
+                                         data_tidur_fauna$nama_belakang)
+
+glimpse(data_tidur_fauna)
+
+df = data_tidur_fauna %>% 
+  unite(col = "tengah_belakng2", nama_tengah:nama_belakang, 
+        sep = " ", remove = FALSE)
+
+# unlist column in a data frame ----
+library(tidyr)
+film_star2 = unnest(film_star, films)
+
+film_star
+glimpse(film_star)
+
+# df1 <- sapply(film_star$films, length)
+# unlist.col1 <- rep(film_star$films, df1)
+# unlist.col1
+
+# film_star$films = as.character(film_star$films)
+# glimpse(film_star)
+film_star$films = gsub("(?!')[[:punct:]]", "", film_star$films, perl=TRUE)
+
+## Kolom baru dengan value rangkuman 
+## membuat kolom baru berisi rerata waktu tidur (sleep_total) fauna berdasarkan kolom order
+?group_by
+?mean
+
+data_tidur_fauna = data_tidur_fauna %>% 
+  group_by(order) %>% 
+  mutate(rerata_tidur = mean(sleep_rem))
+
+rerarat_SC = mean(data_tidur_fauna$sleep_cycle, na.rm = TRUE)
+rerarat_SC = round(rerarat_SC, 2)
+data_tidur_fauna$sleep_cycle[is.na(data_tidur_fauna$sleep_cycle)] = rerarat_SC
+summary(data_tidur_fauna)
