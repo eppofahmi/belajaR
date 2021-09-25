@@ -155,7 +155,7 @@ Setelah bisa mengimpor, dan setelah melakukan pemrosesan di R, selanjutnya kita 
 
 ### Ekspor data frame
 
-Jika untuk mengimpor sebagian besar fungsinya diawali dengan `read*` maka untuk mengekspor data sebagian besar fungsinya diawali dengan `write`. 
+Jika untuk mengimpor sebagian besar fungsinya diawali dengan `read*` maka untuk mengekspor data sebagian besar fungsinya diawali dengan `write`.
 
 Contoh:
 
@@ -176,7 +176,6 @@ library(readr)
 
 write_rds(namaobjek, "namafolder/namafile.rds")
 ```
-
 
 ### Ekspor json
 

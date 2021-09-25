@@ -36,3 +36,5 @@ library(jsonlite)
 mt_car1 = read_json("data/sample.json")
 ?fromJSON
 mt_car2 = fromJSON("data/sample.json", flatten = TRUE)
+
+
