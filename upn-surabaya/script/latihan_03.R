@@ -155,7 +155,7 @@ data_tidur_fauna$nama_tengah[is.na(data_tidur_fauna$nama_tengah)] = ""
 
 film_star = starwars
 
-## Mengabungkan nilai dari kolom 
+## Menggabungkan nilai dari kolom 
 data_tidur_fauna$tengah_belakng = paste0(data_tidur_fauna$nama_tengah, 
                                          "-", 
                                          data_tidur_fauna$nama_belakang)
@@ -194,3 +194,54 @@ rerarat_SC = mean(data_tidur_fauna$sleep_cycle, na.rm = TRUE)
 rerarat_SC = round(rerarat_SC, 2)
 data_tidur_fauna$sleep_cycle[is.na(data_tidur_fauna$sleep_cycle)] = rerarat_SC
 summary(data_tidur_fauna)
+
+# Mengisi nilai kosong
+library(missForest)
+?missForest
+
+data_tes = iris
+glimpse(data_tes)
+
+# level factor
+levels(data_tes$Species)
+summary(data_tes)
+
+# membuat data tes dengan value NA
+# akan mulai dari memiliki data yang memiliki value NA 
+data_tes_na = prodNA(x = data_tes, noNA = 0.7)
+summary(data_tes_na)
+glimpse(data_tes_na)
+
+data_tes_na = data_tes_na %>% 
+  mutate(Petal.Width_r = case_when(
+    is.na(Petal.Width) ~ max(data_tes_na$Petal.Width, na.rm = TRUE), 
+    TRUE ~ Petal.Width
+  ))
+
+summary(data_tes_na)
+
+data_tes_na = data_tes_na %>% 
+  select(-6)
+
+## impute menggunakan missForrest
+hasil_na <- missForest(data_tes_na, xtrue = data_tes, verbose = TRUE)
+hasil_imputasi = hasil_na[[1]]
+
+summary(data_tes_na)
+summary(hasil_imputasi)
+
+# tanpa xtrue
+hasil_na2 <- missForest(data_tes_na, verbose = TRUE)
+hasil_imputasi2 = hasil_na2[[1]]
+
+summary(data_tes_na)
+summary(hasil_imputasi2)
+
+# Noise remmove -----
+teks = "Bpbd... http://sadas.id
+        https://instagram.com/p/CT5xmXMP_xq/?utm_medium=twitter,
+        www.dodoremi.com,
+        pic.twitter..."
+
+?gsub()
+gsub(pattern = "?(f|ht)(tp)(s?)(://)(.*)[.|/](.*)", replacement = "", teks)

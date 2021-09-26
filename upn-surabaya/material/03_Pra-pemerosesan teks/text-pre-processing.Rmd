@@ -53,7 +53,7 @@ Ujang Fahmi,
 
 # Text Mining?
 
-Text mining juga merujuk pada text data mining mirip dengan teks analitik, yaitu sebuah proses mendapatkan informasi yang berkualitas dari teks. Hal ini melibatkan penggunaan komputer untuk observasi, dan **informasi yang sebelumnya belum diketahui**. 
+Text mining juga merujuk pada text data mining, mirip dengan teks analitik, yaitu sebuah proses mendapatkan informasi yang berkualitas dari data teks. Hal ini melibatkan penggunaan komputer untuk observasi, dan **informasi yang sebelumnya belum diketahui**. 
 
 Text mining melibatkan teknik dan metode interdisiplin seperti pemerograman komputer untuk memproses data tidak terstruktur dalam jumlah besar dan linguistik untuk memahami dan mengambil intiusi tentang penggunaan bahasa.
 
@@ -83,7 +83,7 @@ source: [text.ai](https://www.tex-ai.com/5-important-text-mining-techniques-in-u
 
 1. **Extraction of Information** (The information extraction technique focuses a lot on identifying the extraction of attributes, entities, along with their relationship with unstructured or semi-structured texts)
 
-2. **Retrieval of Information** (This technique makes use of information retrieval systems that make use of various algorithms that track and monitor user behaviour and also determine related data accordingly)
+2. **Information Retrieval** (This technique makes use of information retrieval systems that make use of various algorithms that track and monitor user behaviour and also determine related data accordingly)
 
 3. **Categorization** (This is a text mining technique which is a `supervised` learning form where the usual language texts are set to a pre-defined bunch of topics depending on their content)
 

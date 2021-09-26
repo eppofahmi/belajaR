@@ -410,6 +410,7 @@ set.seed(1234)
 iris.mis <- prodNA(iris, noNA = 0.2)
 summary(iris.mis)
 ```
+
 ### Mengisi Nilai kosong dengan rerata
 
 Dari rangkuman diketahui bahwa ada 25 bari yang kosong pada kolom `Sepal.Length`
@@ -438,6 +439,7 @@ result0 <- iris.imp$ximp
 
 summary(result0)
 ```
+
 ## Paket lain untuk *imputation*
 
 Selain dengan menggunakan paket `missForest`, melakukan *imputation* juga dapat dilakukan dengan beberapa paket lain dengan metode dan atau pendekatan yang berbeda. Seperti paket `Hmisc` yang juga cukup populer dikalangan pengguna R menawarkan metode *imputation* dengan beberapa algoritme.
