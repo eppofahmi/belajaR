@@ -12,3 +12,4 @@ page1 <- https://onlinelibrary.wiley.com/action/doSearch?AllField=public%20polic
 page3 <- https://onlinelibrary.wiley.com/action/doSearch?AllField=public%20policy&PubType=journal&SeriesKey=19442866&content=articlesChapters&countTerms=true&target=default&AfterYear=2009&BeforeYear=2018&startPage=2
 
 page13 <- https://onlinelibrary.wiley.com/action/doSearch?AllField=public%20policy&PubType=journal&SeriesKey=19442866&content=articlesChapters&countTerms=true&target=default&AfterYear=2009&BeforeYear=2018&startPage=12
+
