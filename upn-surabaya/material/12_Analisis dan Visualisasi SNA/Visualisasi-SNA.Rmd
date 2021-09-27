@@ -1,0 +1,101 @@
+---
+title: Visualisasi SNA
+subtitle: (Pelatihan data sains menggunakan R dan Gephi)
+author: Ujang Fahmi
+institute: "Pelajaran ke-6"
+titlegraphic: styles/sadasa.png
+fontsize: 10pt
+output:
+ beamer_presentation:
+   template: styles/svm-latex-beamer.tex
+   keep_tex: true
+   latex_engine: xelatex # pdflatex also works here
+   dev: cairo_pdf # I typically comment this out  if latex_engine: pdflatex
+   slide_level: 3
+make149: true
+mainfont: "Open Sans" # Try out some font options if xelatex
+titlefont: "Titillium Web" # Try out some font options if xelatex
+---
+
+```{r setup, include=FALSE, cache=F, message=F, warning=F, results="hide"}
+knitr::opts_chunk$set(cache=TRUE)
+knitr::opts_chunk$set(fig.path='figs/')
+knitr::opts_chunk$set(cache.path='cache/')
+
+knitr::opts_chunk$set(
+                  fig.process = function(x) {
+                      x2 = sub('-\\d+([.][a-z]+)$', '\\1', x)
+                      if (file.rename(x, x2)) x2 else x
+                      }
+                  )
+library(tidyverse)
+library(stevemisc)
+```
+
+Salam kenal dan selamat datang.
+
+Semoga kita semua bisa saling berbagi pengalaman dan pengetahuan. Saya adalah Ujang Fahmi, Co-founder dan mentor Sadasa Academy.
+
+\vspace{0.1in}
+
+Jika anda berada dan sedang membaca tutorial ini, maka kemungkinan anda adalah orang yang sedang ingin belajar data sains, atau mungkin ditugaskan untuk mempelajari R oleh institusi atau organisasi anda. Sama seperti saya dulu, dimana tanpa latar belakang enginering saya didiharuskan untuk belajar R, demi menyelesaikan tugas akhir dan akhirnya jadilah seperti saya sekarang ini.
+
+\vspace{0.1in}
+
+Satu hal yang pasti, ini adalah langkah pertama dari banyak langkah yang harus dilalui, entah melalui lembaga resmi atau belajar secara mandiri. Jadi selamat belajar!!!
+
+\vspace{0.1in}
+Ujang Fahmi, 
+
+`r paste("Yogyakarta,", Sys.Date())`
+
+\vspace{0.1in}
+
+*Materi yang disampaikan disimpan dan dokumentasikan* [**disini**](https://github.com/eppofahmi/belajaR/tree/master/upn-surabaya)
+
+# Pendahuluan
+
+## Apa itu data sains?
+
+- Memiliki keterampilan koding
+- Mengetahui dan menguasai matematika dan statistik
+- Memiliki domain knowledge spesifik yang kuat
+
+## Sosial data sains?
+
+-   Bullet 1
+-   Bullet 2
+-   Bullet 3
+
+## Prasyarat keterampilan
+
+-   Bullet 1
+-   Bullet 2
+-   Bullet 3
+
+## Alat-alat yang biasa digunakan
+
+-   Bullet 1
+-   Bullet 2
+-   Bullet 3
+
+# R dan Rstudio
+## Kenapa menggunakan R dan Rstudio
+
+## Mendapatakan R dan Rstudio
+
+## Bisa apa saja dengan R dan Rstudio
+
+# Menggunakan R dan Rstudio
+
+## Membuat Proyek
+## Membuat dan menyimpan skrip/kumpulan perintah
+## Aturan menulis skrip
+## Jenis skrip di Rstudio
+## Library dan Package
+
+# Your Turn!
+
+1. Buatlah sebuah project di Rstudio
+2. Buatlah sebuah skrip `.R` di project yang telah dibuat
+3. Tulislah perintah untuk menginstall package tidyverse, tidytext, dan igraph
