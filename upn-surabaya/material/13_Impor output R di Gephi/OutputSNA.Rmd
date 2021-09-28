@@ -53,49 +53,8 @@ Ujang Fahmi,
 
 *Materi yang disampaikan disimpan dan dokumentasikan* [**disini**](https://github.com/eppofahmi/belajaR/tree/master/upn-surabaya)
 
-# Pendahuluan
+# Membuat file graph
 
-## Apa itu data sains?
+# Menggunakan Gephi
 
-- Memiliki keterampilan koding
-- Mengetahui dan menguasai matematika dan statistik
-- Memiliki domain knowledge spesifik yang kuat
-
-## Sosial data sains?
-
--   Bullet 1
--   Bullet 2
--   Bullet 3
-
-## Prasyarat keterampilan
-
--   Bullet 1
--   Bullet 2
--   Bullet 3
-
-## Alat-alat yang biasa digunakan
-
--   Bullet 1
--   Bullet 2
--   Bullet 3
-
-# R dan Rstudio
-## Kenapa menggunakan R dan Rstudio
-
-## Mendapatakan R dan Rstudio
-
-## Bisa apa saja dengan R dan Rstudio
-
-# Menggunakan R dan Rstudio
-
-## Membuat Proyek
-## Membuat dan menyimpan skrip/kumpulan perintah
-## Aturan menulis skrip
-## Jenis skrip di Rstudio
-## Library dan Package
-
-# Your Turn!
-
-1. Buatlah sebuah project di Rstudio
-2. Buatlah sebuah skrip `.R` di project yang telah dibuat
-3. Tulislah perintah untuk menginstall package tidyverse, tidytext, dan igraph
+# Menggunakan Nodexl

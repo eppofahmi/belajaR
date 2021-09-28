@@ -53,49 +53,22 @@ Ujang Fahmi,
 
 *Materi yang disampaikan disimpan dan dokumentasikan* [**disini**](https://github.com/eppofahmi/belajaR/tree/master/upn-surabaya)
 
-# Pendahuluan
+# Topic Modeling
 
-## Apa itu data sains?
+## Apa?
 
-- Memiliki keterampilan koding
-- Mengetahui dan menguasai matematika dan statistik
-- Memiliki domain knowledge spesifik yang kuat
+## Bagiamana?
 
-## Sosial data sains?
+# Langkah-langkah Topic Modeling
 
--   Bullet 1
--   Bullet 2
--   Bullet 3
+## Persiapan 
 
-## Prasyarat keterampilan
+### Data yang akan dianalisis
 
--   Bullet 1
--   Bullet 2
--   Bullet 3
+### Algoritma yang akan digunakan 
 
-## Alat-alat yang biasa digunakan
+## Melihat Hasil
 
--   Bullet 1
--   Bullet 2
--   Bullet 3
+## Visualisasi Hasil
 
-# R dan Rstudio
-## Kenapa menggunakan R dan Rstudio
-
-## Mendapatakan R dan Rstudio
-
-## Bisa apa saja dengan R dan Rstudio
-
-# Menggunakan R dan Rstudio
-
-## Membuat Proyek
-## Membuat dan menyimpan skrip/kumpulan perintah
-## Aturan menulis skrip
-## Jenis skrip di Rstudio
-## Library dan Package
-
-# Your Turn!
-
-1. Buatlah sebuah project di Rstudio
-2. Buatlah sebuah skrip `.R` di project yang telah dibuat
-3. Tulislah perintah untuk menginstall package tidyverse, tidytext, dan igraph
+# Your Turn

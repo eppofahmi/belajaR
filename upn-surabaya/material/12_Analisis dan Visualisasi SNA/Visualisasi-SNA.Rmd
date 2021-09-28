@@ -2,7 +2,7 @@
 title: Visualisasi SNA
 subtitle: (Pelatihan data sains menggunakan R dan Gephi)
 author: Ujang Fahmi
-institute: "Pelajaran ke-6"
+institute: "Pelajaran ke-12"
 titlegraphic: styles/sadasa.png
 fontsize: 10pt
 output:
@@ -53,49 +53,14 @@ Ujang Fahmi,
 
 *Materi yang disampaikan disimpan dan dokumentasikan* [**disini**](https://github.com/eppofahmi/belajaR/tree/master/upn-surabaya)
 
-# Pendahuluan
 
-## Apa itu data sains?
+# Visualisasi
 
-- Memiliki keterampilan koding
-- Mengetahui dan menguasai matematika dan statistik
-- Memiliki domain knowledge spesifik yang kuat
 
-## Sosial data sains?
 
--   Bullet 1
--   Bullet 2
--   Bullet 3
+# Persiapan
+## Data Network
 
-## Prasyarat keterampilan
+## Tampilan yang diperlukan
 
--   Bullet 1
--   Bullet 2
--   Bullet 3
-
-## Alat-alat yang biasa digunakan
-
--   Bullet 1
--   Bullet 2
--   Bullet 3
-
-# R dan Rstudio
-## Kenapa menggunakan R dan Rstudio
-
-## Mendapatakan R dan Rstudio
-
-## Bisa apa saja dengan R dan Rstudio
-
-# Menggunakan R dan Rstudio
-
-## Membuat Proyek
-## Membuat dan menyimpan skrip/kumpulan perintah
-## Aturan menulis skrip
-## Jenis skrip di Rstudio
-## Library dan Package
-
-# Your Turn!
-
-1. Buatlah sebuah project di Rstudio
-2. Buatlah sebuah skrip `.R` di project yang telah dibuat
-3. Tulislah perintah untuk menginstall package tidyverse, tidytext, dan igraph
+# Analisis dan Interpretasi
