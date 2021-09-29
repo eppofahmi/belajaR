@@ -1,0 +1,123 @@
+---
+title: Pre-processing untuk SNA
+subtitle: (Pelatihan data sains menggunakan R dan Gephi)
+author: Ujang Fahmi
+institute: "Pelajaran ke-10"
+titlegraphic: styles/sadasa.png
+fontsize: 10pt
+output:
+ beamer_presentation:
+   template: styles/svm-latex-beamer.tex
+   keep_tex: true
+   latex_engine: xelatex # pdflatex also works here
+   dev: cairo_pdf # I typically comment this out  if latex_engine: pdflatex
+   slide_level: 3
+make149: true
+mainfont: "Open Sans" # Try out some font options if xelatex
+titlefont: "Titillium Web" # Try out some font options if xelatex
+---
+
+```{r setup, include=FALSE, cache=F, message=F, warning=F, results="hide"}
+knitr::opts_chunk$set(cache=TRUE)
+knitr::opts_chunk$set(fig.path='figs/')
+knitr::opts_chunk$set(cache.path='cache/')
+
+knitr::opts_chunk$set(
+                  fig.process = function(x) {
+                      x2 = sub('-\\d+([.][a-z]+)$', '\\1', x)
+                      if (file.rename(x, x2)) x2 else x
+                      }
+                  )
+library(tidyverse)
+library(stevemisc)
+```
+
+Salam kenal dan selamat datang.
+
+Semoga kita semua bisa saling berbagi pengalaman dan pengetahuan. Saya adalah Ujang Fahmi, Co-founder dan mentor Sadasa Academy.
+
+\vspace{0.1in}
+
+Jika anda berada dan sedang membaca tutorial ini, maka kemungkinan anda adalah orang yang sedang ingin belajar data sains, atau mungkin ditugaskan untuk mempelajari R oleh institusi atau organisasi anda. Sama seperti saya dulu, dimana tanpa latar belakang enginering saya didiharuskan untuk belajar R, demi menyelesaikan tugas akhir dan akhirnya jadilah seperti saya sekarang ini.
+
+\vspace{0.1in}
+
+Satu hal yang pasti, ini adalah langkah pertama dari banyak langkah yang harus dilalui, entah melalui lembaga resmi atau belajar secara mandiri. Jadi selamat belajar!!!
+
+\vspace{0.1in}
+Ujang Fahmi, 
+
+`r paste("Yogyakarta,", Sys.Date())`
+
+\vspace{0.1in}
+
+*Materi yang disampaikan disimpan dan dokumentasikan* [**disini**](https://github.com/eppofahmi/belajaR/tree/master/upn-surabaya)
+
+# Social Network Analyss
+
+Sama halnya dengan pengeolahan data lain, untuk bisa melakukan SNA kita juga perlu melakukan persiapan terlebih dahulu. Persiapan ini meliputi: 
+
+1. Data yang akan dianalisis;
+2. Tujuan/pertanyaan analisis; 
+3. Nodes dan Edges;
+4. Parameter yang akan digunakan; dan 
+5. Tools yang akan digunakan
+
+# Data yang akan dianalisis
+
+Data yang bisa dianalisis menggunakan SNA sebenarnya cukup beragam dan hampir semua jenis data yang didalamnya bisa kita definisikan nodes dan edgesnya bisa dibuat menjadi network. Tapi umumnya data yang akan dianalisis menggunakan SNA masih berupa data mentah dalam format csv atau graph. 
+
+## Impor data
+
+1. Impor Tabel: Untuk mengimpor data berupa tabel, misalnya dengan ekstensi xlsx, csv atau tsv kita bisa menggunakan fungsi-fungsi seperti `read_csv`, `read_excel`, atau `read_tsv` yang semuanya bisa digunakan dengan memanggil `library(tidyverse)`. 
+
+2. Impor Data Graph: Terkadang kita juga mendapatkan data graph dari aplikasi lain. Jika data/file dengan ekstensi graph seperti graphml, gexf, atau pajek akan diolah di R kita bisa menggunakan fungsi-fungsi impor dari igraph seperti `read_graph`. Informasi lebih detil: `?read_graph()`.
+
+3. Impor Json: Untuk beberapa kasus, misalnya network yang sudah divisualkan dalam sebuah website umumnya menyimpan file dalam format json. Di R kita bisa menggunakan library jsonlite untuk mengimpor file tersebut. Informasi lebih detil: `?jsonlite`.
+
+## Wrangling dan Cleansing
+
+### Memilih variabel yang akan dianalisis
+
+### Membersihkan konten
+
+### Mengekstrak nodes
+
+# Tujuan/pertanyaan analisis
+
+Tujuan analisis ini bisa diawali dengan menentukan objek/nodes yang akan diteliti. Misalnya, untuk analisis media sosial nodes yang akan digunakan adalah username, sementara edgesnya adalah mention. Sementara untuk analisis konten nodes yang bisa digunakan misalnya kata/term dan edgesnya adalah lokasi pada observasi/baris/kalimat yang sama. 
+
+# Nodes dan Edges
+
+Dalam setiap SNA, pada dasarnya adalah kita menganalisis nodes dan edges. Di mana dalam bentuk paling sederhananya dapat dilihat seperti tabel berikut. 
+
+```{r, echo=FALSE}
+df1 = tibble::tibble(sumber = c("n1", "n2", "n3"), 
+                     target = c("n3", "n1", "n6"))
+
+df1 %>% 
+   knitr::kable()
+```
+
+Tabel dengan dua kolom yang masing-masingnya diisi dengan value berupa nodes seperti di atas sudah bisa dijadikan network. Di mana masing-masing nodes di kolom `sumber` terhubung oleh sebuah garis penghubung abstrak yang disebut edges dengan nodes di kolom `target.`
+
+# Parameter dalam SNA yang akan digunakan
+
+1. Untuk menentukan parameter apa yang cocok untuk digunakan dalam analisis, kita perlu mengetahui tujuan yang ingin dicapai atau pertanyaan yang ingin dijawab. 
+
+2. Dari tujuan/pertanyaan tersebut selanjutnya kita bisa memilih parameter. Misalnya betweeness centrality, karena kita ingin mengetahui nodes yang memiliki kemungkinan bisa menjadi jembatan tersebarnya informasi. 
+
+3. Jika tujuannya adalah mengetahui komunitas, maka centrality tidak bisa digunakan melainkan modularity. 
+
+4. Jadi, dalam SNA kita tidak perlu menggunakan semua parameter/pengukuran yang ada, melainkan yang sesuai dengan tujuan analisis saja. 
+
+# Tools yang akan digunakan
+
+Tools yang akan digunakan untuk membuat analisis juga menjadi salah satu yang harus dipertimbangkan. Dalam konteks ini, misalnya kita akan menggunakan gephi atau node xl, maka setidaknya kita perlu menyediakan data yang merepresentasikan network seperti tabel dibagian nodes dan edges sebelumnya. 
+
+\vspace{0.1in}
+
+Selain menggunakan R, kita juga bisa menggunakan tools (tanpa koding) untuk membuat SNA: Pilihannya diantaranya adalah: 
+
+1. Nodexl (sejauh ini hanya bisa diinstall di windows dengan versi gratis dan berbayar)
+2. Gephi (bisa diinstall di semua OS, gratis)

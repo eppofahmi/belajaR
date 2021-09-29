@@ -4,7 +4,6 @@
 Contents....
 
 :::
-  
 ::: {.column width="50%"}
 
 Contents....
