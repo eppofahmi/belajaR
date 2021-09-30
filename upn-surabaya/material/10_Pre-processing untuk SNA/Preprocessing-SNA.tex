@@ -27,6 +27,46 @@
 \usepackage{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
 \usepackage{caption}
 % These lines are needed to make table captions work with longtable:
@@ -225,7 +265,7 @@ Jadi selamat belajar!!!
 
 Ujang Fahmi,
 
-Yogyakarta, 2021-09-29
+Yogyakarta, 2021-09-30
 
 \vspace{0.1in}
 
@@ -294,16 +334,76 @@ atau graph.
 \hypertarget{wrangling-dan-cleansing}{%
 \subsection{Wrangling dan Cleansing}\label{wrangling-dan-cleansing}}
 
-\begin{frame}{Memilih variabel yang akan dianalisis}
-\protect\hypertarget{memilih-variabel-yang-akan-dianalisis}{}
+\begin{frame}[fragile]{Wrangling dan Cleansing}
+Sebagai contoh, berikut adalah data yang akan dianalisis.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\NormalTok{raw\_data }\OtherTok{=} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/tweet\_save\_monas.csv"}\NormalTok{)}
+\FunctionTok{glimpse}\NormalTok{(raw\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+Data di atas terdiri dari 3000 dan 42 variabel. Semua baris akan
+dianalisis, tapi untuk SNA, kita tidak memerlukan semua variabel. Untuk
+SNA kita hanya perlu variabel spesifik yang sesuai dengan SNA yang akan
+dibuat.
 \end{frame}
 
-\begin{frame}{Membersihkan konten}
-\protect\hypertarget{membersihkan-konten}{}
+\hypertarget{memilih-variabel-yang-akan-dianalisis}{%
+\subsection{Memilih variabel yang akan
+dianalisis}\label{memilih-variabel-yang-akan-dianalisis}}
+
+\begin{frame}[fragile]{Memilih variabel yang akan dianalisis}
+Dari data tersebut, lalu kita memutuskan untuk membuat network username
+dengan edgese mention, dimana:
+
+\begin{enumerate}
+\tightlist
+\item
+  Nodes = Username (ada di kolom user\_name dan full\_text)
+\item
+  Edges = mention (Username dari kolom user\_name mention username di
+  kolom full\_text)
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raw\_data }\OtherTok{=}\NormalTok{ raw\_data }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{select}\NormalTok{(id, user\_name, full\_text)}
+\FunctionTok{glimpse}\NormalTok{(raw\_data)}
+\end{Highlighting}
+\end{Shaded}
 \end{frame}
 
-\begin{frame}{Mengekstrak nodes}
-\protect\hypertarget{mengekstrak-nodes}{}
+\hypertarget{mengekstrak-nodes}{%
+\subsection{Mengekstrak nodes}\label{mengekstrak-nodes}}
+
+\begin{frame}[fragile]{Mengekstrak nodes}
+Sampai tahap sebelumnya, kita sudah memiliki data yang fokus untuk SNA.
+Tapi data tersebut juga memiliki ID, yang jika dibutuhkan bisa
+digabungkan kembali dengan data awalnya.
+
+\vspace{0.1in}
+
+Tantangan selanjutnya adalah mengekstrak nodes atau dalam konteks ini
+username dari variabel kedua, yaitu full\_text. Untuk melakukannya kita
+bisa menggunakan \texttt{regex}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# involved}
+\NormalTok{user\_inv }\OtherTok{\textless{}{-}} \FunctionTok{as.character}\NormalTok{(raw\_data}\SpecialCharTok{$}\NormalTok{full\_text)}
+\NormalTok{user\_inv }\OtherTok{\textless{}{-}} \FunctionTok{sapply}\NormalTok{(}\FunctionTok{str\_extract\_all}\NormalTok{(user\_inv, }\StringTok{"(@[[:alnum:]\_]*)"}\NormalTok{,}
+                                   \AttributeTok{simplify =} \ConstantTok{FALSE}\NormalTok{),}
+\NormalTok{                   paste,}
+                   \AttributeTok{collapse =} \StringTok{", "}\NormalTok{)}
+\NormalTok{user\_inv }\OtherTok{\textless{}{-}} \FunctionTok{data\_frame}\NormalTok{(user\_inv)}
+\NormalTok{raw\_data}\SpecialCharTok{$}\NormalTok{user\_mention }\OtherTok{=}\NormalTok{ user\_inv}\SpecialCharTok{$}\NormalTok{user\_inv}
+\FunctionTok{glimpse}\NormalTok{(raw\_data)}
+\end{Highlighting}
+\end{Shaded}
 \end{frame}
 
 \hypertarget{tujuanpertanyaan-analisis}{%
@@ -312,9 +412,12 @@ atau graph.
 \begin{frame}{Tujuan/pertanyaan analisis}
 Tujuan analisis ini bisa diawali dengan menentukan objek/nodes yang akan
 diteliti. Misalnya, untuk analisis media sosial nodes yang akan
-digunakan adalah username, sementara edgesnya adalah mention. Sementara
-untuk analisis konten nodes yang bisa digunakan misalnya kata/term dan
-edgesnya adalah lokasi pada observasi/baris/kalimat yang sama.
+digunakan adalah username, sementara edgesnya adalah mention.
+\vspace{0.1in}
+
+Sementara untuk analisis konten nodes yang bisa digunakan misalnya
+kata/term dan edgesnya adalah lokasi pada observasi/baris/kalimat yang
+sama.
 \end{frame}
 
 \hypertarget{nodes-dan-edges}{%
@@ -368,6 +471,51 @@ digunakan}\label{parameter-dalam-sna-yang-akan-digunakan}}
 \end{enumerate}
 \end{frame}
 
+\hypertarget{tokenisasi-nodes}{%
+\subsection{Tokenisasi nodes}\label{tokenisasi-nodes}}
+
+\begin{frame}[fragile]{Tokenisasi nodes}
+Berdasarkan proses terakhir yang sudah dilakukan, yaitu pengekstrakan
+nodes di kolom \texttt{full\_text}, kini kita perlu menjadikannya token,
+agar bisa dianggap sebagai network.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidytext)}
+
+\NormalTok{raw\_data }\OtherTok{=}\NormalTok{ raw\_data }\SpecialCharTok{\%\textgreater{}\%}
+   \FunctionTok{unnest\_tokens}\NormalTok{(target, user\_mention, }
+                 \AttributeTok{token =} \StringTok{"words"}\NormalTok{, }
+                 \AttributeTok{to\_lower =} \ConstantTok{FALSE}\NormalTok{)}
+\FunctionTok{glimpse}\NormalTok{(raw\_data)}
+\FunctionTok{View}\NormalTok{(raw\_data)}
+\end{Highlighting}
+\end{Shaded}
+\end{frame}
+
+\hypertarget{memastikan-data-network}{%
+\subsection{Memastikan data Network}\label{memastikan-data-network}}
+
+\begin{frame}[fragile]{Memastikan data Network}
+Dalam kondisi real, tidak semua twit memention usrename lain dalam
+postingannya. Karena dalam konsep newtork satu nodes harus terhubung
+dengan nodes lain, kita perlu pastikan variabel yang ada masing-masing
+memiliki pasangan.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{node\_edge1 }\OtherTok{=}\NormalTok{ raw\_data }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{select}\NormalTok{(}\AttributeTok{sumber =}\NormalTok{ user\_name, target)}
+
+\NormalTok{node\_edge1}\SpecialCharTok{$}\NormalTok{sumber }\OtherTok{=} \FunctionTok{paste0}\NormalTok{(}\StringTok{"@"}\NormalTok{, node\_edge1}\SpecialCharTok{$}\NormalTok{sumber)}
+\NormalTok{node\_edge1}\SpecialCharTok{$}\NormalTok{target }\OtherTok{=} \FunctionTok{paste0}\NormalTok{(}\StringTok{"@"}\NormalTok{, node\_edge1}\SpecialCharTok{$}\NormalTok{target)}
+
+\FunctionTok{View}\NormalTok{(node\_edge1)}
+\FunctionTok{glimpse}\NormalTok{(node\_edge1)}
+\end{Highlighting}
+\end{Shaded}
+\end{frame}
+
 \hypertarget{tools-yang-akan-digunakan}{%
 \section{Tools yang akan digunakan}\label{tools-yang-akan-digunakan}}
 
@@ -391,6 +539,48 @@ untuk membuat SNA: Pilihannya diantaranya adalah:
 \item
   Gephi (bisa diinstall di semua OS, gratis)
 \end{enumerate}
+\end{frame}
+
+\hypertarget{mengkespor-data-graph}{%
+\subsection{Mengkespor Data Graph}\label{mengkespor-data-graph}}
+
+\begin{frame}[fragile]{Mengkespor Data Graph}
+Jika kita akan mengerjakan SNA dengan software lain, maka kita perlu
+mengekspor data untuk SNA dalam format yang sesuai. Sebagai contoh,
+untuk Gephi kita bisa menggunakan format file \texttt{graphml}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(igraph)}
+
+\CommentTok{\# Membuat file graph}
+\NormalTok{g1 }\OtherTok{=} \FunctionTok{graph\_from\_data\_frame}\NormalTok{(}\AttributeTok{d =}\NormalTok{ node\_edge1, }
+                           \AttributeTok{directed =} \ConstantTok{FALSE}\NormalTok{)}
+\FunctionTok{class}\NormalTok{(g1)}
+
+\CommentTok{\# menyimpan file }
+\NormalTok{igraph}\SpecialCharTok{::}\FunctionTok{write\_graph}\NormalTok{(}\AttributeTok{graph =}\NormalTok{ g1, }
+                    \AttributeTok{file =} \StringTok{"data/tes\_net.graphml"}\NormalTok{, }
+                    \AttributeTok{format =} \StringTok{"graphml"}\NormalTok{)}
+\NormalTok{igraph}\SpecialCharTok{::}\FunctionTok{write\_graph}\NormalTok{(}\AttributeTok{graph =}\NormalTok{ g1, }
+                    \AttributeTok{file =} \StringTok{"data/tes\_net.txt"}\NormalTok{, }
+                    \AttributeTok{format =} \StringTok{"edgelist"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\end{frame}
+
+\hypertarget{cek-data-graph}{%
+\subsection{Cek data graph}\label{cek-data-graph}}
+
+\begin{frame}[fragile]{Cek data graph}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nodes }\OtherTok{=} \FunctionTok{data\_frame}\NormalTok{(}\AttributeTok{nodes =} \FunctionTok{V}\NormalTok{(}\AttributeTok{graph =}\NormalTok{ g1)}\SpecialCharTok{$}\NormalTok{name)}
+\NormalTok{edges }\OtherTok{=} \FunctionTok{get.edgelist}\NormalTok{(g1)}
+
+\FunctionTok{View}\NormalTok{(edges)}
+\end{Highlighting}
+\end{Shaded}
 \end{frame}
 
 

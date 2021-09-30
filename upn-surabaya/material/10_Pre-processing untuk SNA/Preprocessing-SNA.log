@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2019.3.1)  29 SEP 2021 17:57
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2019.3.1)  30 SEP 2021 10:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1143,56 +1143,74 @@ LaTeX Info: Redefining \lsstyle on input line 255.
 Package microtype Info: Loading configuration file microtype.cfg.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/microtype.cfg
 File: microtype.cfg 2016/05/14 v2.6a microtype main configuration file (RS)
-)) (/usr/local/texlive/2017/texmf-dist/tex/latex/tools/longtable.sty
+)) (/usr/local/texlive/2017/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count274
+\FV@InFile=\read3
+\FV@TabBox=\box70
+\c@FancyVerbLine=\count275
+\FV@StepNumber=\count276
+\FV@OutFile=\write5
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip63
+\fb@frw=\dimen279
+\fb@frh=\dimen280
+\FrameRule=\dimen281
+\FrameSep=\dimen282
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
-\LTleft=\skip63
-\LTright=\skip64
-\LTpre=\skip65
-\LTpost=\skip66
-\LTchunksize=\count274
-\LTcapwidth=\dimen279
-\LT@head=\box70
-\LT@firsthead=\box71
-\LT@foot=\box72
-\LT@lastfoot=\box73
-\LT@cols=\count275
-\LT@rows=\count276
-\c@LT@tables=\count277
-\c@LT@chunks=\count278
+\LTleft=\skip64
+\LTright=\skip65
+\LTpre=\skip66
+\LTpost=\skip67
+\LTchunksize=\count277
+\LTcapwidth=\dimen283
+\LT@head=\box71
+\LT@firsthead=\box72
+\LT@foot=\box73
+\LT@lastfoot=\box74
+\LT@cols=\count278
+\LT@rows=\count279
+\c@LT@tables=\count280
+\c@LT@chunks=\count281
 \LT@p@ftn=\toks46
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2016/04/27 v1.618033 publication quality tables
-\heavyrulewidth=\dimen280
-\lightrulewidth=\dimen281
-\cmidrulewidth=\dimen282
-\belowrulesep=\dimen283
-\belowbottomsep=\dimen284
-\aboverulesep=\dimen285
-\abovetopsep=\dimen286
-\cmidrulesep=\dimen287
-\cmidrulekern=\dimen288
-\defaultaddspace=\dimen289
-\@cmidla=\count279
-\@cmidlb=\count280
-\@aboverulesep=\dimen290
-\@belowrulesep=\dimen291
-\@thisruleclass=\count281
-\@lastruleclass=\count282
-\@thisrulewidth=\dimen292
+\heavyrulewidth=\dimen284
+\lightrulewidth=\dimen285
+\cmidrulewidth=\dimen286
+\belowrulesep=\dimen287
+\belowbottomsep=\dimen288
+\aboverulesep=\dimen289
+\abovetopsep=\dimen290
+\cmidrulesep=\dimen291
+\cmidrulekern=\dimen292
+\defaultaddspace=\dimen293
+\@cmidla=\count282
+\@cmidlb=\count283
+\@aboverulesep=\dimen294
+\@belowrulesep=\dimen295
+\@thisruleclass=\count284
+\@lastruleclass=\count285
+\@thisrulewidth=\dimen296
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 (/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen293
-\captionmargin@=\dimen294
-\captionwidth=\dimen295
-\caption@tempdima=\dimen296
-\caption@indent=\dimen297
-\caption@parindent=\dimen298
-\caption@hangindent=\dimen299
+\captionmargin=\dimen297
+\captionmargin@=\dimen298
+\captionwidth=\dimen299
+\caption@tempdima=\dimen300
+\caption@indent=\dimen301
+\caption@parindent=\dimen302
+\caption@hangindent=\dimen303
 )
-\c@ContinuedFloat=\count283
+\c@ContinuedFloat=\count286
 Package caption Info: beamer document class.
 Package caption Info: hyperref package is loaded.
 Package caption Info: Hyperref support is turned off
@@ -1205,22 +1223,22 @@ Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@r@tfl@t=\count284
-\rotFPtop=\skip67
-\rotFPbot=\skip68
-\rot@float@box=\box74
+\c@r@tfl@t=\count287
+\rotFPtop=\skip68
+\rotFPbot=\skip69
+\rot@float@box=\box75
 \rot@mess@toks=\toks47
 ) (/usr/local/texlive/2017/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box75
-\UL@hyphenbox=\box76
-\UL@skip=\skip69
+\UL@box=\box76
+\UL@hyphenbox=\box77
+\UL@skip=\skip70
 \UL@hook=\toks48
-\UL@height=\dimen300
-\UL@pe=\count285
-\UL@pixel=\dimen301
-\ULC@box=\box77
+\UL@height=\dimen304
+\UL@pe=\count288
+\UL@pixel=\dimen305
+\ULC@box=\box78
 Package: ulem 2012/05/18
-\ULdepth=\dimen302
+\ULdepth=\dimen306
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/wasysym/wasysym.sty
 Package: wasysym 2003/10/30 v2.0 Wasy-2 symbol support package
 \symwasy=\mathgroup6
@@ -1229,31 +1247,31 @@ LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
 ) (./Preprocessing-SNA.aux)
 \openout1 = `Preprocessing-SNA.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 200.
-LaTeX Font Info:    ... okay on input line 200.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 200.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 200.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 240.
+LaTeX Font Info:    ... okay on input line 240.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 240.
+LaTeX Font Info:    ... okay on input line 240.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 240.
+LaTeX Font Info:    ... okay on input line 240.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 240.
+LaTeX Font Info:    ... okay on input line 240.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 240.
+LaTeX Font Info:    ... okay on input line 240.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 240.
+LaTeX Font Info:    ... okay on input line 240.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 240.
+LaTeX Font Info:    ... okay on input line 240.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 240.
+LaTeX Font Info:    ... okay on input line 240.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 240.
+LaTeX Font Info:    ... okay on input line 240.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 240.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 240.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 200.
+LaTeX Font Info:    ... okay on input line 240.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1289,21 +1307,21 @@ LaTeX Font Info:    ... okay on input line 200.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box78
-Package hyperref Info: Link coloring OFF on input line 200.
+\AtBeginShipoutBox=\box79
+Package hyperref Info: Link coloring OFF on input line 240.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count286
+\c@section@level=\count289
 )
-LaTeX Info: Redefining \ref on input line 200.
-LaTeX Info: Redefining \pageref on input line 200.
-LaTeX Info: Redefining \nameref on input line 200.
+LaTeX Info: Redefining \ref on input line 240.
+LaTeX Info: Redefining \pageref on input line 240.
+LaTeX Info: Redefining \nameref on input line 240.
 (./Preprocessing-SNA.out) (./Preprocessing-SNA.out)
-\@outlinefile=\write5
-\openout5 = `Preprocessing-SNA.out'.
+\@outlinefile=\write6
+\openout6 = `Preprocessing-SNA.out'.
 
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/beamer/translator/dicts/translato
@@ -1330,8 +1348,8 @@ Dictionary: translator-numbers-dictionary, Language: English
 r-theorem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 200.
-LaTeX Info: Redefining \microtypecontext on input line 200.
+LaTeX Info: Redefining \includegraphics on input line 240.
+LaTeX Info: Redefining \microtypecontext on input line 240.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -1976,15 +1994,15 @@ Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
 (./Preprocessing-SNA.nav)
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 4.02687pt on input line 200.
+(Font)              scaled to size 4.02687pt on input line 240.
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 11.59738pt on input line 201.
+(Font)              scaled to size 11.59738pt on input line 241.
 .................................................
 . fontspec info: "set-scale"
 . 
 . Titillium Web scale = 0.8620011486482191.
 .................................................
-\g__fontspec_family_TitilliumWeb_int=\count287
+\g__fontspec_family_TitilliumWeb_int=\count290
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2027,24 +2045,24 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
 .................................................
 LaTeX Font Info:    Font shape `TU/TitilliumWeb(0)/m/n' will be
-(Font)              scaled to size 12.41278pt on input line 201.
+(Font)              scaled to size 12.41278pt on input line 241.
 .................................................
 . fontspec info: "set-scale"
 . 
 . Titillium Web scale = 0.8620011486482191.
 .................................................
 LaTeX Font Info:    Font shape `TU/TitilliumWeb(0)/m/n' will be
-(Font)              scaled to size 7.758pt on input line 201.
+(Font)              scaled to size 7.758pt on input line 241.
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 5.63762pt on input line 201.
+(Font)              scaled to size 5.63762pt on input line 241.
 File: styles/sadasa.png Graphic file (type QTm)
 <use  "styles/sadasa.png" > [1
 
 ]
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/it' will be
-(Font)              scaled to size 8.05374pt on input line 234.
+(Font)              scaled to size 8.05374pt on input line 274.
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/bx/n' will be
-(Font)              scaled to size 7.8952pt on input line 234.
+(Font)              scaled to size 7.8952pt on input line 274.
 [2
 
 ]
@@ -2090,6 +2108,9 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/bx/n' will be
 [5
 
 ]
+\openout4 = `Preprocessing-SNA.vrb'.
+
+(./Preprocessing-SNA.vrb)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2103,6 +2124,9 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/bx/n' will be
 [6
 
 ]
+\openout4 = `Preprocessing-SNA.vrb'.
+
+(./Preprocessing-SNA.vrb)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2116,6 +2140,9 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/bx/n' will be
 [7
 
 ]
+\openout4 = `Preprocessing-SNA.vrb'.
+
+(./Preprocessing-SNA.vrb)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2171,6 +2198,9 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/bx/n' will be
 [11
 
 ]
+\openout4 = `Preprocessing-SNA.vrb'.
+
+(./Preprocessing-SNA.vrb)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2184,9 +2214,9 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/bx/n' will be
 [12
 
 ]
-LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 7.24837pt on input line 399.
-(./Preprocessing-SNA.toc)
+\openout4 = `Preprocessing-SNA.vrb'.
+
+(./Preprocessing-SNA.vrb)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2200,28 +2230,93 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
 [13
 
 ]
-\tf@nav=\write6
-\openout6 = `Preprocessing-SNA.nav'.
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+[14
 
-\tf@toc=\write7
-\openout7 = `Preprocessing-SNA.toc'.
+]
+\openout4 = `Preprocessing-SNA.vrb'.
 
-\tf@snm=\write8
-\openout8 = `Preprocessing-SNA.snm'.
+(./Preprocessing-SNA.vrb)
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 400.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 400.
+Overfull \vbox (3.10669pt too high) detected at line 570
+ []
+
+[15
+
+]
+\openout4 = `Preprocessing-SNA.vrb'.
+
+(./Preprocessing-SNA.vrb)
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+[16
+
+]
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
+(Font)              scaled to size 7.24837pt on input line 589.
+(./Preprocessing-SNA.toc)
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+[17
+
+]
+\tf@nav=\write7
+\openout7 = `Preprocessing-SNA.nav'.
+
+\tf@toc=\write8
+\openout8 = `Preprocessing-SNA.toc'.
+
+\tf@snm=\write9
+\openout9 = `Preprocessing-SNA.snm'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 590.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 590.
 (./Preprocessing-SNA.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 400.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 400.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 590.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 590.
  ) 
 Here is how much of TeX's memory you used:
- 32318 strings out of 493005
- 630519 string characters out of 6134597
- 718643 words of memory out of 5000000
- 35765 multiletter control sequences out of 15000+600000
- 4298 words of font info for 40 fonts, out of 8000000 for 9000
+ 32817 strings out of 493005
+ 638008 string characters out of 6134597
+ 730187 words of memory out of 5000000
+ 36240 multiletter control sequences out of 15000+600000
+ 4306 words of font info for 41 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  57i,13n,120p,10415b,575s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Preprocessing-SNA.pdf (13 pages).
+Output written on Preprocessing-SNA.pdf (17 pages).

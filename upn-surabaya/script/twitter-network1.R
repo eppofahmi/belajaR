@@ -52,5 +52,4 @@ semantic_network <- twitter_data %>%
 # dashboard 
 # install.packages("VOSONDash")
 library(VOSONDash)
-
 runVOSONDash()
