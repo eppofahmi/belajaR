@@ -245,8 +245,7 @@ Data yang akan digunakan bisa diambil [**dari sini**](https://raw.githubusercont
 ```{r, eval=TRUE}
 library(tidyverse)
 
-data_twit = readr::read_csv("https://raw.githubusercontent.com/eppofahmi/belajaR/master/upn-surabaya/data/%23savejakarta.csv")
-
+data_twit = readr::read_csv("data/tweet_save_monas.csv")
 glimpse(data_twit[,1:6])
 ```
 
