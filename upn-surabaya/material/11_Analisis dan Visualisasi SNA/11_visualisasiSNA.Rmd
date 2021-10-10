@@ -30,6 +30,7 @@ knitr::opts_chunk$set(
 )
 library(tidyverse)
 library(stevemisc)
+library(tidyverse)
 ```
 
 Salam kenal dan selamat datang.
@@ -53,10 +54,6 @@ Ujang Fahmi,
 
 *Materi yang disampaikan disimpan dan dokumentasikan* [**disini**](https://github.com/eppofahmi/belajaR/tree/master/upn-surabaya)
 
-
-# Visualisasi
-
-Materi berikut merupakan materi visualisasi network di R. Terdapat beberapa package yang akan digunakan untuk membuat visualisasi di sini. Selain itu, kita juga akan menghitung centrality dan modularity network di R secara langsung. Sehingga secara keseluruhan kita tidak perlu lagi pindah ke perangkat lain. 
 
 # Persiapan
 
@@ -146,5 +143,9 @@ member = data_frame(modularity_class = wtc$membership)
 hasil = bind_cols(hasil, member)
 ```
 
+# Visualisasi
 
-# Analisis dan Interpretasi
+Materi berikut merupakan materi visualisasi network di R. Terdapat beberapa package yang akan digunakan untuk membuat visualisasi di sini. Selain itu, kita juga akan menghitung centrality dan modularity network di R secara langsung. Sehingga secara keseluruhan kita tidak perlu lagi pindah ke perangkat lain. 
+
+# Analisis
+

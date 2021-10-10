@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2019.3.1)  6 OCT 2021 08:34
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2019.3.1)  10 OCT 2021 08:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2021,12 +2021,15 @@ File: styles/sadasa.png Graphic file (type QTm)
 
 ]
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/it' will be
-(Font)              scaled to size 8.05374pt on input line 268.
+(Font)              scaled to size 8.05374pt on input line 274.
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/bx/n' will be
-(Font)              scaled to size 7.8952pt on input line 268.
+(Font)              scaled to size 7.8952pt on input line 274.
 [2
 
 ]
+\openout4 = `11_visualisasiSNA.vrb'.
+
+(./11_visualisasiSNA.vrb)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2136,9 +2139,9 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/bx/n' will be
 [9
 
 ]
-\openout4 = `11_visualisasiSNA.vrb'.
-
-(./11_visualisasiSNA.vrb)
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
+(Font)              scaled to size 7.24837pt on input line 409.
+(./11_visualisasiSNA.toc)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2152,22 +2155,6 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/bx/n' will be
 [10
 
 ]
-LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 7.24837pt on input line 417.
-(./11_visualisasiSNA.toc)
-.................................................
-. fontspec info: "set-scale"
-. 
-. Titillium Web scale = 0.8620011486482191.
-.................................................
-.................................................
-. fontspec info: "set-scale"
-. 
-. Titillium Web scale = 0.8620011486482191.
-.................................................
-[11
-
-]
 \tf@nav=\write7
 \openout7 = `11_visualisasiSNA.nav'.
 
@@ -2177,19 +2164,19 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
 \tf@snm=\write9
 \openout9 = `11_visualisasiSNA.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 418.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 418.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 410.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 410.
 (./11_visualisasiSNA.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 418.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 418.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 410.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 410.
  ) 
 Here is how much of TeX's memory you used:
- 32601 strings out of 493005
- 635211 string characters out of 6134597
- 724175 words of memory out of 5000000
- 36038 multiletter control sequences out of 15000+600000
+ 32594 strings out of 493005
+ 635155 string characters out of 6134597
+ 724993 words of memory out of 5000000
+ 36031 multiletter control sequences out of 15000+600000
  4306 words of font info for 41 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  57i,13n,120p,10415b,575s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 11_visualisasiSNA.pdf (11 pages).
+Output written on 11_visualisasiSNA.pdf (10 pages).
