@@ -146,6 +146,5 @@ member = data_frame(modularity_class = wtc$membership)
 hasil = bind_cols(hasil, member)
 ```
 
-## Tampilan yang diperlukan
 
 # Analisis dan Interpretasi
