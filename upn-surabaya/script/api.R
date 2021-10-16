@@ -67,26 +67,15 @@ stream_tweets("#percumalaporpolisi",
               file_name = "tweets.json")
 
 
-## Not run: 
-data_twit = list()
-for (i in seq_along(1:5)) {
-  df <- stream_tweets("#percumalaporpolisi", timeout = 30)
-  ## stream tweets mentioning "election" for 90 seconds
-  if(nrow(df) == 0){
-    df <- stream_tweets("#percumalaporpolisi", timeout = 30)
-  } else {
-    data_twit[[i]] = e
-    rm(df)
-    }
-  }
-
 
 # net data 
 ## search for #rstats tweets
 # rstats <- search_tweets("#rstats", n = 200)
 
 ## create from-to data frame representing retweet/mention/reply connections
-rstats_net <- network_data(rstats, "retweet,mention,reply")
+sample1 = tweets[1:100, ]
+
+rstats_net <- network_data(sample1, "retweet,mention,reply")
 
 ## view edge data frame
 rstats_net
@@ -98,10 +87,8 @@ attr(rstats_net, "idsn")
 if (requireNamespace("igraph", quietly = TRUE)) {
   
   ## (1) convert directly to graph object representing semantic network
-  rstats_net <- network_graph(rstats)
+  rstats_net <- network_graph(tweets)
   
   ## (2) plot graph via igraph.plotting
   plot(rstats_net)
 }
-
-

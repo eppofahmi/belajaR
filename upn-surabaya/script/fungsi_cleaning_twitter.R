@@ -61,10 +61,11 @@ tweet_cleaner <- function(data)
   data <- mgsub_regex(data, pattern = pattern1, replacement = replacement1, fixed = FALSE)
   
   # stopwords bahasa indonesia
-  stopwords_id <- read.delim(text=getURL("https://raw.githubusercontent.com/eppofahmi/ID-Stopwords/master/id.stopwords.02.01.2016.txt"), 
-                             header=F)
+  stopwords_id <- read.delim("https://raw.githubusercontent.com/eppofahmi/belajaR/master/upn-surabaya/data/stopwords_id.csv")
+  colnames(stopwords_id) = "V1"
   stopwords_id$to <- ""
   stopwords_id$V1 <- paste0("\\b", stopwords_id$V1, "\\b") # excact macth
+  
   pattern2 <- as.character(stopwords_id$V1)
   replacement2 <- as.character(stopwords_id$to)
   data <- mgsub_regex(data, pattern = pattern2, replacement = replacement2, fixed = FALSE)
@@ -100,8 +101,7 @@ tweet_cleaner <- function(data)
 }
 
 # test 
-# teks_clean <- tweet_cleaner(data = datasets$full_text)
-# 
+# teks_clean <- tweet_cleaner(data = tweet_analisis$full_text_clean)
 # datasets$clean_text <- teks_clean$clean_text
 # 
 # # after_pre$full_text_norm <- teks_clean$clean_text

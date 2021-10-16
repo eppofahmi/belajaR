@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2019.3.1)  10 OCT 2021 08:18
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2019.3.1)  14 OCT 2021 17:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1161,6 +1161,14 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \fb@frh=\dimen280
 \FrameRule=\dimen281
 \FrameSep=\dimen282
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/grffile.sty
+Package: grffile 2016/05/16 v1.17 Extended file name support for graphics (HO)
+Package grffile Info: \Gread@QTm patched on input line 253.
+Package grffile Info: \Gread@eps patched on input line 303.
+Package grffile Info: Option `multidot' is set to `true'.
+Package grffile Info: Option `extendedchars' is set to `false'.
+Package grffile Info: Option `space' is set to `true'.
+Package grffile Info: \Gin@ii of package `graphicx' fixed on input line 486.
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/rotating.sty
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ifthen.sty
@@ -1209,31 +1217,31 @@ LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
 ) (./11_visualisasiSNA.aux)
 \openout1 = `11_visualisasiSNA.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 234.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 234.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 243.
+LaTeX Font Info:    ... okay on input line 243.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 243.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 243.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    ... okay on input line 243.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1270,7 +1278,7 @@ LaTeX Font Info:    ... okay on input line 234.
 
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box75
-Package hyperref Info: Link coloring OFF on input line 234.
+Package hyperref Info: Link coloring OFF on input line 243.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -1278,9 +1286,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count280
 )
-LaTeX Info: Redefining \ref on input line 234.
-LaTeX Info: Redefining \pageref on input line 234.
-LaTeX Info: Redefining \nameref on input line 234.
+LaTeX Info: Redefining \ref on input line 243.
+LaTeX Info: Redefining \pageref on input line 243.
+LaTeX Info: Redefining \nameref on input line 243.
 (./11_visualisasiSNA.out) (./11_visualisasiSNA.out)
 \@outlinefile=\write6
 \openout6 = `11_visualisasiSNA.out'.
@@ -1310,8 +1318,8 @@ Dictionary: translator-numbers-dictionary, Language: English
 r-theorem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 234.
-LaTeX Info: Redefining \microtypecontext on input line 234.
+LaTeX Info: Redefining \includegraphics on input line 243.
+LaTeX Info: Redefining \microtypecontext on input line 243.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -1955,9 +1963,9 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 (./11_visualisasiSNA.nav)
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 4.02687pt on input line 234.
+(Font)              scaled to size 4.02687pt on input line 243.
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 11.59738pt on input line 235.
+(Font)              scaled to size 11.59738pt on input line 244.
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2006,24 +2014,24 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
 .................................................
 LaTeX Font Info:    Font shape `TU/TitilliumWeb(0)/m/n' will be
-(Font)              scaled to size 12.41278pt on input line 235.
+(Font)              scaled to size 12.41278pt on input line 244.
 .................................................
 . fontspec info: "set-scale"
 . 
 . Titillium Web scale = 0.8620011486482191.
 .................................................
 LaTeX Font Info:    Font shape `TU/TitilliumWeb(0)/m/n' will be
-(Font)              scaled to size 7.758pt on input line 235.
+(Font)              scaled to size 7.758pt on input line 244.
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 5.63762pt on input line 235.
+(Font)              scaled to size 5.63762pt on input line 244.
 File: styles/sadasa.png Graphic file (type QTm)
 <use  "styles/sadasa.png" > [1
 
 ]
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/it' will be
-(Font)              scaled to size 8.05374pt on input line 274.
+(Font)              scaled to size 8.05374pt on input line 277.
 LaTeX Font Info:    Font shape `TU/OpenSans(0)/bx/n' will be
-(Font)              scaled to size 7.8952pt on input line 274.
+(Font)              scaled to size 7.8952pt on input line 277.
 [2
 
 ]
@@ -2072,6 +2080,10 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/bx/n' will be
 . 
 . Titillium Web scale = 0.8620011486482191.
 .................................................
+
+Overfull \vbox (14.33669pt too high) detected at line 351
+ []
+
 [5
 
 ]
@@ -2139,9 +2151,9 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/bx/n' will be
 [9
 
 ]
-LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
-(Font)              scaled to size 7.24837pt on input line 409.
-(./11_visualisasiSNA.toc)
+\openout4 = `11_visualisasiSNA.vrb'.
+
+(./11_visualisasiSNA.vrb)
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2155,6 +2167,159 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
 [10
 
 ]
+\openout4 = `11_visualisasiSNA.vrb'.
+
+(./11_visualisasiSNA.vrb
+File: 11_visualisasiSNA_files/figure-beamer/unnamed-chunk-8-1.pdf Graphic file 
+(type QTm)
+<use  "11_visualisasiSNA_files/figure-beamer/unnamed-chunk-8-1.pdf" >)
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+
+Overfull \vbox (94.66539pt too high) detected at line 470
+ []
+
+[11
+
+]
+\openout4 = `11_visualisasiSNA.vrb'.
+
+(./11_visualisasiSNA.vrb
+File: 11_visualisasiSNA_files/figure-beamer/unnamed-chunk-9-1.pdf Graphic file 
+(type QTm)
+<use  "11_visualisasiSNA_files/figure-beamer/unnamed-chunk-9-1.pdf" >)
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+
+Overfull \vbox (69.20244pt too high) detected at line 488
+ []
+
+[12
+
+]
+\openout4 = `11_visualisasiSNA.vrb'.
+
+(./11_visualisasiSNA.vrb
+File: 11_visualisasiSNA_files/figure-beamer/unnamed-chunk-10-1.pdf Graphic file
+ (type QTm)
+<use  "11_visualisasiSNA_files/figure-beamer/unnamed-chunk-10-1.pdf" >
+File: 11_visualisasiSNA_files/figure-beamer/unnamed-chunk-11-1.pdf Graphic file
+ (type QTm)
+<use  "11_visualisasiSNA_files/figure-beamer/unnamed-chunk-11-1.pdf" >
+File: 11_visualisasiSNA_files/figure-beamer/unnamed-chunk-11-2.pdf Graphic file
+ (type QTm)
+<use  "11_visualisasiSNA_files/figure-beamer/unnamed-chunk-11-2.pdf" >)
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+
+Overfull \vbox (612.23994pt too high) detected at line 530
+ []
+
+[13
+
+]
+\openout4 = `11_visualisasiSNA.vrb'.
+
+(./11_visualisasiSNA.vrb
+File: 11_visualisasiSNA_files/figure-beamer/unnamed-chunk-12-1.pdf Graphic file
+ (type QTm)
+<use  "11_visualisasiSNA_files/figure-beamer/unnamed-chunk-12-1.pdf" >
+File: 11_visualisasiSNA_files/figure-beamer/unnamed-chunk-13-1.pdf Graphic file
+ (type QTm)
+<use  "11_visualisasiSNA_files/figure-beamer/unnamed-chunk-13-1.pdf" >)
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+
+Overfull \vbox (419.43237pt too high) detected at line 568
+ []
+
+[14
+
+]
+\openout4 = `11_visualisasiSNA.vrb'.
+
+(./11_visualisasiSNA.vrb
+File: 11_visualisasiSNA_files/figure-beamer/unnamed-chunk-14-1.pdf Graphic file
+ (type QTm)
+<use  "11_visualisasiSNA_files/figure-beamer/unnamed-chunk-14-1.pdf" >)
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+
+Overfull \vbox (57.19235pt too high) detected at line 585
+ []
+
+[15
+
+]
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+[16
+
+]
+LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
+(Font)              scaled to size 7.24837pt on input line 599.
+(./11_visualisasiSNA.toc)
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Titillium Web scale = 0.8620011486482191.
+.................................................
+[17
+
+]
 \tf@nav=\write7
 \openout7 = `11_visualisasiSNA.nav'.
 
@@ -2164,19 +2329,19 @@ LaTeX Font Info:    Font shape `TU/OpenSans(0)/m/n' will be
 \tf@snm=\write9
 \openout9 = `11_visualisasiSNA.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 410.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 410.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 600.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 600.
 (./11_visualisasiSNA.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 410.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 410.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 600.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 600.
  ) 
 Here is how much of TeX's memory you used:
- 32594 strings out of 493005
- 635155 string characters out of 6134597
- 724993 words of memory out of 5000000
- 36031 multiletter control sequences out of 15000+600000
+ 32723 strings out of 493005
+ 637783 string characters out of 6134597
+ 730549 words of memory out of 5000000
+ 36136 multiletter control sequences out of 15000+600000
  4306 words of font info for 41 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  57i,13n,120p,10415b,575s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 11_visualisasiSNA.pdf (10 pages).
+Output written on 11_visualisasiSNA.pdf (17 pages).

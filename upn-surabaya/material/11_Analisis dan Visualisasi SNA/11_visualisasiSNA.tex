@@ -67,6 +67,15 @@
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight0.8\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
 % Comment these out if you don't want a slide with just the
 % part/section/subsection/subsubsection title:
@@ -259,18 +268,12 @@ Jadi selamat belajar!!!
 
 Ujang Fahmi,
 
-Yogyakarta, 2021-10-10
+Yogyakarta, 2021-10-14
 
 \vspace{0.1in}
 
 \emph{Materi yang disampaikan disimpan dan dokumentasikan}
 \href{https://github.com/eppofahmi/belajaR/tree/master/upn-surabaya}{\textbf{disini}}
-
-Materi berikut merupakan materi visualisasi network di R. Terdapat
-beberapa package yang akan digunakan untuk membuat visualisasi di sini.
-Selain itu, kita juga akan menghitung centrality dan modularity network
-di R secara langsung. Sehingga secara keseluruhan kita tidak perlu lagi
-pindah ke perangkat lain.
 \end{frame}
 
 \hypertarget{persiapan}{%
@@ -311,7 +314,7 @@ bisa mengimpornya terelebih dahulu menggunakan skrip berikut:
 \FunctionTok{gsize}\NormalTok{(data\_net)}
 
 \CommentTok{\# tes 1}
-\FunctionTok{plot}\NormalTok{(data\_net, }\AttributeTok{edge.arrow.size =} \FloatTok{0.2}\NormalTok{)}
+\CommentTok{\# plot(data\_net, edge.arrow.size = 0.2)}
 \end{Highlighting}
 \end{Shaded}
 \end{frame}
@@ -329,11 +332,19 @@ terlebeih dahulu.
 \begin{Highlighting}[]
 \CommentTok{\# extract nodes}
 \NormalTok{nodes }\OtherTok{=} \FunctionTok{data\_frame}\NormalTok{(}\AttributeTok{id =} \FunctionTok{V}\NormalTok{(data\_net)}\SpecialCharTok{$}\NormalTok{id, }\AttributeTok{nodes =} \FunctionTok{V}\NormalTok{(data\_net)}\SpecialCharTok{$}\NormalTok{name)}
+\NormalTok{nodes }\OtherTok{=}\NormalTok{ nodes }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{duplicated}\NormalTok{(nodes))}
 \FunctionTok{glimpse}\NormalTok{(nodes)}
 
 \CommentTok{\# extract edges}
 \NormalTok{edges }\OtherTok{=} \FunctionTok{ends}\NormalTok{(data\_net, }\FunctionTok{E}\NormalTok{(data\_net))}
 \NormalTok{edges }\OtherTok{=} \FunctionTok{as.data.frame}\NormalTok{(edges)}
+\NormalTok{edges}\SpecialCharTok{$}\NormalTok{V1 }\OtherTok{=} \FunctionTok{as.character}\NormalTok{(edges}\SpecialCharTok{$}\NormalTok{V1)}
+\NormalTok{edges}\SpecialCharTok{$}\NormalTok{V2 }\OtherTok{=} \FunctionTok{as.character}\NormalTok{(edges}\SpecialCharTok{$}\NormalTok{V2)}
+\NormalTok{edges }\OtherTok{=}\NormalTok{ edges }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{group\_by}\NormalTok{(V1) }\SpecialCharTok{\%\textgreater{}\%} 
+   \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{duplicated}\NormalTok{(V2))}
+
 \FunctionTok{glimpse}\NormalTok{(edges)}
 \end{Highlighting}
 \end{Shaded}
@@ -400,8 +411,187 @@ terlebeih dahulu.
 \end{Shaded}
 \end{frame}
 
-\hypertarget{analisis-dan-interpretasi}{%
-\section{Analisis dan Interpretasi}\label{analisis-dan-interpretasi}}
+\hypertarget{visualisasi-sna}{%
+\section{Visualisasi SNA}\label{visualisasi-sna}}
+
+\begin{frame}[fragile]{Visualisasi SNA}
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(igraph)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'igraph'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     decompose, spectrum
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:base':
+## 
+##     union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nodes }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://kateto.net/workshops/data/Dataset1{-}Media{-}Example{-}NODES.csv"}\NormalTok{, }\AttributeTok{header=}\NormalTok{T, }\AttributeTok{as.is=}\NormalTok{T)}
+\NormalTok{links }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://kateto.net/workshops/data/Dataset1{-}Media{-}Example{-}EDGES.csv"}\NormalTok{, }\AttributeTok{header=}\NormalTok{T, }\AttributeTok{as.is=}\NormalTok{T)}
+\CommentTok{\# head(nodes)}
+\CommentTok{\# head(links)}
+\NormalTok{net }\OtherTok{\textless{}{-}} \FunctionTok{graph\_from\_data\_frame}\NormalTok{(}\AttributeTok{d=}\NormalTok{links, }\AttributeTok{vertices=}\NormalTok{nodes, }\AttributeTok{directed=}\NormalTok{T) }
+\end{Highlighting}
+\end{Shaded}
+\end{frame}
+
+\hypertarget{distribusi-degree}{%
+\subsection{Distribusi Degree}\label{distribusi-degree}}
+
+\begin{frame}[fragile]{Distribusi Degree}
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{V}\NormalTok{(net)}\SpecialCharTok{$}\NormalTok{label }\OtherTok{\textless{}{-}} \FunctionTok{V}\NormalTok{(net)}\SpecialCharTok{$}\NormalTok{media}
+\FunctionTok{V}\NormalTok{(net)}\SpecialCharTok{$}\NormalTok{degree }\OtherTok{\textless{}{-}} \FunctionTok{degree}\NormalTok{(net)}
+
+\FunctionTok{hist}\NormalTok{(}\FunctionTok{V}\NormalTok{(net)}\SpecialCharTok{$}\NormalTok{degree,}
+     \AttributeTok{col =} \StringTok{\textquotesingle{}green\textquotesingle{}}\NormalTok{,}
+     \AttributeTok{main =} \StringTok{\textquotesingle{}Histogram of Node Degree\textquotesingle{}}\NormalTok{,}
+     \AttributeTok{ylab =} \StringTok{\textquotesingle{}Frequency\textquotesingle{}}\NormalTok{,}
+     \AttributeTok{xlab =} \StringTok{\textquotesingle{}Degree of Vertices\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{11_visualisasiSNA_files/figure-beamer/unnamed-chunk-8-1.pdf}
+\end{frame}
+
+\hypertarget{network-diagram}{%
+\subsection{Network diagram}\label{network-diagram}}
+
+\begin{frame}[fragile]{Network diagram}
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{222}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(net,}
+     \AttributeTok{vertex.color =} \StringTok{\textquotesingle{}green\textquotesingle{}}\NormalTok{,}
+     \AttributeTok{vertext.size =} \DecValTok{2}\NormalTok{,}
+     \AttributeTok{edge.arrow.size =} \FloatTok{0.1}\NormalTok{,}
+     \AttributeTok{vertex.label.cex =} \FloatTok{0.8}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{11_visualisasiSNA_files/figure-beamer/unnamed-chunk-9-1.pdf}
+\end{frame}
+
+\hypertarget{highlighting-degrees-layouts}{%
+\subsection{Highlighting degrees \&
+layouts}\label{highlighting-degrees-layouts}}
+
+\begin{frame}[fragile]{Highlighting degrees \& layouts}
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(net,}
+     \AttributeTok{vertex.color =} \FunctionTok{rainbow}\NormalTok{(}\DecValTok{52}\NormalTok{),}
+     \AttributeTok{vertex.size =} \FunctionTok{V}\NormalTok{(net)}\SpecialCharTok{$}\NormalTok{degree}\SpecialCharTok{*}\FloatTok{0.4}\NormalTok{,}
+     \AttributeTok{edge.arrow.size =} \FloatTok{0.1}\NormalTok{,}
+     \AttributeTok{layout=}\NormalTok{layout.fruchterman.reingold)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{11_visualisasiSNA_files/figure-beamer/unnamed-chunk-10-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(net,}
+     \AttributeTok{vertex.color =} \FunctionTok{rainbow}\NormalTok{(}\DecValTok{52}\NormalTok{),}
+     \AttributeTok{vertex.size =} \FunctionTok{V}\NormalTok{(net)}\SpecialCharTok{$}\NormalTok{degree}\SpecialCharTok{*}\FloatTok{0.4}\NormalTok{,}
+     \AttributeTok{edge.arrow.size =} \FloatTok{0.1}\NormalTok{,}
+     \AttributeTok{layout=}\NormalTok{layout.graphopt)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{11_visualisasiSNA_files/figure-beamer/unnamed-chunk-11-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(net,}
+     \AttributeTok{vertex.color =} \FunctionTok{rainbow}\NormalTok{(}\DecValTok{52}\NormalTok{),}
+     \AttributeTok{vertex.size =} \FunctionTok{V}\NormalTok{(net)}\SpecialCharTok{$}\NormalTok{degree}\SpecialCharTok{*}\FloatTok{0.4}\NormalTok{,}
+     \AttributeTok{edge.arrow.size =} \FloatTok{0.1}\NormalTok{,}
+     \AttributeTok{layout=}\NormalTok{layout.kamada.kawai)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{11_visualisasiSNA_files/figure-beamer/unnamed-chunk-11-2.pdf}
+\end{frame}
+
+\hypertarget{hub-and-authorities}{%
+\subsection{Hub and Authorities}\label{hub-and-authorities}}
+
+\begin{frame}[fragile]{Hub and Authorities}
+Basically, the hub has many outgoing links, and Authorities have many
+incoming links.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{hs }\OtherTok{\textless{}{-}} \FunctionTok{hub\_score}\NormalTok{(net)}\SpecialCharTok{$}\NormalTok{vector}
+\NormalTok{as }\OtherTok{\textless{}{-}} \FunctionTok{authority.score}\NormalTok{(net)}\SpecialCharTok{$}\NormalTok{vector}
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(net,}
+     \AttributeTok{vertex.size=}\NormalTok{hs}\SpecialCharTok{*}\DecValTok{30}\NormalTok{,}
+     \AttributeTok{main =} \StringTok{\textquotesingle{}Hubs\textquotesingle{}}\NormalTok{,}
+     \AttributeTok{vertex.color =} \FunctionTok{rainbow}\NormalTok{(}\DecValTok{52}\NormalTok{),}
+     \AttributeTok{edge.arrow.size=}\FloatTok{0.1}\NormalTok{,}
+     \AttributeTok{layout =}\NormalTok{ layout.kamada.kawai)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{11_visualisasiSNA_files/figure-beamer/unnamed-chunk-12-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(net,}
+     \AttributeTok{vertex.size=}\NormalTok{as}\SpecialCharTok{*}\DecValTok{30}\NormalTok{,}
+     \AttributeTok{main =} \StringTok{\textquotesingle{}Authorities\textquotesingle{}}\NormalTok{,}
+     \AttributeTok{vertex.color =} \FunctionTok{rainbow}\NormalTok{(}\DecValTok{52}\NormalTok{),}
+     \AttributeTok{edge.arrow.size=}\FloatTok{0.1}\NormalTok{,}
+     \AttributeTok{layout =}\NormalTok{ layout.kamada.kawai)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{11_visualisasiSNA_files/figure-beamer/unnamed-chunk-13-1.pdf}
+\end{frame}
+
+\hypertarget{community-detection}{%
+\subsection{Community Detection}\label{community-detection}}
+
+\begin{frame}[fragile]{Community Detection}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cnet }\OtherTok{\textless{}{-}} \FunctionTok{cluster\_edge\_betweenness}\NormalTok{(net)}
+\FunctionTok{plot}\NormalTok{(cnet,}
+\NormalTok{     net,}
+     \AttributeTok{vertex.size =} \DecValTok{10}\NormalTok{,}
+     \AttributeTok{vertex.label.cex =} \FloatTok{0.8}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{11_visualisasiSNA_files/figure-beamer/unnamed-chunk-14-1.pdf}
+\end{frame}
+
+\hypertarget{analisis-dengan-gephi}{%
+\section{Analisis dengan gephi}\label{analisis-dengan-gephi}}
+
+\begin{frame}{Analisis dengan gephi}
+Untuk bisa melakukan analisis network di Gephi kita perlu tahu dulu apa
+persyaratan yang diperlukan: Dalam konteks ini file seperti apa yang
+dibutuhkan di gephi atau perangkat lunak sejenis.
+\end{frame}
 
 
 \section[]{}

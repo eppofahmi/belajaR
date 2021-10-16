@@ -76,7 +76,7 @@ class(data_net)
 gsize(data_net)
 
 # tes 1
-plot(data_net, edge.arrow.size = 0.2)
+# plot(data_net, edge.arrow.size = 0.2)
 ```
 
 ## Menambahan centrality dan modularity
@@ -86,11 +86,19 @@ Sebelum mengukur centrality dan modularity, untuk mempermudah proses visualisasi
 ```{r, eval=FALSE}
 # extract nodes
 nodes = data_frame(id = V(data_net)$id, nodes = V(data_net)$name)
+nodes = nodes %>% 
+   filter(!duplicated(nodes))
 glimpse(nodes)
 
 # extract edges
 edges = ends(data_net, E(data_net))
 edges = as.data.frame(edges)
+edges$V1 = as.character(edges$V1)
+edges$V2 = as.character(edges$V2)
+edges = edges %>% 
+   group_by(V1) %>% 
+   filter(!duplicated(V2))
+
 glimpse(edges)
 ```
 
@@ -143,9 +151,102 @@ member = data_frame(modularity_class = wtc$membership)
 hasil = bind_cols(hasil, member)
 ```
 
-# Visualisasi
+# Visualisasi SNA
 
-Materi berikut merupakan materi visualisasi network di R. Terdapat beberapa package yang akan digunakan untuk membuat visualisasi di sini. Selain itu, kita juga akan menghitung centrality dan modularity network di R secara langsung. Sehingga secara keseluruhan kita tidak perlu lagi pindah ke perangkat lain. 
+```{r}
+library(igraph)
 
-# Analisis
+nodes <- read.csv("https://kateto.net/workshops/data/Dataset1-Media-Example-NODES.csv", header=T, as.is=T)
+links <- read.csv("https://kateto.net/workshops/data/Dataset1-Media-Example-EDGES.csv", header=T, as.is=T)
+# head(nodes)
+# head(links)
+net <- graph_from_data_frame(d=links, vertices=nodes, directed=T) 
+```
 
+## Distribusi Degree
+
+```{r}
+V(net)$label <- V(net)$media
+V(net)$degree <- degree(net)
+
+hist(V(net)$degree,
+     col = 'green',
+     main = 'Histogram of Node Degree',
+     ylab = 'Frequency',
+     xlab = 'Degree of Vertices')
+```
+
+## Network diagram
+
+```{r}
+set.seed(222)
+plot(net,
+     vertex.color = 'green',
+     vertext.size = 2,
+     edge.arrow.size = 0.1,
+     vertex.label.cex = 0.8)
+```
+
+## Highlighting degrees & layouts
+
+```{r}
+plot(net,
+     vertex.color = rainbow(52),
+     vertex.size = V(net)$degree*0.4,
+     edge.arrow.size = 0.1,
+     layout=layout.fruchterman.reingold)
+```
+
+```{r}
+plot(net,
+     vertex.color = rainbow(52),
+     vertex.size = V(net)$degree*0.4,
+     edge.arrow.size = 0.1,
+     layout=layout.graphopt)
+
+plot(net,
+     vertex.color = rainbow(52),
+     vertex.size = V(net)$degree*0.4,
+     edge.arrow.size = 0.1,
+     layout=layout.kamada.kawai)
+```
+
+## Hub and Authorities
+
+Basically, the hub has many outgoing links, and Authorities have many incoming links.
+
+```{r}
+hs <- hub_score(net)$vector
+as <- authority.score(net)$vector
+set.seed(123)
+plot(net,
+     vertex.size=hs*30,
+     main = 'Hubs',
+     vertex.color = rainbow(52),
+     edge.arrow.size=0.1,
+     layout = layout.kamada.kawai)
+```
+
+```{r}
+set.seed(123)
+plot(net,
+     vertex.size=as*30,
+     main = 'Authorities',
+     vertex.color = rainbow(52),
+     edge.arrow.size=0.1,
+     layout = layout.kamada.kawai)
+```
+
+## Community Detection
+
+```{r, message=F, warning=F}
+cnet <- cluster_edge_betweenness(net)
+plot(cnet,
+     net,
+     vertex.size = 10,
+     vertex.label.cex = 0.8)
+```
+
+# Analisis dengan gephi
+
+Untuk bisa melakukan analisis network di Gephi kita perlu tahu dulu apa persyaratan yang diperlukan: Dalam konteks ini file seperti apa yang dibutuhkan di gephi atau perangkat lunak sejenis. 
