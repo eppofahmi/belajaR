@@ -45,7 +45,8 @@ Jika anda berada dan sedang membaca tutorial ini, maka kemungkinan anda adalah o
 Satu hal yang pasti, ini adalah langkah pertama dari banyak langkah yang harus dilalui, entah melalui lembaga resmi atau belajar secara mandiri. Jadi selamat belajar!!!
 
 \vspace{0.1in}
-Ujang Fahmi, 
+
+Ujang Fahmi,
 
 `r paste("Yogyakarta,", Sys.Date())`
 
@@ -59,7 +60,7 @@ Di worksapce kita menulis
 a + 198
 ```
 
-Di console menampilkan: 
+Di console menampilkan:
 
 `Error: object 'a' not found`
 
@@ -75,28 +76,29 @@ df1 = read_csv("folder1/file.csv")
 
 Tapi, di `console` kita masih tetap menerima error berikut:
 
-`Error in read_csv("folder1/file.csv") : `
-  
-  `could not find function "read_csv"`
+`Error in read_csv("folder1/file.csv") :`
+
+`could not find function "read_csv"`
 
 Error menunjukkan bahwa fungsi `read_csv` tidak ditemukan. Artinya kita belum memanggil library yang dibutuhkan.
 
 # Impor dan Ekspor Data
 
-> Di R kita hanya bisa mengolah data yang yang sudah kita impor atau berada di *environment* R. Maka ketika ada `error: object not found` di console, sebagian besar disebabkan oleh data/objek yang belum ada. 
+> Di R kita hanya bisa mengolah data yang yang sudah kita impor atau berada di *environment* R. Maka ketika ada `error: object not found` di console, sebagian besar disebabkan oleh data/objek yang belum ada.
 
 ## Impor Data
 
-- Impor data merupakan salah satu langkah pertama dan utama dalam pengolahan data
-- impor umumnya menggunakan sintak dengan awalan `read`. Misal `read.csv()` atau `read_csv`, sama-sama digunakan untuk impor data `.csv`
+-   Impor data merupakan salah satu langkah pertama dan utama dalam pengolahan data
+-   impor umumnya menggunakan sintak dengan awalan `read`. Misal `read.csv()` atau `read_csv`, sama-sama digunakan untuk impor data `.csv`
 
 ### Impor data frame
-Data frame atau data flate di R bisa diimpor dengan beberapa sintaks dari beberapa package. 
 
-Argumen yang dibutuhkan: 
+Data frame atau data flate di R bisa diimpor dengan beberapa sintaks dari beberapa package.
 
-1. namfolder
-2. namafile atau link data
+Argumen yang dibutuhkan:
+
+1.  namfolder
+2.  namafile atau link data
 
 ```{r}
 # dasar
@@ -112,11 +114,11 @@ df3 = read_excel(path = "namafolder/namafile.xlsx", sheet = 1)
 
 ### Impor data json
 
-`Json` atau `java script object notation` adalah format data yang umum digunakan untuk ditampilkan di sebuah laman/website. 
+`Json` atau `java script object notation` adalah format data yang umum digunakan untuk ditampilkan di sebuah laman/website.
 
 Contoh:
 
-> https://raw.githubusercontent.com/eppofahmi/belajaR/master/upn-surabaya/data/sample.json
+> <https://raw.githubusercontent.com/eppofahmi/belajaR/master/upn-surabaya/data/sample.json>
 
 ```{r, eval=FALSE}
 library(jsonlite)
@@ -131,27 +133,27 @@ Sama seperi data lainnya, untuk mengimpor data `json` kita perlu menulis nama fo
 
 Selain jenis-jenis format data seperti yang sudah dibahas. Di R kita juga bisa membaca jenis lain, seperti:
 
-1. Data output dari SPSS dan Stata
-2. Data `.nc`
-3. Data list
-4. etc. 
+1.  Data output dari SPSS dan Stata
+2.  Data `.nc`
+3.  Data list
+4.  etc.
 
 TIPS:
 
-Jika ingin mengimpor data dengan ekstensi tertentu, kita bisa mencari tutorialnya dengan mengetikan di google search. Misalnya untuk membaca file stata, kita bisa menggunakan kata kunci berikut. 
+Jika ingin mengimpor data dengan ekstensi tertentu, kita bisa mencari tutorialnya dengan mengetikan di google search. Misalnya untuk membaca file stata, kita bisa menggunakan kata kunci berikut.
 
 > read stata data in r
 
 ## Your Turn 1
 
-1. Buatlah data xlsx dan csv dengan menggunakan excel
-2. Letakan di folder data
-3. Impor data tersebut menggunakan sintak-sintak yang sudah dipelajari
-4. Impor data json dari url yang ada dicontoh
+1.  Buatlah data xlsx dan csv dengan menggunakan excel
+2.  Letakan di folder data
+3.  Impor data tersebut menggunakan sintak-sintak yang sudah dipelajari
+4.  Impor data json dari url yang ada dicontoh
 
 ## Ekspor Data
 
-Setelah bisa mengimpor, dan setelah melakukan pemrosesan di R, selanjutnya kita mungkin perlu menyimpan data dihardisk. 
+Setelah bisa mengimpor, dan setelah melakukan pemrosesan di R, selanjutnya kita mungkin perlu menyimpan data dihardisk.
 
 ### Ekspor data frame
 
@@ -165,11 +167,11 @@ write_csv(namaobjek, "namafolder/namafile.csv")
 
 ### Ekspor list
 
-List atau bisa juga disebut sebagai data bertingkat juga dapat disimpan atau diekspor dari R. Tipe data ini biasanya digunakan untuk menyimpan data hasil pengolahan dalam satu file. Untuk mengekspor list di R umumnya dilakukan menggunakan tipe data `.rds`. Tipe data ini hanya spesifik untuk R saja. 
+List atau bisa juga disebut sebagai data bertingkat juga dapat disimpan atau diekspor dari R. Tipe data ini biasanya digunakan untuk menyimpan data hasil pengolahan dalam satu file. Untuk mengekspor list di R umumnya dilakukan menggunakan tipe data `.rds`. Tipe data ini hanya spesifik untuk R saja.
 
 \vspace{0.1in}
 
-Jika Menghendaki format yang lebih umum, maka sebaiknya list disimpan dalam format data yang juga umum. Misalnya json. 
+Jika Menghendaki format yang lebih umum, maka sebaiknya list disimpan dalam format data yang juga umum. Misalnya json.
 
 ```{r}
 library(readr)
@@ -179,15 +181,15 @@ write_rds(namaobjek, "namafolder/namafile.rds")
 
 ### Ekspor json
 
-Untuk menyimpan json kita juga bisa menggunakan pola sintak yang sama seperti yang sudah dipelajari sebelumnya, yaitu: 
+Untuk menyimpan json kita juga bisa menggunakan pola sintak yang sama seperti yang sudah dipelajari sebelumnya, yaitu:
 
 ```{r}
 jsonlite::write_json(x = namaobjek, path = "namafolder/namafile.json")
 ```
 
-# Pengecekan Data 
+# Pengecekan Data
 
-> Cobalah untuk mengimpor data ke R, dan perhatikan apa yang ada dibagian environment. 
+> Cobalah untuk mengimpor data ke R, dan perhatikan apa yang ada dibagian environment.
 
 ```{r, eval=FALSE}
 nama_objek1 = read_csv("folder/file.csv")
@@ -195,16 +197,16 @@ nama_objek1 = read_csv("folder/file.csv")
 
 Gantilah nama folder dan file yang sesuai dengan yang dimiliki di laptop masing-masing
 
-## Jumlah observasi dan variabel 
+## Jumlah observasi dan variabel
 
 ::: {.columns}
 ::: {.column width="50%"}
-- Jumlah observasi menunjukkan jumlah baris, sementara jumlah variabel menunjukkan jumlah kolom
-- Selain itu, sebagai analis kita juga harus tahu masing-masing tipe variabel yang dimiliki
-- Untuk mengetahuinya kita bisa menggunakan fungsi glimpse()
+-   Jumlah observasi menunjukkan jumlah baris, sementara jumlah variabel menunjukkan jumlah kolom
+-   Selain itu, sebagai analis kita juga harus tahu masing-masing tipe variabel yang dimiliki
+-   Untuk mengetahuinya kita bisa menggunakan fungsi glimpse()
 :::
-::: {.column width="50%"}
 
+::: {.column width="50%"}
 Contoh:
 
 ```{r, eval=TRUE}
@@ -218,12 +220,12 @@ glimpse(nama_objek2)
 
 ::: {.columns}
 ::: {.column width="50%"}
-
-- Untuk mendapatkan rangkuman dari data kita bisa menggunakan fungsi `summary()` atau `skim()` dari package `skimr`
-- Rangkuman biasanya digunakan untuk mendapatkan informasi umum terkait dengan data yang akan diolah
-- Rangkuman secara umum jika angka akan berupa *central tendency* statistik
-- Rangkuman data teks biasanya berupa jenis datanya saja
+-   Untuk mendapatkan rangkuman dari data kita bisa menggunakan fungsi `summary()` atau `skim()` dari package `skimr`
+-   Rangkuman biasanya digunakan untuk mendapatkan informasi umum terkait dengan data yang akan diolah
+-   Rangkuman secara umum jika angka akan berupa *central tendency* statistik
+-   Rangkuman data teks biasanya berupa jenis datanya saja
 :::
+
 ::: {.column width="50%"}
 Contoh:
 
@@ -235,26 +237,25 @@ summary(nama_objek2)
 
 # Penataan Data *(Data Wrangling)*
 
-Penataan atau juga bisa disebut wrangling data juga merupakan salah satu bagian penting dalam tahap pra-pemrosesan data. Hal ini bisanya dilakukan mulai dari menstandarisasi nama kolom hingga memutuskan metode pengisian data yang kosong atau imputasi. 
+Penataan atau juga bisa disebut wrangling data juga merupakan salah satu bagian penting dalam tahap pra-pemrosesan data. Hal ini bisanya dilakukan mulai dari menstandarisasi nama kolom hingga memutuskan metode pengisian data yang kosong atau imputasi.
 
 \vspace{0.1in}
 
-Data wrangling berfungsi agar analis bisa fokus pada metode dan hasil pada saat melakukan analisis. Tidak lagi bingung atau harus menata data yang tidak terstruktur yang tidak mudah dipahami. 
+Data wrangling berfungsi agar analis bisa fokus pada metode dan hasil pada saat melakukan analisis. Tidak lagi bingung atau harus menata data yang tidak terstruktur yang tidak mudah dipahami.
 
 ## Standar nama kolom
+
 ::: {.columns}
 ::: {.column width="50%"}
+Nama kolom/variabel di R sebaiknya dibuat berdasarkan aturan yang sama untuk membuat objek R, yaitu:
 
-Nama kolom/variabel di R sebaiknya dibuat berdasarkan aturan yang sama untuk membuat objek R, yaitu: 
-
-- Tidak diawali dengan angka (`kolom1`, bukan `1kolom`)
-- Tidak menggunakan spasi (`kolom_ke1` bukan `kolom ke 1`)
-- Sebaiknya menggunakan huruf yang seragam (huruf kecil atau besar semua)
+-   Tidak diawali dengan angka (`kolom1`, bukan `1kolom`)
+-   Tidak menggunakan spasi (`kolom_ke1` bukan `kolom ke 1`)
+-   Sebaiknya menggunakan huruf yang seragam (huruf kecil atau besar semua)
 :::
-  
-::: {.column width="50%"}
 
-Contoh: 
+::: {.column width="50%"}
+Contoh:
 
 ```{r}
 library(janitor)
@@ -274,7 +275,6 @@ glimpse(df1)
 
 ::: {.columns}
 ::: {.column width="50%"}
-
 Untuk memilih nama kolom kita bisa menggunakan fungsi `select` dari `dplyr`. Namun sebelum menggunakannya, cobalah untuk menjalankan dan membaca dokumentasinya dengan menjalankan fungsi berikut:
 
 ```{r}
@@ -282,13 +282,12 @@ library(dplyr)
 
 ?dplyr::select
 ```
-
 :::
+
 ::: {.column width="50%"}
+Untuk menata atau mengurutkan kolom/variabel sesuai kebutuhan kita juga bisa mengkombinasikan fungsi `select()` dengan nomor indeks atau anam kolomnya.
 
-Untuk menata atau mengurutkan kolom/variabel sesuai kebutuhan kita juga bisa mengkombinasikan fungsi `select()` dengan nomor indeks atau anam kolomnya. 
-
-Misalnya: 
+Misalnya:
 
 ```{r}
 nama_objek2 %>% 
@@ -296,23 +295,25 @@ nama_objek2 %>%
 ```
 
 Kita memilih kolom 1 sampai 4 dan kolom ke 10 dari data `nama_objek2`
-
 :::
 :::
 
 ## Memilih Baris
 
-- Untuk memilih baris kita bisa menggunakan `filter()` dari dplyr
-- `filter()` digunakan untuk memilih baris dari data berdasarkan kondisi yang ditetapkan pada satu atau lebih kolom
+-   Untuk memilih baris kita bisa menggunakan `filter()` dari dplyr
+-   `filter()` digunakan untuk memilih baris dari data berdasarkan kondisi yang ditetapkan pada satu atau lebih kolom
 
 ```{r}
 nama_objek2 %>% 
    filter(disp > 250)
 ```
-Skrip diatas digunakan untuk memfilter (memilih baris) yang nilai dikolom `disp` nya lebih dari 250. 
+
+Skrip diatas digunakan untuk memfilter (memilih baris) yang nilai dikolom `disp` nya lebih dari 250.
 
 ## Transformasi kolom
+
 ### Nama baris menjadi kolom
+
 ::: {.columns}
 ::: {.column width="50%"}
 ```{r, eval=TRUE}
@@ -322,6 +323,7 @@ df3 %>%
    head(5)
 ```
 :::
+
 ::: {.column width="50%"}
 ```{r, eval=TRUE}
 df3 = rownames_to_column(df3)
@@ -365,10 +367,9 @@ df4 %>%
    unite(col = "nama_lengkap", sep = " ", remove = FALSE)
 ```
 
-
 ### Membuat kolom baru dan Merangkum data
 
-Untuk membuat kolom baru kita bisa menggunakan fungsi `mutate()`, di sini kita akan menggunakan dengan mengisi jumlah observasi dari kolom lain. 
+Untuk membuat kolom baru kita bisa menggunakan fungsi `mutate()`, di sini kita akan menggunakan dengan mengisi jumlah observasi dari kolom lain.
 
 ```{r}
 fauna = msleep
@@ -386,20 +387,19 @@ mobil %>%
 
 # Mengatasasi Nilai Hilang
 
-- Terkadang kita memiliki data yang tidak semua barisnya terisi. Kondisi tersebut disebut value not available, missinf value atau `NA`. 
+-   Terkadang kita memiliki data yang tidak semua barisnya terisi. Kondisi tersebut disebut value not available, missinf value atau `NA`.
 
-- Keputusan untuk tetap menggunakan data yang terdapat nilai kosong dalam salah satu variabelnya merupakan keputusan teoretis
+-   Keputusan untuk tetap menggunakan data yang terdapat nilai kosong dalam salah satu variabelnya merupakan keputusan teoretis
 
-- Secara teknis, ada beberapa upaya yang bisa dilakukan. Upaya ini disebut imputasi.
+-   Secara teknis, ada beberapa upaya yang bisa dilakukan. Upaya ini disebut imputasi.
 
-Anggap saja kita memiliki data berikut, dimana tidak ada nilai yang kosong di dalamnya. 
+Anggap saja kita memiliki data berikut, dimana tidak ada nilai yang kosong di dalamnya.
 
 ```{r, eval=TRUE}
 library(missForest)
 data(iris)
 summary(iris)
 ```
-
 
 ## Menggunakan teknik manual
 
@@ -428,7 +428,7 @@ summary(iris.mis)
 
 ## Menggunakan `package`
 
-Untuk melakukan *imputation* kita bisa menggunakan fungsing `missForest()` seperti contoh skrip berikut. 
+Untuk melakukan *imputation* kita bisa menggunakan fungsing `missForest()` seperti contoh skrip berikut.
 
 ```{r, eval=FALSE}
 iris.imp <- missForest(iris.mis, xtrue = iris, verbose = TRUE)

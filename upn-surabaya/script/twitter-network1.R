@@ -49,6 +49,8 @@ semantic_network <- twitter_data %>%
          termFreq = 10,
          hashtagFreq = 20)
 
+class(semantic_network)
+
 # dashboard 
 # install.packages("VOSONDash")
 library(VOSONDash)
