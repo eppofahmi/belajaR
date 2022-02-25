@@ -7,7 +7,7 @@ library(tidytext)
 library(igraph)
 
 # 1. data 
-dataMentah = read_csv(file = "https://raw.githubusercontent.com/eppofahmi/belajaR/master/upn-surabaya/data/tweet_save_monas.csv")
+dataMentah = read_csv(file = "https://raw.githubusercontent.com/eppofahmi/belajaR/master/99-BankData/tweet_save_monas.csv")
 
 # 2. Network (Butuh nodes dan hubungan abstrak antar nodes)
 glimpse(dataMentah)
