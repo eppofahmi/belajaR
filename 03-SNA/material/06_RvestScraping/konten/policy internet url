@@ -1,0 +1,15 @@
+Multipple pages scarping
+Yang diperlukan adalah mengetahui perubahan url - biasanya menjadi halaman 1, 2, dan 3 dan seterusnya. Dalam konteks web ini, ada 7 halaman/pages di mana halaman 1 = 0 
+
+page1 <- https://onlinelibrary.wiley.com/action/doSearch?AllField=public+policy&PubType=journal&SeriesKey=19442866&content=articlesChapters&countTerms=true&target=default&AfterYear=2009&BeforeYear=2018
+
+URL yang Stabil 
+ 
+page2 <- https://onlinelibrary.wiley.com/action/doSearch?AllField=public%20policy&PubType=journal&SeriesKey=19442866&content=articlesChapters&countTerms=true&target=default&AfterYear=2009&BeforeYear=2018&startPage=1
+
+page1 <- https://onlinelibrary.wiley.com/action/doSearch?AllField=public%20policy&PubType=journal&SeriesKey=19442866&content=articlesChapters&countTerms=true&target=default&AfterYear=2009&BeforeYear=2018&startPage=0
+
+page3 <- https://onlinelibrary.wiley.com/action/doSearch?AllField=public%20policy&PubType=journal&SeriesKey=19442866&content=articlesChapters&countTerms=true&target=default&AfterYear=2009&BeforeYear=2018&startPage=2
+
+page13 <- https://onlinelibrary.wiley.com/action/doSearch?AllField=public%20policy&PubType=journal&SeriesKey=19442866&content=articlesChapters&countTerms=true&target=default&AfterYear=2009&BeforeYear=2018&startPage=12
+

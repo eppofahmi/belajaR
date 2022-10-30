@@ -40,7 +40,7 @@ Saya bukanlah orang dengan latar belakang pendidikan teknik, S1 saya adalah Hubu
 
 \vspace{0.1in}
 
-Kemungkinan, jika ada yang sedang membaca atau memiliki slides ini juga tertarik untuk belajar tentang analisis big data atau digital. Satu hal yang saya bisa katakan untuk itu, bidang ini sangat terbuka bagi siapa saja yang mau dan bisa meluangkan waktu secara konsisten untuk belajar. 
+Kemungkinan, jika ada yang sedang membaca atau memiliki slides ini juga tertarik untuk belajar tentang analisis big data atau digital. Satu hal yang saya bisa katakan untuk itu, bidang ini sangat terbuka bagi siapa saja yang mau dan bisa meluangkan waktu secara konsisten untuk belajar.
 
 Jadi, selemat belajar!...
 
