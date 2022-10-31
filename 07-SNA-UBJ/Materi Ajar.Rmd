@@ -1,0 +1,61 @@
+---
+title: "Materi Ajar SNA"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Pengenalan Dasar Data Science (3 Jam)
+
+Materi ini akan memberikan pemahaman kepada peserta pelatihan mengenai: 
+
+1. Diagram alir proyek data science pengenalan bahasa pemrograman R;
+2. Pengenalan lingkungan RStudio;
+3. Jenis-jenis tipe data dalam R
+
+## Prapemrosesan Data (3 Jam)
+
+Materi ini akan memberikan pemahaman kepada peserta pelatihan mengenai:
+
+1. Impor dan ekspor data dari dan ke RStudio;
+2. Wrangling data;
+3. Missing value
+
+## Visualisasi Data (3 Jam)
+
+Materi ini akan memberikan pemahaman kepada peserta pelatihan mengenai visualisasi menggunakan library ggplot: 
+
+1. Komparasi;
+2. Distribusi; 
+3. Komposisi; 
+4. Hubungan
+
+## Pengenalan Analisis Network (3 Jam)
+
+Materi ini akan memberikan pemahaman terkait dengan: 
+
+1. Konsep dasar analisis network;
+2. Centrality;
+3. Modularity
+
+## Pra Pemrosesan Data untuk Analisis Network (3 Jam)
+
+Materi ini akan memberikan pemahaman dan keterampilan terkait dengan persiapan yang perlu dilakukan untuk melakukan network analysis menggunakan R.
+
+1. Pertanyaan;
+2. Nodes;
+3. Edges
+
+## Menggunakan igraph, ggraph, dan gephi (3 Jam)
+
+Materi ini akan memberikan pemahaman terkait dengan fitur yang ada dalam igraph dan gephi dan keterampilan untuk menggunakannya dalam analisis.
+
+1. igraph;
+2. ggraph; 
+3. gephi
+
+## Proyek Akhir (2 Jam)
+
+Peserta diminta mengerjakan soal berupa studi kasus yang dikerjakan dengan menggunakan pengetahuan dan keterampilan yang telah dipelajari.
